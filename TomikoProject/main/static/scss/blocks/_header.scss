@@ -1,0 +1,60 @@
+.header{
+  display: flex;
+  margin-top: 24px;
+  justify-content: space-between;
+  &__navbar{
+    display: flex;
+    align-items: center;
+    column-gap: 60px;
+    @include tablet{
+      column-gap: 15px;
+    }
+    &-item{
+      font-size: 16px;
+      font-weight: 600;
+      opacity: 70%;
+      @include tablet{
+        font-size: 14px;
+      }
+    }
+    &-list{
+      display: flex;
+      column-gap: 40px;
+      @include tablet{
+        column-gap: 15px;
+      }
+    }
+  }
+  &__contacts{
+    display: flex;
+    align-items: center;
+    column-gap: 24px;
+    font-size: 24px;
+    font-family: var(--second-family);
+    font-weight: 700;
+  }
+  &__socials{
+    display: flex;
+    column-gap: 10px;
+    &-item{
+      width: 36px;
+      height: 36px;
+    }
+  }
+}
+.burger-button {
+  @include reset-button;
+  width: 48px;
+  aspect-ratio: 1;
+  position: relative;
+  border-radius: 1px;
+  &::after {
+    @include abs-center;
+    content: '';
+    width: 50%;
+    height: 2px;
+    background-color: var(--color-white);
+    border-radius: 5px;
+    box-shadow: var(--color-white) 0px -8px 0px 0px,var(--color-white) 0px 8px 0px 0px;
+  }
+}
