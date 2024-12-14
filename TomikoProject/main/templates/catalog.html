@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Car Catalog</title>
+</head>
+<body>
+    <h1>Car Catalog</h1>
+    <table border="1">
+        <thead>
+            <tr>
+                <th>Model</th>
+                <th>Year</th>
+                <th>Mileage</th>
+                <th>Price</th>
+                <th>Transmission</th>
+                <th>Engine Volume</th>
+                <th>Drive</th>
+                <th>Color</th>
+                <th>Power Volume</th>
+                <th>Brand Country</th>
+            </tr>
+        </thead>
+        <tbody>
+            {% for car in cars %}
+            <tr>
+                <td>{{ car.model }}</td>
+                <td>{{ car.year }}</td>
+                <td>{{ car.mileage }}</td>
+                <td>{{ car.price }}</td>
+                <td>{{ car.transmission }}</td>
+                <td>{{ car.engine_volume }}</td>
+                <td>{{ car.drive }}</td>
+                <td>{{ car.color }}</td>
+                <td>{{ car.power_volume }}</td>
+                <td>{{ car.brand_country.country }}</td>
+            </tr>
+            {% endfor %}
+        </tbody>
+    </table>
+</body>
+</html>
