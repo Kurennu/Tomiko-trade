@@ -1,1 +1,1 @@
-# Tomiko-trade💋
+# Tomiko-trade
