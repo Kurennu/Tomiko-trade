@@ -361,6 +361,8 @@ svg * {
       align-content: center;
   width: 285px;
   height: 70px;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
   border-radius: 60px;
   background: linear-gradient(135deg, rgb(13, 47, 104), rgb(213, 17, 23) 100%);
   padding-inline: 40px;
@@ -380,6 +382,14 @@ svg * {
     padding-inline: 40px;
   }
 }
+.hero__info-button--promo {
+  width: 293px;
+  height: 44px;
+  font-size: 14px;
+  padding-block: 0px;
+  padding-inline: 24px;
+  margin-top: 24px;
+}
 .hero__benefits {
   margin-top: 233px;
   display: -webkit-box;
@@ -395,6 +405,103 @@ svg * {
   -webkit-box-align: end;
       -ms-flex-align: end;
           align-items: end;
+}
+.hero__stats {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+}
+.hero__stats-item {
+  position: relative;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+}
+.hero__stats-item:not(:first-child) {
+  padding-inline: 40px;
+}
+.hero__stats-item:not(:first-child):before {
+  position: absolute;
+  content: "";
+  width: 1px;
+  height: 100%;
+  background-color: var(--color-white);
+  opacity: 16%;
+  left: 0;
+}
+.hero__stats-item:first-child {
+  padding-right: 40px;
+}
+.hero__stats-item:last-child {
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  padding-inline: 67px;
+}
+.hero__stats-item:last-child:after {
+  position: absolute;
+  left: 27px;
+  content: "";
+  width: 27px;
+  height: 57px;
+  background: url("/static/img/star.png") center/contain no-repeat;
+}
+.hero__stats-char {
+  font-size: 48px;
+  padding: 0;
+  font-family: var(--second-family);
+  text-align: center;
+}
+.hero__stats-desc {
+  opacity: 50%;
+}
+.hero__promo {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  width: 325px;
+  height: 198px;
+  padding: 16px;
+  background-color: #081E36;
+  border-radius: 28px;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+}
+.hero__promo-text {
+  font-size: 24px;
+  font-weight: 400;
+  line-height: 150%;
+  text-align: left;
+}
+.hero__promo-text--red {
+  position: relative;
+}
+.hero__promo-text--red:after {
+  position: absolute;
+  content: "30%";
+  bottom: 9px;
+  padding-left: 10px;
+  font-size: 48px;
+  color: #FD554B;
+  font-weight: 900;
 }
 
 .burger-button {

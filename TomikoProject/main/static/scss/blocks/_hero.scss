@@ -49,6 +49,7 @@
       align-content: center;
       width: 285px;
       height: 70px;
+      box-sizing: border-box;
       border-radius: 60px;
       background: linear-gradient(135.00deg, rgb(13, 47, 104),rgb(213, 17, 23) 100%);
       padding-inline: 40px;
@@ -65,7 +66,15 @@
         padding-block: 0;
         padding-inline: 40px;
       }
-    } 
+      &--promo{
+        width: 293px;
+        height: 44px;
+        font-size: 14px;
+        padding-block: 0px;
+        padding-inline: 24px;
+        margin-top: 24px;
+      }
+    }
   }
   &__benefits{
     margin-top: 233px;
@@ -74,7 +83,81 @@
     justify-content: space-between;
     align-items: end;
   }
+  &__stats{
+    display: flex;
+    flex-direction: row;
+    &-item{
+      position: relative;
+      align-items: center;
+      display: flex;
+      flex-direction: column;
+      &:not(:first-child){
+        padding-inline: 40px;
+        &:before{
+          position: absolute;
+          content: '';
+          width: 1px;
+          height: 100%;
+          background-color: var(--color-white);
+          opacity: 16%;
+          left: 0;
+        }
+      }
+      
+      &:first-child{
+        padding-right: 40px;
+      }
+      &:last-child{
+        justify-content: center;
+        padding-inline: 67px;
+        &:after{
+          position: absolute;
+          left: 27px;
+          content: '';
+          width: 27px;
+          height: 57px;
+          background: url("/static/img/star.png") center/contain no-repeat;
+        }
+      }
+    }
+    &-char{
+      font-size: 48px;
+      padding: 0;
+      font-family: var(--second-family);
+      text-align: center;
+    }
+    &-desc{
+      opacity: 50%;
+    }
+  }
+&__promo{
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  width: 325px;
+  height: 198px;
+  padding: 16px;
+  background-color: #081E36;
+  border-radius: 28px;
+  box-sizing: border-box;
 
+  &-text{
+    font-size: 24px;
+    font-weight: 400;
+    line-height: 150%;
+    text-align: left;
+    &--red{
+      position: relative;
+      &:after{
+        position: absolute;
+        content: '30%';
+        bottom: 9px;
+        padding-left: 10px;
+        font-size: 48px;
+        color: #FD554B;
+        font-weight: 900;
+      }
+    }
+  }
 }
-
-
+}
