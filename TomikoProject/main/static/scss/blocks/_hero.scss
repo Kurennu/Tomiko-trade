@@ -17,13 +17,19 @@
     background-position: center;
     background-size: cover;
   }
+  &__main{
+    display: flex;
+    justify-content: space-between;
+    align-items: start;
+    column-gap: 30px;
+  }
   &__info{
     display: flex;
     justify-content: center;
     flex-direction: column;
     text-align: center;
     padding-top: 130px;
-    row-gap: 46px;
+    row-gap: var(--section-padding-y);
     align-items: center;
     max-width: 714px;
     width: 100%;
@@ -76,5 +82,3 @@
   }
 
 }
-
-
