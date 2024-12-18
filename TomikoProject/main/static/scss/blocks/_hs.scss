@@ -2,18 +2,19 @@
     display: flex;
     flex-direction: column;
     row-gap: var(--section-padding-y);
+
     &:before {
-        content: "";
-        position: absolute;
-        z-index: -100;
-        top: 0;
-        left: 0;
-        width: 100%;
-        height: 100%;
-        background-blend-mode: overlay;
-        background-repeat: no-repeat;
-        background-position: center;
-        background-size: cover;
+      content: "";
+      position: absolute;
+      z-index: -100;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background-blend-mode: overlay;
+      background-repeat: no-repeat;
+      background-position: center;
+      background-size: cover;
       }
     &__main {
         display: flex;
@@ -21,22 +22,47 @@
         align-items: start;
         column-gap: 30px;
     }
+    
+    h1 {
+      font-family: var(--second-family);
+      font-size: 70px;
+      font-weight: 700;
+      line-height: 70px;
+      text-align: left;
+      text-underline-position: from-font;
+      text-decoration-skip-ink: none;
+      
+
+      
+
+  }
+    
     &__image1 {
-        position: absolute;
         top: 0;
         left: 0;
+        border-radius: 28px;
+        box-shadow: 0px 24px 100px 0px #D5111766;
+        z-index: 1;
+       
       }
       
+      
     &__image2 {
-        position: absolute;
-        top: 0;
-        left: 0;
+        img {
+            z-index: -2;
+            position: absolute;
+            top: 100px;
+          }
       }
+    
     &__body {
-        display: flex;
-        flex-direction: column;
-        max-width: 748px;
-        row-gap: 40;
+      align-items: start;
+      display: flex;
+      flex-direction: column;
+      max-width: 748px;
+      row-gap: 40;
+      align-items: start;
+      
 
     }
     &__description {
@@ -46,28 +72,112 @@
     }
     &__progress {
 
-            display: flex;
+      display: flex;
 
     }
     &__button{
-        width: 285px;
-        height: 70px;
+        width: 304px;
+        height: 74px;
         border-radius: 60px;
-        background: linear-gradient(135.00deg, rgb(13, 47, 104),rgb(213, 17, 23) 100%);
+        border-left-width: 0px;
+        border-right-width: 0px;
+        border-bottom-width: 0px;
+        border-top-width: 0px;
+        background: linear-gradient(94.98deg, #0D2F68 0%, #D51117 100%);
         padding-inline: 40px;
         padding-block: 24px;
         font-size: 18px;
         font-weight: 600;
         line-height: 22px;
         color: var(--color-white);
+        text-align: center;
+        margin-top: 40px;
+
+
+    }
 
 
     &__progress {
-        &-list {
+        
+        display: flex;
+        justify-content: space-between;
+        column-gap: 16px;
+        font-size: 16px;
+        font-weight: 400;
+        line-height: 24px;
+        width: 1400px;
+        height: 104px;
+        padding: 0px 0px 0px 0px;
+        gap: 0px;
+        border: 1px 0px 0px 0px;
+        justify: space-between;
+        opacity: 0px;
+        border-top: 1px solid #FFFFFF29
+      }
+
+        
+
+
+
+        div {
+            display: flex;
+            unicode-bidi: isolate;
+            word-wrap: break-word;
+
+            
+
+
+            h3 {
+                font-family: var(--second-family);
+                font-size: 48px;
+                font-weight: 700;
+                line-height: 48px;
+                text-align: center;
+                text-underline-position: from-font;
+                text-decoration-skip-ink: none;
+                color: #FD554B;
+
+                
+
+            }
+
+            
+        }
+
+        &-icon1 {
             display: flex;
             justify-content: space-between;
-            column-gap: 16px;
-        }
-    }
+            width: Hug 377px;
+            height: Hug 72px;
+            gap: 24px;
+            border: 0px 1px 0px 0px;
+            opacity: 0px;            
+            padding-right: 46px;
+          }
+          &-icon2 {
+            display: flex;
+            justify-content: space-between;
+            width: Hug (344px)px;
+            height: Hug (72px)px;
+            gap: 24px;
+            border: 0px 1px 0px 0px;
+            opacity: 0px;   
+            padding-right: 46px;         
+           
+          }
+          &-icon3 {
+            display: flex;
+            justify-content: space-between;
+            width: Hug (179px)px;
+            height: Fixed (72px)px;
+            gap: 24px;
+            border: 0px 1px 0px 0px;
+            opacity: 0px;
+            
+            
+          }
+
+        
 }
-}
+    
+
