@@ -36,23 +36,19 @@
       
 
   }
-    
+    &__image{
+      position: relative;
+    }
     &__image1 {
-        top: 0;
-        left: 0;
         border-radius: 28px;
         box-shadow: 0px 24px 100px 0px #D5111766;
         z-index: 1;
-       
-      }
-      
-      
+      } 
     &__image2 {
-        img {
-            z-index: -2;
-            position: absolute;
-            top: 100px;
-          }
+      bottom: -20px;
+      left: 20px;
+      z-index: 0;
+      position: absolute;
       }
     
     &__body {
@@ -110,7 +106,7 @@
         padding: 0px 0px 0px 0px;
         gap: 0px;
         border: 1px 0px 0px 0px;
-        justify: space-between;
+        justify-content: space-between;
         opacity: 0px;
         border-top: 1px solid #FFFFFF29
       }
