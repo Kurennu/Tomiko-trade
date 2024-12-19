@@ -1,6 +1,6 @@
 html,
 body {
-  font-family: var(--first-family);
+  font-family: var(--inter-400);
   font-weight: 400;
   font-size: 16px;
   line-height: 1.28;
@@ -8,6 +8,8 @@ body {
   height: 100%;
   background-color: var(--color-dark);
   width: 100%;
+  margin: 0;
+  overflow-x: hidden;
 }
 a {
   text-decoration: none;

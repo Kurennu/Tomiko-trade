@@ -1,0 +1,124 @@
+.swiper-container {
+    width: 100%;
+    height: auto;
+    margin: 20px auto;
+    padding: 10px;
+    position: relative;
+    margin-bottom: 20px !important;
+  }
+  
+  .swiper-wrapper {
+
+        align-items: end;
+  }
+  
+  .swiper__card {
+    width: 100%;
+    height: 100%;
+    border-radius: 10px;
+    color: #fff;
+    text-align: center;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+
+  }
+  .swiper__standart-slide {
+    width: 300px !important;
+    height: 347px !important;
+  }
+  
+  .button {
+    background-color: #d40000;
+    color: white;
+    border: none;
+    padding: 10px;
+    margin-top: 10px;
+    cursor: pointer;
+    border-radius: 5px;
+  }
+
+  .swiper{
+    &__main-slide{
+        width: 641px !important;
+        height: 431px !important;
+        background-color: transparent !important;
+        &:after{
+            position: absolute;
+            content: '';
+            background-color: #d40000;
+            width: 582px;
+            height: 74px;
+            border-radius: 28px;
+            rotate: -1deg;
+            z-index: -100;
+            bottom: -9px;
+            left: 30px;
+        }
+        &-img{
+            border-radius: 28px;
+            position: relative;
+            z-index: 1;
+            &:after {
+                content: '';
+                position: absolute;
+                z-index: 100;
+                background: linear-gradient(180deg, rgba(1, 18, 36, 0.8) 0%, rgba(1, 18, 36, 0.8) 100%), linear-gradient(360deg, rgba(1, 18, 36, 0.8) 0%, rgba(1, 18, 36, 0.8) 100%);
+            }
+        }
+    }
+}
+
+.inner-slider-wrapper {
+    position: relative;
+    width: 100%;
+    overflow: hidden;
+
+  }
+  
+.inner-swiper {
+    width: 641px !important;
+    height: 431px !important;
+    border-radius: 28px !important;
+}
+
+.swiper__inner-slide-img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.inner-swiper-pagination {
+    position: relative;
+    display: flex;
+    justify-content: center;
+    margin-top: 10px;
+    bottom: 35px;
+    z-index: 100;
+    column-gap: 8px;
+  }
+  
+  .pagination-bullet {
+    position: relative;
+    width: 4px !important;
+    aspect-ratio: 1;
+    background-color: #ddd;
+    border-radius: 50%;
+    cursor: pointer;
+    transition: 0.3s;
+    border: none;
+    padding: 0;
+    &::before {
+        content: '';
+        position: absolute;
+        width: 16px;
+        height: 16px; 
+        background: transparent;
+        cursor: pointer;
+        z-index: -1;
+        left:-6px;
+        bottom:-7px;
+      }
+  }
+  .pagination-bullet.active {
+    background-color: var(--color-white)
+  }
+  

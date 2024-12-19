@@ -30,9 +30,11 @@
       padding-top: 24px;
     }
     &-header{
-      font-family: var(--second-family);
-      font-size: 64px;
+    
       line-height: 120%;
+      font-size: 64px;
+      font-family: var(--bebas-700);
+      font-weight: 700;
       @include mobile{
         font-size: 24px;
       }
@@ -53,7 +55,6 @@
       box-sizing: border-box;
       border-radius: 60px;
       background: linear-gradient(135.00deg, rgb(13, 47, 104),rgb(213, 17, 23) 100%);
-      padding-inline: 40px;
       padding-block: 24px;
       font-size: 18px;
       font-weight: 600;
@@ -137,7 +138,7 @@
     &-char{
       font-size: 48px;
       padding: 0;
-      font-family: var(--second-family);
+      font-family: var(--bebas-700);
       text-align: center;
       @include mobile{
         font-size: 18px;
@@ -179,4 +180,11 @@
     }
   }
 }
+}
+
+.sh{
+  line-height: 120%;
+  font-size: 64px;
+  font-family: var(--bebas-700);
+  font-weight: 700;
 }
