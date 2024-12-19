@@ -3,3 +3,4 @@ db.sqlite3
 prepros.config
 /TomikoProject/main/__pycache__/
 /TomikoProject/TomikoProject/__pycache__/
+/TomikoProject/main/migrations/__pycache__/
