@@ -72,9 +72,9 @@
         </header>
         <div class="hero__info">
             <div class="hero__info-text">
-                <h1 class="hero__info-header">
+                <h3 class="hero__info-header">
                     Автомобиль вашей мечты
-                </h1>
+                </h>
                 <h2 class="hero__info-subheader">Прозрачное ценообразование с подробным разъяснением затрат на каждом этапе</h2>
             </div>
             <button type="" class="hero__info-button">Рассчитать стоимость</button>
@@ -102,6 +102,9 @@
             </div>
         </div>
     </section>
+  <section class="container">
+
+
 <div class="swiper-container">
     <div class="custom-prev">
       <svg width="55" height="13" viewBox="0 0 55 13" fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -117,16 +120,51 @@
     <div class="swiper-wrapper">
       <div class="swiper-slide swiper__main-slide">
         <div class="swiper__card">
-          <img src="/static/img/subarutest.png" alt="Car">
-          <h3>SUBARU LEVORG VN5</h3>
-          <p>2021 · Гибрид · 10 000 км</p>
-          <strong>2 115 600 ₽</strong>
-          <button class="button">Оставить заявку</button>
+          <div class="swiper__main-slide-wrapper">
+            
+            <div class="inner-slider-wrapper">
+
+              <div class="swiper inner-swiper">
+                <div class="swiper-wrapper">
+
+                  <div class="swiper-slide">
+                    <img 
+                      class="swiper__inner-slide-img"
+                      src="/static/img/car-slider-main.png" 
+                      alt="Car 1">
+                  </div>
+
+                  <div class="swiper-slide">
+                    <img 
+                      class="swiper__inner-slide-img"
+                      src="/static/img/car-slider-main.png" 
+                      alt="Car 2">
+                  </div>
+
+                  <div class="swiper-slide">
+                    <img 
+                      class="swiper__inner-slide-img"
+                      src="/static/img/car-slider-main.png" 
+                      alt="Car 3">
+                  </div>
+
+                </div>
+
+                <div class="inner-swiper-pagination">
+                  <button class="pagination-bullet" data-index="0"></button>
+                  <button class="pagination-bullet" data-index="1"></button>
+                  <button class="pagination-bullet" data-index="2"></button>
+                </div>
+              </div>
+            </div>
+
+          </div>
         </div>
       </div>
-      <div class="swiper-slide">
+
+      <div class="swiper-slide swiper__standart-slide">
         <div class="swiper__card">
-          <img src="/static/img/subarutest.png" alt="Car">
+          <img src="/static/img/car-slider.png" alt="Car">
           <h3>SUBARU LEVORG VN5</h3>
           <p>2021 · Гибрид · 10 000 км</p>
           <strong>2 115 600 ₽</strong>
@@ -134,18 +172,18 @@
         </div>
       </div>
 
-      <div class="swiper-slide">
-        <div class="swiper__card">
-          <img src="" alt="Car">
+      <div class="swiper-slide swiper__standart-slide">
+        <div class="swiper__card ">
+          <img src="/static/img/car-slider.png" alt="Car">
           <h3>SUBARU LEVORG VN5</h3>
           <p>2021 · Гибрид · 10 000 км</p>
           <strong>2 115 600 ₽</strong>
           <button class="button">Оставить заявку</button>
         </div>
       </div>
-      <div class="swiper-slide">
+      <div class="swiper-slide swiper__standart-slide">
         <div class="swiper__card">
-          <img src="/static/img/subarutest.png" alt="Car">
+          <img src="/static/img/car-slider.png" alt="Car">
           <h3>SUBARU LEVORG VN5</h3>
           <p>2021 · Гибрид · 10 000 км</p>
           <strong>2 115 600 ₽</strong>
@@ -153,9 +191,9 @@
         </div>
       </div>
 
-      <div class="swiper-slide">
+      <div class="swiper-slide swiper__standart-slide">
         <div class="swiper__card">
-          <img src="/static/img/subarutest.png" alt="Car">
+          <img src="/static/img/car-slider.png" alt="Car">
           <h3>SUBARU LEVORG VN5</h3>
           <p>2021 · Гибрид · 10 000 км</p>
           <strong>2 115 600 ₽</strong>
@@ -166,31 +204,58 @@
     </div>
 
 </div>
-  
+</section>
 <script>
-document.addEventListener('DOMContentLoaded', () => {
-  const swiper = new Swiper('.swiper-container', {
+  document.addEventListener('DOMContentLoaded', () => {
+  // Инициализация основного слайдера
+  const mainSwiper = new Swiper('.swiper-container', {
     slidesPerView: 3,
-
     navigation: {
-        nextEl: '.custom-next',
-        prevEl: '.custom-prev',
+      nextEl: '.custom-next',
+      prevEl: '.custom-prev',
     },
-    pagination: {
-      el: '.swiper-pagination',
-      clickable: true,
-    },
-    breakpoints: {
-      768: {
-        slidesPerView: 2,
-      },
-      1024: {
-        slidesPerView: 3,
-      },
-    },
+  });
+
+  // Инициализация вложенного слайдера
+  const innerSwipers = document.querySelectorAll('.inner-swiper');
+
+  innerSwipers.forEach((swiperElement, swiperIndex) => {
+    const swiperInstance = new Swiper(swiperElement, {
+      spaceBetween: 0,
+      centeredSlides: false,
+      loop: true, 
+      allowTouchMove: true,
+      pagination: false,
+    });
+
+    // Кастомная пагинация
+    const bullets = swiperElement.closest('.inner-slider-wrapper')
+      .querySelectorAll('.pagination-bullet');
+
+    bullets.forEach((bullet, index) => {
+      bullet.addEventListener('click', () => {
+        // Переключаем слайд
+        swiperInstance.slideTo(index);
+
+        // Обновляем активный класс
+        bullets.forEach(b => b.classList.remove('active'));
+        bullet.classList.add('active');
+      });
+    });
+
+    // Обновляем активный класс при смене слайда
+    swiperInstance.on('slideChange', () => {
+      bullets.forEach(b => b.classList.remove('active'));
+      bullets[swiperInstance.activeIndex].classList.add('active');
+    });
+
+    // Устанавливаем первый активный элемент
+    bullets[0].classList.add('active');
   });
 });
 
-    </script>
+
+  </script>
+  
 </body>
 </html>
