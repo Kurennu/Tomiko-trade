@@ -1,2 +1,5 @@
 venv
 db.sqlite3
+prepros.config
+/TomikoProject/main/__pycache__/
+/TomikoProject/TomikoProject/__pycache__/
