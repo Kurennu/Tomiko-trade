@@ -110,7 +110,7 @@
 
     <div class="swiper__info">
       <div class="swiper__title">
-        <p class="swiper__title-text">Популярные авто</p>
+        <p class="swiper__title-text">Популярные авто &nbsp;</p>
         <p class="swiper__title-text swiper__title-text--red">Из Кореи</p>
       </div>
       <div class="swiper__nav hidden-mobile">
@@ -277,16 +277,17 @@
     },
     on: {
       slideChange: function () {
-      const currentIndex = this.activeIndex;
-      const title = document.querySelector('.swiper__title')
+        if (window.innerWidth >= 768) {
+          const currentIndex = this.activeIndex;
+          const title = document.querySelector('.swiper__title');
 
-      const offset = currentIndex * 338;
+          const offset = currentIndex * 338;
+          const maxOffset = 675;
+          const finalOffset = Math.min(offset, maxOffset);
 
-
-      const maxOffset = 675;
-      const finalOffset = Math.min(offset, maxOffset);
-
-      title.style.transform = `translateX(${-finalOffset}px)`;
+          title.style.transform = `translateX(${-finalOffset}px)`;
+        } else {
+        }
     },
   },
   });

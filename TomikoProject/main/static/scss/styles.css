@@ -436,6 +436,7 @@ svg * {
         -ms-flex-pack: center;
             justify-content: center;
     margin-top: 24px;
+    margin-bottom: 50px;
   }
 }
 .hero__stats {
@@ -847,6 +848,12 @@ svg * {
   right: 0;
   width: 727px;
 }
+@media (max-width: 767px) {
+  .swiper__info {
+    right: auto;
+    top: -30px;
+  }
+}
 .swiper__title {
   -webkit-transition: -webkit-transform 0.5s ease;
   transition: -webkit-transform 0.5s ease;
@@ -862,10 +869,23 @@ svg * {
           flex-direction: column;
   row-gap: -10px;
 }
+@media (max-width: 767px) {
+  .swiper__title {
+    -webkit-box-orient: horizontal;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: row;
+            flex-direction: row;
+  }
+}
 .swiper__title-text {
   font-size: 40px;
   line-height: 1;
   opacity: 30%;
+}
+@media (max-width: 767px) {
+  .swiper__title-text {
+    font-size: 24px;
+  }
 }
 .swiper__title-text--red {
   color: #FD554B;
@@ -876,9 +896,16 @@ svg * {
   margin-left: 10px;
   content: "";
   position: absolute;
-  background: url("/static/img/korea.png");
+  background: url("/static/img/korea.png") no-repeat center/contain;
   width: 40px;
-  aspect-ratio: 1;
+  height: 40px;
+}
+@media (max-width: 767px) {
+  .swiper__title-text--red::after {
+    width: 20px;
+    height: 20px;
+    margin-left: 8px;
+  }
 }
 .swiper__nav {
   display: -webkit-box;

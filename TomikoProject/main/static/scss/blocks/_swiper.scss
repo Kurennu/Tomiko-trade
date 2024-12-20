@@ -14,7 +14,10 @@
     position: absolute;
     right: 0;
     width: 727px;
-   
+    @include mobile{
+      right: auto;
+      top: -30px;
+    }
   }
   &__title{
     transition: transform 0.5s ease;
@@ -22,10 +25,16 @@
     display: flex;
     flex-direction: column;
     row-gap: -10px;
+    @include mobile{
+      flex-direction: row;
+    }
     &-text{
       font-size: 40px;
       line-height: 1;
       opacity: 30%;
+      @include mobile{
+        font-size: 24px;
+      }
       &--red{
         color: #FD554B;
         opacity: 100%;
@@ -34,9 +43,14 @@
           margin-left: 10px;
           content: "";
           position: absolute;
-          background: url("/static/img/korea.png");
+          background: url("/static/img/korea.png") no-repeat center / contain;
           width: 40px;
-          aspect-ratio: 1;
+          height: 40px;
+          @include mobile{
+            width: 20px;
+            height: 20px;
+            margin-left: 8px;
+          }
         }
       }
     }

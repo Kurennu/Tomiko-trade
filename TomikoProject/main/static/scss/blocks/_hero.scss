@@ -97,7 +97,9 @@
     @include tablet{
       justify-content: center;
       margin-top: 24px;
+      margin-bottom: 50px;
     }
+
   }
   &__stats{
     display: flex;
