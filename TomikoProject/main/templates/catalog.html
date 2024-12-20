@@ -1,43 +1,47 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="ru">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Car Catalog</title>
+    <title>Каталог автомобилей</title>
+    <style>
+        .car-card { width: 322px; height: 190px; margin: 1%; float: left; border: 1px solid #ccc; padding: 10px; text-align: center; }
+        .pagination { clear: both; text-align: center; margin-top: 20px; }
+        .pagination a, .pagination span { margin: 0 5px; padding: 10px 15px; border: 1px solid #ccc; text-decoration: none; color: #000; }
+        .pagination .active { background: #007bff; color: #fff; }
+    </style>
 </head>
 <body>
-    <h1>Car Catalog</h1>
-    <table border="1">
-        <thead>
-            <tr>
-                <th>Model</th>
-                <th>Year</th>
-                <th>Mileage</th>
-                <th>Price</th>
-                <th>Transmission</th>
-                <th>Engine Volume</th>
-                <th>Drive</th>
-                <th>Color</th>
-                <th>Power Volume</th>
-                <th>Brand Country</th>
-            </tr>
-        </thead>
-        <tbody>
-            {% for car in cars %}
-            <tr>
-                <td>{{ car.model }}</td>
-                <td>{{ car.year }}</td>
-                <td>{{ car.mileage }}</td>
-                <td>{{ car.price }}</td>
-                <td>{{ car.transmission }}</td>
-                <td>{{ car.engine_volume }}</td>
-                <td>{{ car.drive }}</td>
-                <td>{{ car.color }}</td>
-                <td>{{ car.power_volume }}</td>
-                <td>{{ car.brand_country.country }}</td>
-            </tr>
-            {% endfor %}
-        </tbody>
-    </table>
+    <h1>Каталог автомобилей</h1>
+    <div class="car-grid">
+        {% for car in page_obj %}
+        <div class="car-card">
+            <img src="{{ car.image.url }}" alt="{{ car.name }}" style="width: 100%; height: auto;">
+            <h3>{{ car.name }}</h3>
+            <p>{{ car.description|truncatewords:10 }}</p>
+            <p><strong>{{ car.price }} ₽</strong></p>
+        </div>
+        {% endfor %}
+    </div>
+
+    <div class="pagination">
+        {% if page_obj.has_previous %}
+            <a href="?page=1">Первая</a>
+            <a href="?page={{ page_obj.previous_page_number }}">Назад</a>
+        {% endif %}
+
+        {% for page_num in page_obj.paginator.page_range %}
+            {% if page_num == page_obj.number %}
+                <span class="active">{{ page_num }}</span>
+            {% else %}
+                <a href="?page={{ page_num }}">{{ page_num }}</a>
+            {% endif %}
+        {% endfor %}
+
+        {% if page_obj.has_next %}
+            <a href="?page={{ page_obj.next_page_number }}">Вперёд</a>
+            <a href="?page={{ page_obj.paginator.num_pages }}">Последняя</a>
+        {% endif %}
+    </div>
 </body>
 </html>
