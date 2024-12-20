@@ -1,6 +1,7 @@
 .hero {
   position: relative;
   z-index: 100;
+
   &:before {
     content: "";
     position: absolute;
@@ -15,6 +16,7 @@
     background-position: center;
     background-size: cover;
   }
+
   &__main{
     display: flex;
     justify-content: space-between;
@@ -32,6 +34,7 @@
     max-width: 714px;
     width: 100%;
     margin: auto;
+    
     @include tablet{
       padding-top: 24px;
     }
@@ -90,10 +93,13 @@
     flex-direction: row;
     justify-content: space-between;
     align-items: end;
+    margin-bottom: 40px;
     @include tablet{
       justify-content: center;
       margin-top: 24px;
+      margin-bottom: 50px;
     }
+
   }
   &__stats{
     display: flex;

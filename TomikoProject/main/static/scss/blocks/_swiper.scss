@@ -1,0 +1,204 @@
+.swiper{
+  &-container {
+    margin-bottom: 20px !important;
+    position: relative;
+  }
+
+  &__info{
+    display: flex;
+    flex-direction: row;
+    column-gap: 24px;
+    justify-content: space-between;
+    align-items: flex-end;
+    z-index: 700;
+    position: absolute;
+    right: 0;
+    width: 727px;
+    @include mobile{
+      right: auto;
+      top: -30px;
+    }
+  }
+  &__title{
+    transition: transform 0.5s ease;
+    font-family: var(--second-family);
+    display: flex;
+    flex-direction: column;
+    row-gap: -10px;
+    @include mobile{
+      flex-direction: row;
+    }
+    &-text{
+      font-size: 40px;
+      line-height: 1;
+      opacity: 30%;
+      @include mobile{
+        font-size: 24px;
+      }
+      &--red{
+        color: #FD554B;
+        opacity: 100%;
+        position: relative;
+        &::after{
+          margin-left: 10px;
+          content: "";
+          position: absolute;
+          background: url("/static/img/korea.png") no-repeat center / contain;
+          width: 40px;
+          height: 40px;
+          @include mobile{
+            width: 20px;
+            height: 20px;
+            margin-left: 8px;
+          }
+        }
+      }
+    }
+  }
+  &__nav{
+    display: flex;
+    column-gap: 24px;
+  }
+  &__main{
+    &-slide{
+      width: 641px !important;
+      height: 431px !important;
+      background-color: var(--color-dark) !important;
+      position: relative;
+      &::before {
+        content: "";
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background: linear-gradient(0.00deg, rgba(1, 18, 36, 0.8),rgba(1, 18, 36, 0) 31.206%),linear-gradient(180.00deg, rgba(1, 18, 36, 0.8) 11.717%,rgba(1, 18, 36, 0) 41.995%),url(1_1_11zon-9);
+        z-index: 200;
+        pointer-events: none;
+      }
+      &:after{
+          position: absolute;
+          content: '';
+          background-color: #d40000;
+          width: 582px;
+          height: 74px;
+          border-radius: 28px;
+          rotate: -1.2deg;
+          z-index: -100;
+          bottom: -5px;
+          left: 30px;
+        }
+        &-img{
+            border-radius: 28px;
+            position: relative;
+            z-index: 100;
+        }
+    }
+    &-info-wrapper{
+      pointer-events: none;
+      z-index: 500;
+      position: absolute;
+      top: 0px;
+      padding: 24px 28px;
+      box-sizing: border-box;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      width: 100%;
+      height: 100%;
+    }
+    &-title{
+      row-gap: 8px;
+      &-name{      
+        font-size: 24px;
+        font-family: var(--second-family);
+      }
+      &-desc{
+        font-size: 14px;
+        opacity: 50%;
+        font-weight: 500;
+        line-height: 1;
+      }
+    }
+    &-order{
+      display: flex;
+      justify-content: space-between;
+      &-price{
+        font-size: 26px;
+        font-family: var(--second-family);
+        text-align: right;
+      }
+      &-button{
+        @include reset-button;
+        border-radius: 30px;
+        padding: 12px;
+        width: 149px;
+        height: 44px;
+        background-color: #D51117;
+        color: var(--color-white);
+        backdrop-filter: blur(34px);
+        font-weight: 600;
+        font-size: 14px;
+        line-height: 140%;
+        text-align: center;
+        position: relative;
+        pointer-events: auto;
+        cursor: pointer;
+        z-index: 600;
+        &:after{
+          content: "";
+          position: absolute;
+          background: url("/static/img/cursor.svg");
+          width: 14px;
+          height: 15px;
+          bottom: -7px;
+          right: 44px;
+        }
+        &--gray{
+          background-color: rgba(255, 255, 255, 0.1);
+
+          &:after{
+            display: none;
+            content: none;
+          }
+        }
+      }
+    }
+  }
+  &-wrapper {
+    align-items: end;
+  }
+  &__standart-slide {
+    width: 338px !important;
+  }
+  &__card-standart{
+    background-color: #081E36;
+    border-radius: 24px;
+    padding: 16px 8px;
+    box-sizing: border-box;
+    display: flex;
+    flex-direction: column;
+    row-gap: 16px;
+    &:after{
+      position: absolute;
+      content: '';
+      background-color: #d40000;
+      width: 305px;
+      height: 74px;
+      border-radius: 28px;
+      rotate: -2deg;
+      z-index: -100;
+      bottom: -4px;
+      left: 25px;
+    }
+  }
+  &__card-image{
+    border-radius: 16px;
+    &-wrapper{
+      width: 322px;
+      height: 190px;
+      object-fit: contain;
+    }
+  }
+
+}

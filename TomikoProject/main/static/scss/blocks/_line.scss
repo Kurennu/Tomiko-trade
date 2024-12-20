@@ -1,0 +1,9 @@
+.line{
+    width: 100%;
+    height: 1px;
+    background-color: #344150;
+    margin-bottom: 40px;
+    @include tablet{
+        display: none;
+    }
+}
