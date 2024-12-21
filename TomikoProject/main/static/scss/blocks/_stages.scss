@@ -1,0 +1,188 @@
+.stages{
+    z-index: 1000;
+    margin-bottom: 80px;
+    display: flex;
+    flex-direction: column;
+    row-gap: 45px;
+    position: relative;
+    
+
+    &__content{
+        margin-top: 47px;
+        display: flex;
+        align-items: center;
+        flex-direction: column;
+        row-gap: 80px;
+        position: relative;
+        &:before{
+            content: "";
+            position: absolute;
+            top: 50%; 
+            left: 50%; 
+            transform: translate(-50%, -50%); 
+            width: 1400px;
+            height: 705px;
+            background-image: url("/static/img/promobg.png");
+            background-blend-mode: overlay;
+            background-repeat: no-repeat;
+            background-position: center;
+            background-size: cover;
+            border-radius: 28px;
+            border: rgb(255, 255, 255, 0.12) 1px;
+        }
+        &:after{
+            position: absolute;
+            content: '';
+            background: url('/static/img/Rectangle-big.png');
+            background-repeat: no-repeat;
+            width: 1287px;
+            height: 219px;
+            bottom: -140px;
+            z-index: -100;
+            left: -25px;
+          }  
+    }
+    &__header{
+       display: flex;
+       flex-direction: column;
+       align-items: center;
+       max-width: 504px;
+       z-index: 1000;
+       &-main{
+        display: flex;
+       }
+        &-text{
+            font-family: var(--second-family);
+            font-size: 70px;
+            &--red{
+                color: #FD554B;
+            }
+        }
+        &-desc{
+            font-size: 18px;
+            line-height: 1.5;
+            opacity: 50%;
+            text-align: center;
+        }
+    }
+    &__items{
+        display: flex;
+        column-gap: 57px;
+        &-unit{
+            display: flex;
+            flex-direction: column;
+            row-gap: 72px;
+            justify-content: left;
+            justify-content: space-between;
+            position: relative;
+            width: 250px;
+            &:first-child::after{
+                content: "";
+                position: absolute;
+                background-color: #D51117;
+                border-radius: 40px;
+                height: 2px;
+                width: 155px;
+                left:72px;
+                top: 20px;
+            }
+            &:last-child::after{
+                content: "";
+                position: absolute;
+                background-color: #FFFFFF;
+                opacity: 20%;
+                border-radius: 40px;
+                height: 2px;
+                width: 293px;
+                left:72px;
+                top: 20px;
+            }
+            &:not(:last-child):not(:first-child)::after{
+                content: "";
+                position: absolute;
+                background-color: #FFFFFF;
+                opacity: 20%;
+                border-radius: 40px;
+                height: 2px;
+                width: 203px;
+                left: 72px;
+                top: 20px;
+
+            }
+            &-text{
+                display: flex;
+                flex-direction: column;
+                row-gap: 11px;
+            }
+            &-title{
+                font-family: var(--second-family);
+                font-size: 32px;
+                &--gray{
+                    opacity: 70%;
+                }
+            }
+            &-desc{
+                &--gray{
+                    opacity: 70%;
+                }
+            }
+        }
+    }
+    &__buttons{
+        z-index: 1000;
+        display: flex;
+        column-gap: 12px;
+        cursor: pointer;
+        &-img{
+            position: absolute;
+            bottom: 21px;
+            left:21px;
+        }
+        &-whatsapp{
+            @include reset-button;
+            position: relative;
+            &::after{
+                content: "";
+                position: absolute;
+                background-color: var(--color-white);
+                width: 70px;
+                aspect-ratio: 1;
+                opacity: 10%;
+                top: 0;
+                left:0;
+                border-radius: 50%;
+            }
+        }
+    }
+    &__promo{
+        display: flex;
+        column-gap: 11px;
+        &-title{
+            &-content{
+                display: flex;
+                flex-direction: column;
+            }
+            font-size: 24px;
+            font-weight: 600;
+            &::after{
+                content: "30%";
+                font-size: 32px;
+                font-weight: 900;
+            }
+        }
+        &-desc{
+            font-size: 14px;
+            line-height: 1.5;
+        }
+        &-button{
+            @include reset-button;
+            color: var(--color-white);
+            width: 48px;
+            height: 32px;
+            border-radius: 30px;
+            background-color: rgb(255,255, 255, 0.3);
+            margin-top: 5px;
+        }
+    }
+    
+}
