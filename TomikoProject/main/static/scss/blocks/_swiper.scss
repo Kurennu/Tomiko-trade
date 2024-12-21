@@ -1,6 +1,7 @@
 .swiper{
+
   &-container {
-    margin-bottom: 20px !important;
+    margin-bottom: 60px !important;
     position: relative;
   }
 
@@ -52,6 +53,12 @@
             margin-left: 8px;
           }
         }
+      }
+      &--china::after{
+        background: url("/static/img/china.png") no-repeat center / contain !important;
+      }
+      &--japan::after{
+        background: url("/static/img/japan.png") no-repeat center / contain !important;
       }
     }
   }

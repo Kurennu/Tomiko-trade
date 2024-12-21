@@ -13,6 +13,7 @@
     <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
 </head> 
 <body>
+
 <section class="hero">
         <header class="header container">
             <nav class="header__navbar">
@@ -105,7 +106,7 @@
 </section>
 
 
-<section class="container">
+<section class="swiper__content container">
 <div class="swiper-container">
 
     <div class="swiper__info">
@@ -261,9 +262,631 @@
           </div>
         </div>
       </div>
-    </div>
+</div>
     
 </div>
+  <div class="swiper-container">
+  
+      <div class="swiper__info">
+        <div class="swiper__title">
+          <p class="swiper__title-text">Популярные авто &nbsp;</p>
+          <p class="swiper__title-text swiper__title-text--red swiper__title-text--china">Из Китая</p>
+        </div>
+        <div class="swiper__nav hidden-mobile">
+          <div class="custom-prev">
+            <svg width="55" height="13" viewBox="0 0 55 13" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <path d="M0.182812 6.30746L5.80781 0.68246C5.92509 0.565185 6.08415 0.4993 6.25 0.4993C6.41585 0.4993 6.57491 0.565185 6.69219 0.68246C6.80946 0.799736 6.87535 0.958795 6.87535 1.12465C6.87535 1.2905 6.80946 1.44956 6.69219 1.56683L2.1336 6.12465L54.375 6.12465C54.5408 6.12465 54.6997 6.1905 54.8169 6.30771C54.9342 6.42492 55 6.58389 55 6.74965C55 6.91541 54.9342 7.07438 54.8169 7.19159C54.6997 7.3088 54.5408 7.37465 54.375 7.37465L2.1336 7.37465L6.69219 11.9325C6.80946 12.0497 6.87535 12.2088 6.87535 12.3746C6.87535 12.5405 6.80946 12.6996 6.69219 12.8168C6.57491 12.9341 6.41585 13 6.25 13C6.08415 13 5.92509 12.9341 5.80781 12.8168L0.182812 7.19184C0.124702 7.13379 0.0786029 7.06486 0.0471502 6.98899C0.0156975 6.91311 -0.000491557 6.83178 -0.00049155 6.74965C-0.000491542 6.66751 0.0156975 6.58618 0.0471502 6.51031C0.0786029 6.43444 0.124702 6.36551 0.182812 6.30746Z" fill="white"/>
+            </svg>            
+          </div>
+          <div class="custom-next">
+            <svg width="55" height="13" viewBox="0 0 55 13" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <path d="M54.8172 7.1918L49.1922 12.8168C49.0749 12.9341 48.9159 13 48.75 13C48.5841 13 48.4251 12.9341 48.3078 12.8168C48.1905 12.6995 48.1247 12.5405 48.1247 12.3746C48.1247 12.2088 48.1905 12.0497 48.3078 11.9324L52.8664 7.37462H0.625C0.45924 7.37462 0.300269 7.30877 0.183059 7.19156C0.0658485 7.07435 0 6.91538 0 6.74962C0 6.58385 0.0658485 6.42488 0.183059 6.30767C0.300269 6.19046 0.45924 6.12462 0.625 6.12462H52.8664L48.3078 1.5668C48.1905 1.44953 48.1247 1.29047 48.1247 1.12462C48.1247 0.958763 48.1905 0.799703 48.3078 0.682428C48.4251 0.565152 48.5841 0.499268 48.75 0.499268C48.9159 0.499268 49.0749 0.565152 49.1922 0.682428L54.8172 6.30743C54.8753 6.36547 54.9214 6.4344 54.9529 6.51028C54.9843 6.58615 55.0005 6.66748 55.0005 6.74962C55.0005 6.83175 54.9843 6.91308 54.9529 6.98895C54.9214 7.06483 54.8753 7.13376 54.8172 7.1918Z" fill="white"/>
+            </svg>
+          </div>
+        </div>
+      
+      </div>
+    
+      <div class="swiper-wrapper">
+        <div class="swiper-slide swiper__main-slide hidden-mobile">
+          <div class="swiper__card">
+            <div class="swiper__main-slide-wrapper">
+              
+              <div class="inner-slider__wrapper">
+  
+                <div class="swiper inner-slider">
+                  <div class="swiper-wrapper">
+  
+                    <div class="swiper-slide">
+                      <img 
+                        class="inner-slider__img"
+                        src="/static/img/car-slider-main.png" 
+                        alt="Car 1">
+                    </div>
+  
+                    <div class="swiper-slide">
+                      <img 
+                        class="inner-slider__img"
+                        src="/static/img/car-slider.png" 
+                        alt="Car 2">
+                    </div>
+  
+                    <div class="swiper-slide">
+                      <img 
+                        class="inner-slider__img"
+                        src="/static/img/car-slider-main.png" 
+                        alt="Car 3">
+                    </div>
+  
+                  </div>
+  
+                  <div class="inner-slider__pagination">
+                    <button class="inner-slider__pagination-bullet" data-index="0"></button>
+                    <button class="inner-slider__pagination-bullet" data-index="1"></button>
+                    <button class="inner-slider__pagination-bullet" data-index="2"></button>
+                  </div>
+                </div>
+              </div>
+              <div class="swiper__main-info-wrapper">
+                <div class="swiper__main-title">
+                  <h3 class="swiper__main-title-name">Subaru LEVORG VN5</h3>
+                  <p class="swiper__main-title-desc">2021 • Гибрит • 10 000 км</p>
+                </div>
+                <div class="swiper__main-order">
+                    <h3 class="swiper__main-order-price">2 115 600 ₽</h3>
+                    <button onclick="" class="swiper__main-order-button">Оставить заявку</a></button>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+  
+        <div class="swiper-slide swiper__standart-slide">
+          <div class="swiper__card-standart">
+            <div class="swiper__main-title">
+              <h3 class="swiper__main-title-name">SUBARU LEVORG VN5</h3>
+              <p class="swiper__main-title-desc">2021 · Гибрид · 10 000 км</p>
+            </div>
+            <div class="swiper__card-image-wrapper">
+              <img  class="swiper__card-image" src="/static/img/car-slider.png" alt="Car">
+            </div>
+            <div class="swiper__main-order">
+              <h3 class="swiper__main-order-price">2 115 600 ₽</h3>
+              <button class="swiper__main-order-button swiper__main-order-button--gray">Оставить заявку</button>
+            </div>
+          </div>
+        </div>
+  
+        <div class="swiper-slide swiper__standart-slide">
+          <div class="swiper__card-standart">
+            <div class="swiper__main-title">
+              <h3 class="swiper__main-title-name">SUBARU LEVORG VN5</h3>
+              <p class="swiper__main-title-desc">2021 · Гибрид · 10 000 км</p>
+            </div>
+            <div class="swiper__card-image-wrapper">
+              <img  class="swiper__card-image" src="/static/img/car-slider.png" alt="Car">
+            </div>
+            <div class="swiper__main-order">
+              <h3 class="swiper__main-order-price">2 115 600 ₽</h3>
+              <button class="swiper__main-order-button swiper__main-order-button--gray">Оставить заявку</button>
+            </div>
+          </div>
+        </div>
+  
+        <div class="swiper-slide swiper__standart-slide">
+          <div class="swiper__card-standart">
+            <div class="swiper__main-title">
+              <h3 class="swiper__main-title-name">SUBARU LEVORG VN5</h3>
+              <p class="swiper__main-title-desc">2021 · Гибрид · 10 000 км</p>
+            </div>
+            <div class="swiper__card-image-wrapper">
+              <img  class="swiper__card-image" src="/static/img/car-slider.png" alt="Car">
+            </div>
+            <div class="swiper__main-order">
+              <h3 class="swiper__main-order-price">2 115 600 ₽</h3>
+              <button class="swiper__main-order-button swiper__main-order-button--gray">Оставить заявку</button>
+            </div>
+          </div>
+        </div>
+  
+        <div class="swiper-slide swiper__standart-slide">
+          <div class="swiper__card-standart">
+            <div class="swiper__main-title">
+              <h3 class="swiper__main-title-name">SUBARU LEVORG VN5</h3>
+              <p class="swiper__main-title-desc">2021 · Гибрид · 10 000 км</p>
+            </div>
+            <div class="swiper__card-image-wrapper">
+              <img  class="swiper__card-image" src="/static/img/car-slider.png" alt="Car">
+            </div>
+            <div class="swiper__main-order">
+              <h3 class="swiper__main-order-price">2 115 600 ₽</h3>
+              <button class="swiper__main-order-button swiper__main-order-button--gray">Оставить заявку</button>
+            </div>
+          </div>
+        </div>
+  
+        <div class="swiper-slide swiper__standart-slide">
+          <div class="swiper__card-standart">
+            <div class="swiper__main-title">
+              <h3 class="swiper__main-title-name">SUBARU LEVORG VN5</h3>
+              <p class="swiper__main-title-desc">2021 · Гибрид · 10 000 км</p>
+            </div>
+            <div class="swiper__card-image-wrapper">
+              <img  class="swiper__card-image" src="/static/img/car-slider.png" alt="Car">
+            </div>
+            <div class="swiper__main-order">
+              <h3 class="swiper__main-order-price">2 115 600 ₽</h3>
+              <button class="swiper__main-order-button swiper__main-order-button--gray">Оставить заявку</button>
+            </div>
+          </div>
+        </div>
+  </div>
+      
+  </div>
+ 
+    <div class="swiper-container">
+    
+        <div class="swiper__info">
+          <div class="swiper__title">
+            <p class="swiper__title-text">Популярные авто &nbsp;</p>
+            <p class="swiper__title-text swiper__title-text--red swiper__title-text--japan">Из Японии</p>
+          </div>
+          <div class="swiper__nav hidden-mobile">
+            <div class="custom-prev">
+              <svg width="55" height="13" viewBox="0 0 55 13" fill="none" xmlns="http://www.w3.org/2000/svg">
+                  <path d="M0.182812 6.30746L5.80781 0.68246C5.92509 0.565185 6.08415 0.4993 6.25 0.4993C6.41585 0.4993 6.57491 0.565185 6.69219 0.68246C6.80946 0.799736 6.87535 0.958795 6.87535 1.12465C6.87535 1.2905 6.80946 1.44956 6.69219 1.56683L2.1336 6.12465L54.375 6.12465C54.5408 6.12465 54.6997 6.1905 54.8169 6.30771C54.9342 6.42492 55 6.58389 55 6.74965C55 6.91541 54.9342 7.07438 54.8169 7.19159C54.6997 7.3088 54.5408 7.37465 54.375 7.37465L2.1336 7.37465L6.69219 11.9325C6.80946 12.0497 6.87535 12.2088 6.87535 12.3746C6.87535 12.5405 6.80946 12.6996 6.69219 12.8168C6.57491 12.9341 6.41585 13 6.25 13C6.08415 13 5.92509 12.9341 5.80781 12.8168L0.182812 7.19184C0.124702 7.13379 0.0786029 7.06486 0.0471502 6.98899C0.0156975 6.91311 -0.000491557 6.83178 -0.00049155 6.74965C-0.000491542 6.66751 0.0156975 6.58618 0.0471502 6.51031C0.0786029 6.43444 0.124702 6.36551 0.182812 6.30746Z" fill="white"/>
+              </svg>            
+            </div>
+            <div class="custom-next">
+              <svg width="55" height="13" viewBox="0 0 55 13" fill="none" xmlns="http://www.w3.org/2000/svg">
+                  <path d="M54.8172 7.1918L49.1922 12.8168C49.0749 12.9341 48.9159 13 48.75 13C48.5841 13 48.4251 12.9341 48.3078 12.8168C48.1905 12.6995 48.1247 12.5405 48.1247 12.3746C48.1247 12.2088 48.1905 12.0497 48.3078 11.9324L52.8664 7.37462H0.625C0.45924 7.37462 0.300269 7.30877 0.183059 7.19156C0.0658485 7.07435 0 6.91538 0 6.74962C0 6.58385 0.0658485 6.42488 0.183059 6.30767C0.300269 6.19046 0.45924 6.12462 0.625 6.12462H52.8664L48.3078 1.5668C48.1905 1.44953 48.1247 1.29047 48.1247 1.12462C48.1247 0.958763 48.1905 0.799703 48.3078 0.682428C48.4251 0.565152 48.5841 0.499268 48.75 0.499268C48.9159 0.499268 49.0749 0.565152 49.1922 0.682428L54.8172 6.30743C54.8753 6.36547 54.9214 6.4344 54.9529 6.51028C54.9843 6.58615 55.0005 6.66748 55.0005 6.74962C55.0005 6.83175 54.9843 6.91308 54.9529 6.98895C54.9214 7.06483 54.8753 7.13376 54.8172 7.1918Z" fill="white"/>
+              </svg>
+            </div>
+          </div>
+        </div>
+        <div class="swiper-wrapper">
+          <div class="swiper-slide swiper__main-slide hidden-mobile">
+            <div class="swiper__card">
+              <div class="swiper__main-slide-wrapper">
+                
+                <div class="inner-slider__wrapper">
+    
+                  <div class="swiper inner-slider">
+                    <div class="swiper-wrapper">
+    
+                      <div class="swiper-slide">
+                        <img 
+                          class="inner-slider__img"
+                          src="/static/img/car-slider-main.png" 
+                          alt="Car 1">
+                      </div>
+    
+                      <div class="swiper-slide">
+                        <img 
+                          class="inner-slider__img"
+                          src="/static/img/car-slider.png" 
+                          alt="Car 2">
+                      </div>
+    
+                      <div class="swiper-slide">
+                        <img 
+                          class="inner-slider__img"
+                          src="/static/img/car-slider-main.png" 
+                          alt="Car 3">
+                      </div>
+    
+                    </div>
+    
+                    <div class="inner-slider__pagination">
+                      <button class="inner-slider__pagination-bullet" data-index="0"></button>
+                      <button class="inner-slider__pagination-bullet" data-index="1"></button>
+                      <button class="inner-slider__pagination-bullet" data-index="2"></button>
+                    </div>
+                  </div>
+                </div>
+                <div class="swiper__main-info-wrapper">
+                  <div class="swiper__main-title">
+                    <h3 class="swiper__main-title-name">Subaru LEVORG VN5</h3>
+                    <p class="swiper__main-title-desc">2021 • Гибрит • 10 000 км</p>
+                  </div>
+                  <div class="swiper__main-order">
+                      <h3 class="swiper__main-order-price">2 115 600 ₽</h3>
+                      <button onclick="" class="swiper__main-order-button">Оставить заявку</a></button>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+    
+          <div class="swiper-slide swiper__standart-slide">
+            <div class="swiper__card-standart">
+              <div class="swiper__main-title">
+                <h3 class="swiper__main-title-name">SUBARU LEVORG VN5</h3>
+                <p class="swiper__main-title-desc">2021 · Гибрид · 10 000 км</p>
+              </div>
+              <div class="swiper__card-image-wrapper">
+                <img  class="swiper__card-image" src="/static/img/car-slider.png" alt="Car">
+              </div>
+              <div class="swiper__main-order">
+                <h3 class="swiper__main-order-price">2 115 600 ₽</h3>
+                <button class="swiper__main-order-button swiper__main-order-button--gray">Оставить заявку</button>
+              </div>
+            </div>
+          </div>
+    
+          <div class="swiper-slide swiper__standart-slide">
+            <div class="swiper__card-standart">
+              <div class="swiper__main-title">
+                <h3 class="swiper__main-title-name">SUBARU LEVORG VN5</h3>
+                <p class="swiper__main-title-desc">2021 · Гибрид · 10 000 км</p>
+              </div>
+              <div class="swiper__card-image-wrapper">
+                <img  class="swiper__card-image" src="/static/img/car-slider.png" alt="Car">
+              </div>
+              <div class="swiper__main-order">
+                <h3 class="swiper__main-order-price">2 115 600 ₽</h3>
+                <button class="swiper__main-order-button swiper__main-order-button--gray">Оставить заявку</button>
+              </div>
+            </div>
+          </div>
+    
+          <div class="swiper-slide swiper__standart-slide">
+            <div class="swiper__card-standart">
+              <div class="swiper__main-title">
+                <h3 class="swiper__main-title-name">SUBARU LEVORG VN5</h3>
+                <p class="swiper__main-title-desc">2021 · Гибрид · 10 000 км</p>
+              </div>
+              <div class="swiper__card-image-wrapper">
+                <img  class="swiper__card-image" src="/static/img/car-slider.png" alt="Car">
+              </div>
+              <div class="swiper__main-order">
+                <h3 class="swiper__main-order-price">2 115 600 ₽</h3>
+                <button class="swiper__main-order-button swiper__main-order-button--gray">Оставить заявку</button>
+              </div>
+            </div>
+          </div>
+    
+          <div class="swiper-slide swiper__standart-slide">
+            <div class="swiper__card-standart">
+              <div class="swiper__main-title">
+                <h3 class="swiper__main-title-name">SUBARU LEVORG VN5</h3>
+                <p class="swiper__main-title-desc">2021 · Гибрид · 10 000 км</p>
+              </div>
+              <div class="swiper__card-image-wrapper">
+                <img  class="swiper__card-image" src="/static/img/car-slider.png" alt="Car">
+              </div>
+              <div class="swiper__main-order">
+                <h3 class="swiper__main-order-price">2 115 600 ₽</h3>
+                <button class="swiper__main-order-button swiper__main-order-button--gray">Оставить заявку</button>
+              </div>
+            </div>
+          </div>
+    
+          <div class="swiper-slide swiper__standart-slide">
+            <div class="swiper__card-standart">
+              <div class="swiper__main-title">
+                <h3 class="swiper__main-title-name">SUBARU LEVORG VN5</h3>
+                <p class="swiper__main-title-desc">2021 · Гибрид · 10 000 км</p>
+              </div>
+              <div class="swiper__card-image-wrapper">
+                <img  class="swiper__card-image" src="/static/img/car-slider.png" alt="Car">
+              </div>
+              <div class="swiper__main-order">
+                <h3 class="swiper__main-order-price">2 115 600 ₽</h3>
+                <button class="swiper__main-order-button swiper__main-order-button--gray">Оставить заявку</button>
+              </div>
+            </div>
+          </div>
+    </div>
+    </div>
+</section>
+<section class="brands">
+  <div class="brands__carousel">
+    <div class="brands__carousel-track">
+      <img src="/static/img/BMW.png" alt="">
+      <img src="/static/img/toyota.png" alt="">
+      <img src="/static/img/audi.png" alt="">
+      <img src="/static/img/kia.png" alt="">
+      <img src="/static/img/mercedes.png" alt="">
+      <img src="/static/img/hyundai.png" alt="">
+      <img src="/static/img/chery.png" alt="">
+      <img src="/static/img/chevrolet.png" alt="">
+      <img src="/static/img/samsung.png" alt="">
+      <img src="/static/img/haval.png" alt="">
+      <img src="/static/img/jac.png" alt="">
+      <img src="/static/img/Daewoo.png" alt="">
+      <img src="/static/img/Ford.png" alt="">
+      <img src="/static/img/Volvo.png" alt="">
+
+      <img src="/static/img/BMW.png" alt="">
+      <img src="/static/img/toyota.png" alt="">
+      <img src="/static/img/audi.png" alt="">
+      <img src="/static/img/kia.png" alt="">
+      <img src="/static/img/mercedes.png" alt="">
+      <img src="/static/img/hyundai.png" alt="">
+      <img src="/static/img/chery.png" alt="">
+      <img src="/static/img/chevrolet.png" alt="">
+      <img src="/static/img/samsung.png" alt="">
+      <img src="/static/img/haval.png" alt="">
+      <img src="/static/img/jac.png" alt="">
+      <img src="/static/img/Daewoo.png" alt="">
+      <img src="/static/img/Ford.png" alt="">
+      <img src="/static/img/Volvo.png" alt="">
+    </div>
+  </div>
+</section>
+<section class="stages container">
+  <div class="stages__content">
+    <div class="stages__header">
+      <div class="stages__header-main">
+        <h2 class="stages__header-text">этапы &nbsp;</h2>
+        <h2 class="stages__header-text stages__header-text--red">работы</h2>
+      </div>
+      <p class="stages__header-desc">Прозрачное ценообразование с подробным разъяснением затрат на каждом этапе</p>
+    </div>
+
+    <div class="stages__items">
+      <div class="stages__items-unit">
+          <img 
+            class="stages__items-unit-img" 
+            src="/static/img/doc.png" alt=""
+            width="38" height="38"
+          >
+          <div class="stages__items-unit-text">
+            <h4 class="stages__items-unit-title">Заявка</h4>
+            <p class="stages__items-unit-desc">Оставьте заявку,чтобы получить  индивидуальную консультацию</p>
+          </div>
+        
+      </div>
+      <div class="stages__items-unit">
+        <img 
+          class="stages__items-unit-img" 
+          src="/static/img/lupa.png" alt=""
+          width="38" height="38"
+        >
+        <div class="stages__items-unit-text">
+          <h4 class="stages__items-unit-title stages__items-unit-title--gray">Подбор авто</h4>
+          <p class="stages__items-unit-desc stages__items-unit-desc--gray">Подберем автомобиль под ваши критерии</p>
+        </div>
+      
+    </div>
+    <div class="stages__items-unit">
+      <img 
+        class="stages__items-unit-img" 
+        src="/static/img/hand.png" alt=""
+        width="38" height="38"
+      >
+      <div class="stages__items-unit-text">
+        <h4 class="stages__items-unit-title stages__items-unit-title--gray">Оформление</h4>
+        <p class="stages__items-unit-desc stages__items-unit-desc--gray">Согласуем бюджет и заключим договор на авто</p>
+      </div>
+    
+  </div>
+  <div class="stages__items-unit">
+    <img 
+      class="stages__items-unit-img" 
+      src="/static/img/cringe.png" alt=""
+      width="38" height="38"
+    >
+    <div class="stages__items-unit-text">
+      <h4 class="stages__items-unit-title stages__items-unit-title--gray">Доставка по РФ</h4>
+      <p class="stages__items-unit-desc stages__items-unit-desc--gray">После доставки в г. Владивосток, мы отправим автомобиль в ваш город</p>
+    </div>
+  
+</div>
+    </div>
+    <div class="stages__buttons">
+      <button class="stages__buttons-help hero__info-button">Получить консультацию</button>
+      <button class="stages__buttons-whatsapp">
+        <img src="/static/img/cta_button.png" alt="" class="stages__buttons-img">
+      </button>
+    </div>
+  </div>
+  <div class="stages__promo">
+    <div class="stages__promo-title-content">
+      <h5 class="stages__promo-title">Экономия до &nbsp;</h5>
+      <p class="stages__promo-desc">от рынка авто в наличии</p>
+    </div>
+    <button class="stages__promo-button">
+      <svg width="14" height="12" viewBox="0 0 14 12" fill="none" xmlns="http://www.w3.org/2000/svg">
+        <path d="M13.0306 6.53074L8.53063 11.0307C8.38973 11.1716 8.19863 11.2508 7.99938 11.2508C7.80012 11.2508 7.60902 11.1716 7.46813 11.0307C7.32723 10.8898 7.24807 10.6987 7.24807 10.4995C7.24807 10.3002 7.32723 10.1091 7.46813 9.96824L10.6875 6.75011H1.5C1.30109 6.75011 1.11032 6.67109 0.96967 6.53044C0.829018 6.38979 0.75 6.19902 0.75 6.00011C0.75 5.8012 0.829018 5.61043 0.96967 5.46978C1.11032 5.32913 1.30109 5.25011 1.5 5.25011H10.6875L7.46937 2.03011C7.32848 1.88921 7.24932 1.69812 7.24932 1.49886C7.24932 1.2996 7.32848 1.10851 7.46937 0.967609C7.61027 0.826713 7.80137 0.747559 8.00062 0.747559C8.19988 0.747559 8.39098 0.826713 8.53187 0.967609L13.0319 5.46761C13.1018 5.53738 13.1573 5.62028 13.1951 5.71155C13.2329 5.80281 13.2523 5.90065 13.2522 5.99943C13.252 6.09822 13.2324 6.19601 13.1944 6.28718C13.1564 6.37836 13.1007 6.46113 13.0306 6.53074Z" fill="white"/>
+        </svg>        
+    </button>
+  </div>
+</section>
+<section class="about container">
+  <div class="about__text-content">
+    <div class="about__header">
+      <h3 class="about__header-title">О нас</h3>
+      <p class="about__header-text">Компания «Правый руль» предлагает широкий выбор автомобилей от ведущих мировых производителей. Мы специализируемся на продаже новых и подержанных авто. Наша команда профессионалов поможет вам выбрать идеальный автомобиль, учитывая ваши потребности и бюджет.</p>
+    </div>
+    <div class="stages__buttons">
+      <button class="stages__buttons-help hero__info-button">Получить консультацию</button>
+      <button class="stages__buttons-whatsapp">
+        <img src="/static/img/cta_button.png" alt="" class="stages__buttons-img">
+      </button>
+    </div>
+  </div>
+  <div class="about__img-container">
+    <img class="about__img" src="/static/img/team.png" alt="Наша команда">
+  </div>
+  </div>
+</section>
+<section class="benefits container">
+    <div class="benefits__items">
+      <div class="benefits__units-numbers">
+        <h5 class="benefits__units-num">5+</h5>
+        <p class="benefits__units-desc">Лет на рынке</p>
+      </div>
+      <div class="benefits__units-numbers">
+        <h5 class="benefits__units-num">4 000+</h5>
+        <p class="benefits__units-desc">Довольных клиентов</p>
+      </div>
+      <div class="benefits__units-def ">
+        <img 
+          class='benefits__units-def-img'
+          src="/static/img/good.png" alt=""
+          width="40" height="40"
+          >
+        <p class='benefits__units-def-text benefits__units-def-text--first'>Прозрачное ценообразование с подробным разъяснением затрат на каждом этапе</p>
+      </div>
+      <div class="benefits__units-def ">
+        <img 
+          class='benefits__units-def-img'
+          src="/static/img/page.png" alt=""
+          width="40" height="40"
+          >
+        <p class='benefits__units-def-text benefits__units-def-text--second'>Полное сопровождение и предоставление фото/видео отчета на протяжение всей сделки</p>
+      </div>
+      <div class="benefits__units-def ">
+        <img 
+          class='benefits__units-def-img'
+          src="/static/img/heands.png" alt=""
+          width="40" height="40"
+          >
+        <p class='benefits__units-def-text'>Проверенные поставщики</p>
+      </div>
+    </div>
+</section>
+<section class="lines">
+  <div class="lines__track">
+    <span class="lines__track-text">Денежное вознаграждение за рекомендацию</span>
+    <span class="lines__track-text">Система лояльности для оптовых заказов</span>
+    <span class="lines__track-text">Денежное вознаграждение за рекомендацию</span>
+    <span class="lines__track-text">Система лояльности для оптовых заказов</span>
+    <span class="lines__track-text">Денежное вознаграждение за рекомендацию</span>
+    <span class="lines__track-text">Система лояльности для оптовых заказов</span>
+    <span class="lines__track-text">Денежное вознаграждение за рекомендацию</span>
+    <span class="lines__track-text">Система лояльности для оптовых заказов</span>
+  </div>
+</section>
+<section class="lines lines--dark">
+  <div class="lines__track">
+    <span class="lines__track-text">Денежное вознаграждение за рекомендацию</span>
+    <span class="lines__track-text">Система лояльности для оптовых заказов</span>
+    <span class="lines__track-text">Денежное вознаграждение за рекомендацию</span>
+    <span class="lines__track-text">Система лояльности для оптовых заказов</span>
+    <span class="lines__track-text">Денежное вознаграждение за рекомендацию</span>
+    <span class="lines__track-text">Система лояльности для оптовых заказов</span>
+    <span class="lines__track-text">Денежное вознаграждение за рекомендацию</span>
+    <span class="lines__track-text">Система лояльности для оптовых заказов</span>
+  </div>
+</section>
+<section class="reviews container">
+  <div class="reviews__head-content">
+    <div class="reviews__header">
+      <h2 class="reviews__header-text">Отзывы</h2>
+      <h2 class="reviews__header-text">4.9</h2>
+    </div>
+    <div class="reviews__link">
+      <div class="reviews__link-item">
+        <a>VL справочник</a>
+        <svg width="10" height="9" viewBox="0 0 10 9" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <path d="M9.50028 0.5V7C9.50028 7.13261 9.4476 7.25979 9.35383 7.35355C9.26006 7.44732 9.13289 7.5 9.00028 7.5C8.86767 7.5 8.74049 7.44732 8.64672 7.35355C8.55296 7.25979 8.50028 7.13261 8.50028 7V1.70687L1.35403 8.85375C1.26021 8.94757 1.13296 9.00028 1.00028 9.00028C0.867596 9.00028 0.740348 8.94757 0.646528 8.85375C0.552708 8.75993 0.5 8.63268 0.5 8.5C0.5 8.36732 0.552708 8.24007 0.646528 8.14625L7.7934 1H2.50028C2.36767 1 2.24049 0.947321 2.14672 0.853553C2.05296 0.759785 2.00028 0.632608 2.00028 0.5C2.00028 0.367392 2.05296 0.240215 2.14672 0.146447C2.24049 0.0526785 2.36767 0 2.50028 0H9.00028C9.13289 0 9.26006 0.0526785 9.35383 0.146447C9.4476 0.240215 9.50028 0.367392 9.50028 0.5Z" fill="white" fill-opacity="0.5"/>
+        </svg>
+      </div>
+      <div class="reviews__link-item">
+        <a>2ГИС</a>
+        <svg width="10" height="9" viewBox="0 0 10 9" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <path d="M9.50028 0.5V7C9.50028 7.13261 9.4476 7.25979 9.35383 7.35355C9.26006 7.44732 9.13289 7.5 9.00028 7.5C8.86767 7.5 8.74049 7.44732 8.64672 7.35355C8.55296 7.25979 8.50028 7.13261 8.50028 7V1.70687L1.35403 8.85375C1.26021 8.94757 1.13296 9.00028 1.00028 9.00028C0.867596 9.00028 0.740348 8.94757 0.646528 8.85375C0.552708 8.75993 0.5 8.63268 0.5 8.5C0.5 8.36732 0.552708 8.24007 0.646528 8.14625L7.7934 1H2.50028C2.36767 1 2.24049 0.947321 2.14672 0.853553C2.05296 0.759785 2.00028 0.632608 2.00028 0.5C2.00028 0.367392 2.05296 0.240215 2.14672 0.146447C2.24049 0.0526785 2.36767 0 2.50028 0H9.00028C9.13289 0 9.26006 0.0526785 9.35383 0.146447C9.4476 0.240215 9.50028 0.367392 9.50028 0.5Z" fill="white" fill-opacity="0.5"/>
+        </svg>
+      </div>
+      <div class="reviews__link-item">
+        <a>Яндекс карты</a>
+        <svg width="10" height="9" viewBox="0 0 10 9" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <path d="M9.50028 0.5V7C9.50028 7.13261 9.4476 7.25979 9.35383 7.35355C9.26006 7.44732 9.13289 7.5 9.00028 7.5C8.86767 7.5 8.74049 7.44732 8.64672 7.35355C8.55296 7.25979 8.50028 7.13261 8.50028 7V1.70687L1.35403 8.85375C1.26021 8.94757 1.13296 9.00028 1.00028 9.00028C0.867596 9.00028 0.740348 8.94757 0.646528 8.85375C0.552708 8.75993 0.5 8.63268 0.5 8.5C0.5 8.36732 0.552708 8.24007 0.646528 8.14625L7.7934 1H2.50028C2.36767 1 2.24049 0.947321 2.14672 0.853553C2.05296 0.759785 2.00028 0.632608 2.00028 0.5C2.00028 0.367392 2.05296 0.240215 2.14672 0.146447C2.24049 0.0526785 2.36767 0 2.50028 0H9.00028C9.13289 0 9.26006 0.0526785 9.35383 0.146447C9.4476 0.240215 9.50028 0.367392 9.50028 0.5Z" fill="white" fill-opacity="0.5"/>
+        </svg>
+      </div>
+    </div>
+  </div>
+
+  <div class="reviews__content">
+    <div class="reviews__item">
+      <img src="/static/img/human.png" alt="" class="reviews__item-img">
+      <p class="reviews__item-name">Иванова Ольга</p>
+      
+      <div>
+        <div class="reviews__item-stars">
+          <img src="" alt="" class="reviews__item-star">
+          <img src="" alt="" class="reviews__item-star">
+          <img src="" alt="" class="reviews__item-star">
+          <img src="" alt="" class="reviews__item-star">
+          <img src="" alt="" class="reviews__item-star">
+        </div>
+        <div class="reviews__item-date">1 октября 2023 г.</div>
+      </div>
+    </div>
+
+    <div class="reviews__item">
+      <p class="reviews__item-name">Иванова Ольга</p>
+      <div>
+        <div class="reviews__item-stars">
+          <img src="" alt="" class="reviews__item-star">
+          <img src="" alt="" class="reviews__item-star">
+          <img src="" alt="" class="reviews__item-star">
+          <img src="" alt="" class="reviews__item-star">
+          <img src="" alt="" class="reviews__item-star">
+        </div>
+        <div class="reviews__item-date">1 октября 2023 г.</div>
+      </div>
+    </div>
+
+    <div class="reviews__item">
+      <p class="reviews__item-name">Иванова Ольга</p>
+      <div>
+        <div class="reviews__item-stars">
+          <img src="" alt="" class="reviews__item-star">
+          <img src="" alt="" class="reviews__item-star">
+          <img src="" alt="" class="reviews__item-star">
+          <img src="" alt="" class="reviews__item-star">
+          <img src="" alt="" class="reviews__item-star">
+        </div>
+        <div class="reviews__item-date">1 октября 2023 г.</div>
+      </div>
+    </div>
+
+    <div class="reviews__item">
+      <p class="reviews__item-name">Иванова Ольга</p>
+      <div>
+        <div class="reviews__item-stars">
+          <img src="" alt="" class="reviews__item-star">
+          <img src="" alt="" class="reviews__item-star">
+          <img src="" alt="" class="reviews__item-star">
+          <img src="" alt="" class="reviews__item-star">
+          <img src="" alt="" class="reviews__item-star">
+        </div>
+        <div class="reviews__item-date">1 октября 2023 г.</div>
+      </div>
+    </div>
+
+    <div class="reviews__item">
+      <p class="reviews__item-name">Иванова Ольга</p>
+      <div>
+        <div class="reviews__item-stars">
+          <img src="" alt="" class="reviews__item-star">
+          <img src="" alt="" class="reviews__item-star">
+          <img src="" alt="" class="reviews__item-star">
+          <img src="" alt="" class="reviews__item-star">
+          <img src="" alt="" class="reviews__item-star">
+        </div>
+        <div class="reviews__item-date">1 октября 2023 г.</div>
+      </div>
+    </div>
+
+    <div class="reviews__item">
+      <p class="reviews__item-name">Иванова Ольга</p>
+      <div>
+        <div class="reviews__item-stars">
+          <img src="" alt="" class="reviews__item-star">
+          <img src="" alt="" class="reviews__item-star">
+          <img src="" alt="" class="reviews__item-star">
+          <img src="" alt="" class="reviews__item-star">
+          <img src="" alt="" class="reviews__item-star">
+        </div>
+        <div class="reviews__item-date">1 октября 2023 г.</div>
+      </div>
+    </div>
+  </div>
 </section>
 <script>
   document.addEventListener('DOMContentLoaded', () => {
@@ -324,6 +947,62 @@
 
     bullets[0].classList.add('active');
   });
+
+const track = document.querySelector(".brands__carousel-track");
+const speed = 1;
+let offset = 0;
+
+const clone = track.innerHTML;
+track.innerHTML += clone;
+
+function animate() {
+  offset -= speed;
+  if (Math.abs(offset) >= track.scrollWidth / 2) {
+    offset = 0;
+  }
+  track.style.transform = `translateX(${offset}px)`;
+  requestAnimationFrame(animate);
+}
+
+animate();
+
+
+const ttrack = document.querySelector(".lines__track");
+const sspeed = 1;
+let ooffset = 0;
+
+const cclone = ttrack.innerHTML; 
+ttrack.innerHTML += cclone;
+
+function aanimate() {
+  ooffset -= sspeed;
+  if (Math.abs(ooffset) >= ttrack.scrollWidth / 2) {
+    ooffset = 0;
+  }
+  ttrack.style.transform = `translateX(${ooffset}px)`;
+  requestAnimationFrame(aanimate);
+}
+
+aanimate();
+const linesTrack = document.querySelector(".lines__track--dark");
+const linesSpeed = 1; 
+let linesOffset = 0;
+
+const linesClone = linesTrack.innerHTML;
+linesTrack.innerHTML += linesClone;
+
+function animateLines() {
+  linesOffset -= linesSpeed;  
+  if (linesOffset <= -linesTrack.scrollWidth / 2) {
+    linesOffset = 0;
+  }
+  linesTrack.style.transform = `translateX(${linesOffset}px)`;
+  requestAnimationFrame(animateLines);
+}
+
+animateLines();
+
+
 });
   </script>
 </body>
