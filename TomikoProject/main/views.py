@@ -5,3 +5,6 @@ def index(request):
 
 def contacts(request):
     return render(request, 'contacts.html')
+
+def promo(request):
+    return render(request, 'promo.html')

@@ -1378,4 +1378,108 @@ svg * {
   display: flex;
   -moz-column-gap: 16px;
        column-gap: 16px;
+}
+
+.fon {
+  width: 1400px;
+  height: 634px;
+  padding: 80px 0px 0px 0px;
+  gap: 80px;
+  border-radius: 28px 28px 28px 28px;
+  border: 1px 0px 0px 0px;
+  opacity: 0px;
+  background: #081E36;
+  border: 1px solid rgba(255, 255, 255, 0.1215686275);
+}
+
+.fon1 {
+  width: 1400px;
+  height: 406px;
+  padding: 80px 0px 0px 0px;
+  gap: 80px;
+  border-radius: 28px 28px 28px 28px;
+  border: 1px 0px 0px 0px;
+  opacity: 0px;
+  background: #081E36;
+  border: 1px solid rgba(255, 255, 255, 0.1215686275);
+}
+
+.fon2 {
+  width: 1400px;
+  height: 600px;
+  padding: 80px 0px 0px 0px;
+  gap: 80px;
+  border-radius: 28px 28px 28px 28px;
+  border: 1px 0px 0px 0px;
+  opacity: 0px;
+  background: #081E36;
+  border: 1px solid rgba(255, 255, 255, 0.1215686275);
+}
+
+.promo {
+  display: flex;
+  flex-direction: column;
+  row-gap: 32px;
+  align-items: flex-end;
+  flex-wrap: nowrap;
+}
+.promo__main {
+  display: flex;
+  justify-content: space-between;
+  align-items: start;
+  -moz-column-gap: 30px;
+       column-gap: 30px;
+  margin-right: 80px;
+}
+.promo__body {
+  display: flex;
+  flex-direction: column;
+  max-width: 620px;
+  row-gap: 24px;
+  padding-left: 80px;
+  padding-top: 40px;
+}
+.promo__description {
+  font-family: var(--first-family);
+  font-size: 16px;
+  font-weight: 400;
+  line-height: 24px;
+  padding-bottom: 16px;
+}
+.promo__title {
+  padding-left: 80px;
+}
+.promo__description--item {
+  display: flex;
+  padding-bottom: 16px;
+}
+.promo__description--item--img {
+  width: 28px;
+  height: 28px;
+  padding: 0px 9px 0px 9px;
+}
+.promo__zagolovok {
+  display: flex;
+  width: 620px;
+  height: 40px;
+  gap: 0px;
+  opacity: 0px;
+  font-family: var(--second-family);
+  font-size: 40px;
+  font-weight: 700;
+  line-height: 40px;
+}
+.promo__zagolovok--img {
+  width: 40px;
+  height: 40px;
+  padding-left: 10px;
+  margin-bottom: 40px;
+}
+.promo__title {
+  width: 1400px;
+  height: 70px;
+  font-family: Bebas Neue;
+  font-size: 70px;
+  font-weight: 700;
+  line-height: 70px;
 }/*# sourceMappingURL=styles.css.map */
