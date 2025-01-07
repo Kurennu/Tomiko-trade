@@ -25,3 +25,13 @@ class Cars(models.Model):
     class Meta:
         managed = False
         db_table = 'cars'
+
+
+class Reviews(models.Model):
+    user_name = models.CharField(max_length=255)
+    rating = models.FloatField()
+    date = models.DateField()
+
+    class Meta:
+        managed = False
+        db_table = 'reviews'
