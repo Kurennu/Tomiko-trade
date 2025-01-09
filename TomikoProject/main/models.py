@@ -35,3 +35,13 @@ class Reviews(models.Model):
     class Meta:
         managed = False
         db_table = 'reviews'
+
+
+class Feedback(models.Model):
+    name = models.CharField(max_length=50)
+    phone = models.CharField(max_length=15)
+    message = models.CharField(max_length=200)
+
+    class Meta:
+        managed = False  
+        db_table = 'feedback'
