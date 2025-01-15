@@ -27,93 +27,7 @@
                 background: #f0f0f0;
             }
         </style>
-        <script>
-            document.addEventListener('DOMContentLoaded', function() {
-                const form = document.querySelector('form');
-                const inputs = form.querySelectorAll('input');
-                
-                function createSuggestionBox(input, items) {
-                    const suggestionBox = document.createElement('div');
-                    suggestionBox.className = 'filter-suggestions';
-                    input.parentNode.style.position = 'relative';
-                    input.parentNode.appendChild(suggestionBox);
-    
-                    input.addEventListener('input', function() {
-                        const value = this.value.toLowerCase();
-                        suggestionBox.innerHTML = '';
-                        
-                        const filtered = items.filter(item => 
-                            item.toLowerCase().includes(value)
-                        );
-                        
-                        filtered.forEach(item => {
-                            const div = document.createElement('div');
-                            div.className = 'suggestion-item';
-                            div.textContent = item;
-                            div.onclick = () => {
-                                input.value = item;
-                                suggestionBox.style.display = 'none';
-                                form.submit();
-                            };
-                            suggestionBox.appendChild(div);
-                        });
-                        
-                        suggestionBox.style.display = filtered.length ? 'block' : 'none';
-                    });
-    
-                    document.addEventListener('click', function(e) {
-                        if (!input.contains(e.target) && !suggestionBox.contains(e.target)) {
-                            suggestionBox.style.display = 'none';
-                        }
-                    });
-    
-                    // Обработка нажатия Enter
-                    input.addEventListener('keypress', function(e) {
-                        if (e.key === 'Enter') {
-                            e.preventDefault();
-                            form.submit();
-                        }
-                    });
-                }
-    
-                // Автодополнение для марки
-                const brandInput = document.querySelector('input[name="brand"]');
-                const modelInput = document.querySelector('input[name="model"]');
-                const brands = {{ brands_json|safe }};
-                createSuggestionBox(brandInput, brands);
-    
-                // Обновление моделей при выборе бренда
-                if (brandInput.value) {
-                    const models = {{ models_by_brand|safe }}[brandInput.value] || [];
-                    createSuggestionBox(modelInput, models);
-                }
-    
-                brandInput.addEventListener('change', function() {
-                    const brand = this.value;
-                    if (brand) {
-                        const models = {{ models_by_brand|safe }}[brand] || [];
-                        createSuggestionBox(modelInput, models);
-                    }
-                });
-    
-                // Остальные поля автодополнения
-                createSuggestionBox(document.querySelector('input[name="transmission"]'), {{ transmissions_json|safe }});
-                createSuggestionBox(document.querySelector('input[name="drive"]'), {{ drives_json|safe }});
-                createSuggestionBox(document.querySelector('input[name="color"]'), {{ colors_json|safe }});
-    
-                // Добавляем обработчик Enter для числовых полей
-                inputs.forEach(input => {
-                    if (input.type === 'number') {
-                        input.addEventListener('keypress', function(e) {
-                            if (e.key === 'Enter') {
-                                e.preventDefault();
-                                form.submit();
-                            }
-                        });
-                    }
-                });
-            });
-        </script>
+        
     </head>
 </head>
 <body>
@@ -179,5 +93,87 @@
             <a href="?page={{ page_obj.paginator.num_pages }}{% for key, value in request.GET.items %}{% if key != 'page' %}&{{ key }}={{ value }}{% endif %}{% endfor %}">последняя &raquo;</a>
         {% endif %}
     </div>
+<script>
+    document.addEventListener('DOMContentLoaded', function() {
+        const form = document.querySelector('form');
+        const inputs = form.querySelectorAll('input');
+        
+        function createSuggestionBox(input, items) {
+            const suggestionBox = document.createElement('div');
+            suggestionBox.className = 'filter-suggestions';
+            input.parentNode.style.position = 'relative';
+            input.parentNode.appendChild(suggestionBox);
+
+            input.addEventListener('input', function() {
+                const value = this.value.toLowerCase();
+                suggestionBox.innerHTML = '';
+                
+                const filtered = items.filter(item => 
+                    item.toLowerCase().includes(value)
+                );
+                
+                filtered.forEach(item => {
+                    const div = document.createElement('div');
+                    div.className = 'suggestion-item';
+                    div.textContent = item;
+                    div.onclick = () => {
+                        input.value = item;
+                        suggestionBox.style.display = 'none';
+                        form.submit();
+                    };
+                    suggestionBox.appendChild(div);
+                });
+                
+                suggestionBox.style.display = filtered.length ? 'block' : 'none';
+            });
+
+            document.addEventListener('click', function(e) {
+                if (!input.contains(e.target) && !suggestionBox.contains(e.target)) {
+                    suggestionBox.style.display = 'none';
+                }
+            });
+
+            input.addEventListener('keypress', function(e) {
+                if (e.key === 'Enter') {
+                    e.preventDefault();
+                    form.submit();
+                }
+            });
+        }
+
+        const brandInput = document.querySelector('input[name="brand"]');
+        const modelInput = document.querySelector('input[name="model"]');
+        const brands = {{ brands_json|safe }};
+        createSuggestionBox(brandInput, brands);
+
+        if (brandInput.value) {
+            const models = {{ models_by_brand|safe }}[brandInput.value] || [];
+            createSuggestionBox(modelInput, models);
+        }
+
+        brandInput.addEventListener('change', function() {
+            const brand = this.value;
+            if (brand) {
+                const models = {{ models_by_brand|safe }}[brand] || [];
+                createSuggestionBox(modelInput, models);
+            }
+        });
+
+        createSuggestionBox(document.querySelector('input[name="transmission"]'), {{ transmissions_json|safe }});
+        createSuggestionBox(document.querySelector('input[name="drive"]'), {{ drives_json|safe }});
+        createSuggestionBox(document.querySelector('input[name="color"]'), {{ colors_json|safe }});
+
+        inputs.forEach(input => {
+            if (input.type === 'number') {
+                input.addEventListener('keypress', function(e) {
+                    if (e.key === 'Enter') {
+                        e.preventDefault();
+                        form.submit();
+                    }
+                });
+            }
+        });
+    });
+</script>
 </body>
 </html>
