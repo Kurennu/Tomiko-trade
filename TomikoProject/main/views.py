@@ -8,3 +8,6 @@ def contacts(request):
 
 def promo(request):
     return render(request, 'promo.html')
+
+def promo(request):
+    return render(request, '405.html')
