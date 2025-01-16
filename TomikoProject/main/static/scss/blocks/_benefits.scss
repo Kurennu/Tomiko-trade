@@ -1,0 +1,41 @@
+.benefits{
+    width: 100%;
+    margin-bottom: 100px;
+    &__items{
+        display: flex;
+        justify-content: space-between;
+        
+        align-items: flex-start;
+    }
+    &__units{
+        &-numbers{
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            row-gap: 4px;
+        }
+        &-num{
+            color: #FD554B;
+            font-family: var(--second-family);
+            font-size: 48px;
+        }
+        &-desc{
+            opacity: 50%;
+            font-size: 14px;
+        }
+        &-def{
+            display: flex;
+            column-gap: 24px;
+            justify-content: flex-start;
+            &-text{
+                line-height: 150%;
+                &--first{
+                    width: 313px;
+                }
+                &--second{
+                    width: 280px;
+                }
+            }
+        }
+    }
+}

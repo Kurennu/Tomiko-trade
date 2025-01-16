@@ -1,0 +1,76 @@
+.reviews{
+    width: 100%;
+    margin-bottom: 40px;
+
+    &__head-content{
+        display: flex;
+        justify-content: space-between;
+        align-items: end;
+        margin-bottom: 40px;
+    }
+    &__link{
+        display: flex;
+        column-gap: 24px;
+        &-item{
+            font-size: 16px;
+            opacity: 50%;
+        }
+    }
+    &__header{
+        display: flex;
+
+        &-text{
+            font-family: var(--second-family);
+            font-size: 70px;
+            position: relative;
+            margin-right: 84px;
+            line-height: 1;
+            &:not(:last-child)::after{
+                position: absolute;
+                content: '';
+                width: 48px;
+                height: 57px;
+                background: url('/static/img/star-big.png');
+                background-repeat: no-repeat;
+                top:8px;
+                right:-75px;
+            }
+        }
+    }
+    &__content{
+        display: flex;
+        flex-wrap: wrap;
+
+        column-gap: 16px;
+
+        row-gap: 16px;
+    }
+    &__item{
+        padding-block: 16px;
+        padding-inline: 24px;
+        box-sizing: border-box;
+        width: 338px;
+        height: 82px;
+        border-radius: 16px;
+        background-color: #081E36;
+        display: flex;
+        column-gap: 16px;
+
+        &-stars{
+            color: #F5B300;
+        }
+        &-name{
+            max-width: 90px;
+            font-weight: 500;
+            font-size: 16px;
+            line-height: 150%;
+        }
+        &-date{
+            opacity: 50%;
+            font-weight: 400;
+            font-size: 14px;
+            line-height: 143%;
+        }
+
+    }
+}

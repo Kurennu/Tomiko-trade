@@ -1,0 +1,43 @@
+.lines {
+    height: 50px;
+    background-color: #D51117;
+    width: 100%;
+    margin-bottom: 12px;
+    &--dark{
+        background-color: #081E36;
+        margin-bottom: 100px;
+    }
+    &__track{
+        display: flex;
+        animation: scroll 20s linear infinite;
+        &-text {
+            font-size: 16px;
+            font-weight: 600;
+            line-height: 150%;
+
+            color: white;
+            font-weight: bold;
+            position: relative;
+            padding-inline: 16px;
+            white-space: nowrap;
+            &:after{
+                margin-left: 16px;
+                position: absolute;
+                content: '';
+                height: 19px;
+                width: 1px;
+                background-color: var(--color-white);
+                opacity: 40%;
+                top: 3px;
+            }
+          }
+    }
+  }
+  @keyframes scroll {
+    0% {
+        transform: translateX(0);
+    }
+    100% {
+        transform: translateX(-50%);
+    }
+}
