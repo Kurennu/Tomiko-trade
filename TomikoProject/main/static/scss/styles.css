@@ -1713,7 +1713,7 @@ svg * {
 }
 
 .clips {
-  margin-bottom: 100px;
+  margin-bottom: 180px;
   position: relative;
 }
 .clips:after {
@@ -1797,24 +1797,49 @@ svg * {
 
 .socials {
   width: 100%;
+  margin-top: 100px;
+  position: relative;
+  height: 476px;
+  margin-bottom: 150px;
+}
+.socials__background {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: #081E36;
+  border-radius: 28px;
+  z-index: 1;
+}
+.socials__wrapper {
+  position: relative;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
-  -webkit-column-gap: 144px;
-     -moz-column-gap: 144px;
-          column-gap: 144px;
-  margin-top: 100px;
-  -webkit-box-pack: center;
-      -ms-flex-pack: center;
-          justify-content: center;
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
-  background-color: #081E36;
+  -webkit-column-gap: 144px;
+     -moz-column-gap: 144px;
+          column-gap: 144px;
+  margin-top: -70px;
+  max-height: 602px;
+  z-index: 2;
+}
+.socials__stripe {
+  position: absolute;
+  bottom: -17px;
+  left: 60px;
+  width: 1300px;
+  height: 87px;
+  background-color: #D51117;
+  -webkit-transform: rotate(-1.5deg);
+          transform: rotate(-1.5deg);
   border-radius: 28px;
 }
 .socials__img {
-  width: 464px;
+  width: 500px;
   height: auto;
 }
 .socials__content {
@@ -1885,5 +1910,145 @@ svg * {
   border-radius: 12px;
   width: 44px;
   aspect-ratio: 1;
+}
+
+.footer {
+  background-color: #081E36;
+  padding: 40px 0;
+  color: #fff;
+  border-top: 4px solid #ff0000;
+}
+.footer__content {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  margin-bottom: 24px;
+}
+.footer__nav {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  -webkit-column-gap: 60px;
+     -moz-column-gap: 60px;
+          column-gap: 60px;
+}
+.footer__logo img {
+  max-width: 100px;
+  height: auto;
+}
+.footer__section--two {
+  margin-left: 20px;
+}
+.footer__title {
+  font-family: var(--second-family);
+  font-size: 24px;
+  font-weight: 700;
+  margin-bottom: 12px;
+  color: #fff;
+}
+.footer__list {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  row-gap: 12px;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+}
+.footer__list a {
+  color: var(--color-white);
+  opacity: 0.5;
+  font-weight: 400;
+  font-size: 16px;
+}
+.footer__contact {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-align: start;
+      -ms-flex-align: start;
+          align-items: flex-start;
+}
+.footer__phone-label {
+  font-weight: 400;
+  font-size: 14px;
+  color: var(--color-white);
+  opacity: 0.5;
+  margin-bottom: 12px;
+}
+.footer__phone {
+  font-family: var(--second-family);
+  font-weight: 700;
+  font-size: 48px;
+  color: #fff;
+  margin-bottom: 16px;
+}
+.footer__socials {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  gap: 15px;
+  -webkit-box-pack: end;
+      -ms-flex-pack: end;
+          justify-content: flex-end;
+}
+.footer__social-link img {
+  width: 24px;
+  height: 24px;
+  opacity: 0.7;
+  -webkit-transition: opacity 0.3s;
+  transition: opacity 0.3s;
+}
+.footer__social-link img:hover {
+  opacity: 1;
+}
+.footer__bottom {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  padding-top: 20px;
+  font-size: 12px;
+}
+.footer__copyright {
+  color: var(--color-white);
+  font-weight: 400;
+  font-size: 14px;
+}
+.footer__policy {
+  color: var(--color-white);
+  font-weight: 400;
+  font-size: 14px;
+}
+.footer__policy:hover {
+  color: #fff;
+  opacity: 0.5;
+  -webkit-transition: 0.3s;
+  transition: 0.3s;
+}
+.footer__divider {
+  width: 100%;
+  height: 1px;
+  background-color: rgba(255, 255, 255, 0.1);
 }
 /*# sourceMappingURL=styles.css.map */
