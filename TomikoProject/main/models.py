@@ -45,3 +45,11 @@ class Feedback(models.Model):
     class Meta:
         managed = False  
         db_table = 'feedback'
+
+
+class Clip(models.Model):
+    cover_url = models.CharField(max_length=200)
+    link = models.CharField(max_length=200)
+
+    def __str__(self):
+        return f"Clip {self.id}: {self.cover_url}"
