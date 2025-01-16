@@ -1,6 +1,7 @@
 .reviews{
     width: 100%;
     margin-bottom: 40px;
+
     &__head-content{
         display: flex;
         justify-content: space-between;
@@ -39,7 +40,9 @@
     &__content{
         display: flex;
         flex-wrap: wrap;
+
         column-gap: 16px;
+
         row-gap: 16px;
     }
     &__item{
@@ -52,6 +55,7 @@
         background-color: #081E36;
         display: flex;
         column-gap: 16px;
+
         &-stars{
             color: #F5B300;
         }
@@ -67,5 +71,6 @@
             font-size: 14px;
             line-height: 143%;
         }
+
     }
 }

@@ -1159,7 +1159,9 @@ svg * {
 
 .brands {
   margin-top: 20px;
+
   margin-bottom: 50px;
+
 }
 .brands__carousel {
   width: 100%;
@@ -1579,7 +1581,9 @@ svg * {
 }
 .lines--dark {
   background-color: #081E36;
+
   margin-bottom: 100px;
+
 }
 .lines__track {
   display: -webkit-box;
@@ -1621,7 +1625,9 @@ svg * {
 }
 .reviews {
   width: 100%;
+
   margin-bottom: 40px;
+
 }
 .reviews__head-content {
   display: -webkit-box;
@@ -1675,9 +1681,11 @@ svg * {
   display: flex;
   -ms-flex-wrap: wrap;
       flex-wrap: wrap;
+
   -webkit-column-gap: 16px;
      -moz-column-gap: 16px;
           column-gap: 16px;
+
   row-gap: 16px;
 }
 .reviews__item {
@@ -1696,6 +1704,7 @@ svg * {
      -moz-column-gap: 16px;
           column-gap: 16px;
 }
+
 .reviews__item-stars {
   color: #F5B300;
 }
@@ -2051,4 +2060,5 @@ svg * {
   height: 1px;
   background-color: rgba(255, 255, 255, 0.1);
 }
+
 /*# sourceMappingURL=styles.css.map */
