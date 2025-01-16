@@ -11,6 +11,7 @@
     <meta name="description" content="">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css" />
     <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
+    <script src="/static/js/clipSwiper.js"></script>
 </head> 
 <body>
 
@@ -106,8 +107,8 @@
 </section>
 
 
-<section class="swiper__content container">
-<div class="swiper-container">
+<section class="container">
+  <div class="swiper-container">
 
     <div class="swiper__info">
       <div class="swiper__title">
@@ -117,51 +118,35 @@
       <div class="swiper__nav hidden-mobile">
         <div class="custom-prev">
           <svg width="55" height="13" viewBox="0 0 55 13" fill="none" xmlns="http://www.w3.org/2000/svg">
-              <path d="M0.182812 6.30746L5.80781 0.68246C5.92509 0.565185 6.08415 0.4993 6.25 0.4993C6.41585 0.4993 6.57491 0.565185 6.69219 0.68246C6.80946 0.799736 6.87535 0.958795 6.87535 1.12465C6.87535 1.2905 6.80946 1.44956 6.69219 1.56683L2.1336 6.12465L54.375 6.12465C54.5408 6.12465 54.6997 6.1905 54.8169 6.30771C54.9342 6.42492 55 6.58389 55 6.74965C55 6.91541 54.9342 7.07438 54.8169 7.19159C54.6997 7.3088 54.5408 7.37465 54.375 7.37465L2.1336 7.37465L6.69219 11.9325C6.80946 12.0497 6.87535 12.2088 6.87535 12.3746C6.87535 12.5405 6.80946 12.6996 6.69219 12.8168C6.57491 12.9341 6.41585 13 6.25 13C6.08415 13 5.92509 12.9341 5.80781 12.8168L0.182812 7.19184C0.124702 7.13379 0.0786029 7.06486 0.0471502 6.98899C0.0156975 6.91311 -0.000491557 6.83178 -0.00049155 6.74965C-0.000491542 6.66751 0.0156975 6.58618 0.0471502 6.51031C0.0786029 6.43444 0.124702 6.36551 0.182812 6.30746Z" fill="white"/>
+            <path d="M0.182812 6.30746L5.80781 0.68246C5.92509 0.565185 6.08415 0.4993 6.25 0.4993C6.41585 0.4993 6.57491 0.565185 6.69219 0.68246C6.80946 0.799736 6.87535 0.958795 6.87535 1.12465C6.87535 1.2905 6.80946 1.44956 6.69219 1.56683L2.1336 6.12465L54.375 6.12465C54.5408 6.12465 54.6997 6.1905 54.8169 6.30771C54.9342 6.42492 55 6.58389 55 6.74965C55 6.91541 54.9342 7.07438 54.8169 7.19159C54.6997 7.3088 54.5408 7.37465 54.375 7.37465L2.1336 7.37465L6.69219 11.9325C6.80946 12.0497 6.87535 12.2088 6.87535 12.3746C6.87535 12.5405 6.80946 12.6996 6.69219 12.8168C6.57491 12.9341 6.41585 13 6.25 13C6.08415 13 5.92509 12.9341 5.80781 12.8168L0.182812 7.19184C0.124702 7.13379 0.0786029 7.06486 0.0471502 6.98899C0.0156975 6.91311 -0.000491557 6.83178 -0.00049155 6.74965C-0.000491542 6.66751 0.0156975 6.58618 0.0471502 6.51031C0.0786029 6.43444 0.124702 6.36551 0.182812 6.30746Z" fill="white"/>
           </svg>            
         </div>
         <div class="custom-next">
           <svg width="55" height="13" viewBox="0 0 55 13" fill="none" xmlns="http://www.w3.org/2000/svg">
-              <path d="M54.8172 7.1918L49.1922 12.8168C49.0749 12.9341 48.9159 13 48.75 13C48.5841 13 48.4251 12.9341 48.3078 12.8168C48.1905 12.6995 48.1247 12.5405 48.1247 12.3746C48.1247 12.2088 48.1905 12.0497 48.3078 11.9324L52.8664 7.37462H0.625C0.45924 7.37462 0.300269 7.30877 0.183059 7.19156C0.0658485 7.07435 0 6.91538 0 6.74962C0 6.58385 0.0658485 6.42488 0.183059 6.30767C0.300269 6.19046 0.45924 6.12462 0.625 6.12462H52.8664L48.3078 1.5668C48.1905 1.44953 48.1247 1.29047 48.1247 1.12462C48.1247 0.958763 48.1905 0.799703 48.3078 0.682428C48.4251 0.565152 48.5841 0.499268 48.75 0.499268C48.9159 0.499268 49.0749 0.565152 49.1922 0.682428L54.8172 6.30743C54.8753 6.36547 54.9214 6.4344 54.9529 6.51028C54.9843 6.58615 55.0005 6.66748 55.0005 6.74962C55.0005 6.83175 54.9843 6.91308 54.9529 6.98895C54.9214 7.06483 54.8753 7.13376 54.8172 7.1918Z" fill="white"/>
+            <path d="M54.8172 7.1918L49.1922 12.8168C49.0749 12.9341 48.9159 13 48.75 13C48.5841 13 48.4251 12.9341 48.3078 12.8168C48.1905 12.6995 48.1247 12.5405 48.1247 12.3746C48.1247 12.2088 48.1905 12.0497 48.3078 11.9324L52.8664 7.37462H0.625C0.45924 7.37462 0.300269 7.30877 0.183059 7.19156C0.0658485 7.07435 0 6.91538 0 6.74962C0 6.58385 0.0658485 6.42488 0.183059 6.30767C0.300269 6.19046 0.45924 6.12462 0.625 6.12462H52.8664L48.3078 1.5668C48.1905 1.44953 48.1247 1.29047 48.1247 1.12462C48.1247 0.958763 48.1905 0.799703 48.3078 0.682428C48.4251 0.565152 48.5841 0.499268 48.75 0.499268C48.9159 0.499268 49.0749 0.565152 49.1922 0.682428L54.8172 6.30743C54.8753 6.36547 54.9214 6.4344 54.9529 6.51028C54.9843 6.58615 55.0005 6.66748 55.0005 6.74962C55.0005 6.83175 54.9843 6.91308 54.9529 6.98895C54.9214 7.06483 54.8753 7.13376 54.8172 7.1918Z" fill="white"/>
           </svg>
         </div>
       </div>
-    
     </div>
-  
     <div class="swiper-wrapper">
-      <div class="swiper-slide swiper__main-slide hidden-mobile">
-        <div class="swiper__card">
-          <div class="swiper__main-slide-wrapper">
-            
-            <div class="inner-slider__wrapper">
 
+      {% with cars|first as main_car %}
+      <div class="swiper-slide swiper__main-slide ">
+        <div class="swiper__card ">
+          <div class="swiper__main-slide-wrapper ">
+            <div class="inner-slider__wrapper ">
               <div class="swiper inner-slider">
                 <div class="swiper-wrapper">
-
                   <div class="swiper-slide">
-                    <img 
-                      class="inner-slider__img"
-                      src="/static/img/car-slider-main.png" 
-                      alt="Car 1">
+                    <img class="inner-slider__img" src="/static/img/car-slider-main.png" alt="Car 1">
                   </div>
-
                   <div class="swiper-slide">
-                    <img 
-                      class="inner-slider__img"
-                      src="/static/img/car-slider.png" 
-                      alt="Car 2">
+                    <img class="inner-slider__img" src="/static/img/car-slider.png" alt="Car 2">
                   </div>
-
                   <div class="swiper-slide">
-                    <img 
-                      class="inner-slider__img"
-                      src="/static/img/car-slider-main.png" 
-                      alt="Car 3">
+                    <img class="inner-slider__img" src="/static/img/car-slider-main.png" alt="Car 3">
                   </div>
-
                 </div>
-
                 <div class="inner-slider__pagination">
                   <button class="inner-slider__pagination-bullet" data-index="0"></button>
                   <button class="inner-slider__pagination-bullet" data-index="1"></button>
@@ -171,414 +156,388 @@
             </div>
             <div class="swiper__main-info-wrapper">
               <div class="swiper__main-title">
-                <h3 class="swiper__main-title-name">Subaru LEVORG VN5</h3>
-                <p class="swiper__main-title-desc">2021 • Гибрит • 10 000 км</p>
+                <h3 class="swiper__main-title-name">{{ main_car.model }}</h3>
+                <p class="swiper__main-title-desc">{{ main_car.year }} • {{ main_car.transmission }} • {{ main_car.mileage }} км</p>
               </div>
               <div class="swiper__main-order">
-                  <h3 class="swiper__main-order-price">2 115 600 ₽</h3>
-                  <button onclick="" class="swiper__main-order-button">Оставить заявку</a></button>
+                <h3 class="swiper__main-order-price">{{ main_car.price }} ₽</h3>
+                <button onclick="" class="swiper__main-order-button">Оставить заявку</button>
               </div>
             </div>
           </div>
         </div>
       </div>
-
-      <div class="swiper-slide swiper__standart-slide">
-        <div class="swiper__card-standart">
-          <div class="swiper__main-title">
-            <h3 class="swiper__main-title-name">SUBARU LEVORG VN5</h3>
-            <p class="swiper__main-title-desc">2021 · Гибрид · 10 000 км</p>
-          </div>
-          <div class="swiper__card-image-wrapper">
-            <img  class="swiper__card-image" src="/static/img/car-slider.png" alt="Car">
-          </div>
-          <div class="swiper__main-order">
-            <h3 class="swiper__main-order-price">2 115 600 ₽</h3>
-            <button class="swiper__main-order-button swiper__main-order-button--gray">Оставить заявку</button>
-          </div>
-        </div>
-      </div>
-
-      <div class="swiper-slide swiper__standart-slide">
-        <div class="swiper__card-standart">
-          <div class="swiper__main-title">
-            <h3 class="swiper__main-title-name">SUBARU LEVORG VN5</h3>
-            <p class="swiper__main-title-desc">2021 · Гибрид · 10 000 км</p>
-          </div>
-          <div class="swiper__card-image-wrapper">
-            <img  class="swiper__card-image" src="/static/img/car-slider.png" alt="Car">
-          </div>
-          <div class="swiper__main-order">
-            <h3 class="swiper__main-order-price">2 115 600 ₽</h3>
-            <button class="swiper__main-order-button swiper__main-order-button--gray">Оставить заявку</button>
-          </div>
-        </div>
-      </div>
-
-      <div class="swiper-slide swiper__standart-slide">
-        <div class="swiper__card-standart">
-          <div class="swiper__main-title">
-            <h3 class="swiper__main-title-name">SUBARU LEVORG VN5</h3>
-            <p class="swiper__main-title-desc">2021 · Гибрид · 10 000 км</p>
-          </div>
-          <div class="swiper__card-image-wrapper">
-            <img  class="swiper__card-image" src="/static/img/car-slider.png" alt="Car">
-          </div>
-          <div class="swiper__main-order">
-            <h3 class="swiper__main-order-price">2 115 600 ₽</h3>
-            <button class="swiper__main-order-button swiper__main-order-button--gray">Оставить заявку</button>
-          </div>
-        </div>
-      </div>
-
-      <div class="swiper-slide swiper__standart-slide">
-        <div class="swiper__card-standart">
-          <div class="swiper__main-title">
-            <h3 class="swiper__main-title-name">SUBARU LEVORG VN5</h3>
-            <p class="swiper__main-title-desc">2021 · Гибрид · 10 000 км</p>
-          </div>
-          <div class="swiper__card-image-wrapper">
-            <img  class="swiper__card-image" src="/static/img/car-slider.png" alt="Car">
-          </div>
-          <div class="swiper__main-order">
-            <h3 class="swiper__main-order-price">2 115 600 ₽</h3>
-            <button class="swiper__main-order-button swiper__main-order-button--gray">Оставить заявку</button>
-          </div>
-        </div>
-      </div>
-
-      <div class="swiper-slide swiper__standart-slide">
-        <div class="swiper__card-standart">
-          <div class="swiper__main-title">
-            <h3 class="swiper__main-title-name">SUBARU LEVORG VN5</h3>
-            <p class="swiper__main-title-desc">2021 · Гибрид · 10 000 км</p>
-          </div>
-          <div class="swiper__card-image-wrapper">
-            <img  class="swiper__card-image" src="/static/img/car-slider.png" alt="Car">
-          </div>
-          <div class="swiper__main-order">
-            <h3 class="swiper__main-order-price">2 115 600 ₽</h3>
-            <button class="swiper__main-order-button swiper__main-order-button--gray">Оставить заявку</button>
-          </div>
-        </div>
-      </div>
-</div>
+      {% endwith %}
     
+      {% for car in cars|slice:"1:11" %}
+      <div class="swiper-slide swiper__standart-slide">
+        <div class="swiper__card-standart">
+          <div class="swiper__main-title">
+            <h3 class="swiper__main-title-name">{{ car.model }}</h3>
+            <p class="swiper__main-title-desc">{{ car.year }} • {{ car.transmission }} • {{ car.mileage }} км</p>
+          </div>
+          <div class="swiper__card-image-wrapper">
+            <img class="swiper__card-image" src="/static/img/car-slider.png" alt="Car">
+          </div>
+          <div class="swiper__main-order">
+            <h3 class="swiper__main-order-price">{{ car.price }} ₽</h3>
+            <button class="swiper__main-order-button swiper__main-order-button--gray">Оставить заявку</button>
+          </div>
+        </div>
+      </div>
+      {% endfor %}
+      <div class="swiper-slide swiper__standart-slide">
+        <div class="swiper__card-standart">
+          <div class="swiper__main-title">
+            <h3 class="swiper__main-title-name">SUBARU LEVORG VN5</h3>
+            <p class="swiper__main-title-desc">2021 · Гибрид · 10 000 км</p>
+          </div>
+          <div class="swiper__card-image-wrapper">
+            <img  class="swiper__card-image" src="/static/img/car-slider.png" alt="Car">
+          </div>
+          <div class="swiper__main-order">
+            <h3 class="swiper__main-order-price">2 115 600 ₽</h3>
+            <button class="swiper__main-order-button swiper__main-order-button--gray">Оставить заявку</button>
+          </div>
+        </div>
+      </div>
+
+      <div class="swiper-slide swiper__standart-slide">
+        <div class="swiper__card-standart">
+          <div class="swiper__main-title">
+            <h3 class="swiper__main-title-name">SUBARU LEVORG VN5</h3>
+            <p class="swiper__main-title-desc">2021 · Гибрид · 10 000 км</p>
+          </div>
+          <div class="swiper__card-image-wrapper">
+            <img  class="swiper__card-image" src="/static/img/car-slider.png" alt="Car">
+          </div>
+          <div class="swiper__main-order">
+            <h3 class="swiper__main-order-price">2 115 600 ₽</h3>
+            <button class="swiper__main-order-button swiper__main-order-button--gray">Оставить заявку</button>
+          </div>
+        </div>
+      </div>
+
+      <div class="swiper-slide swiper__standart-slide">
+        <div class="swiper__card-standart">
+          <div class="swiper__main-title">
+            <h3 class="swiper__main-title-name">SUBARU LEVORG VN5</h3>
+            <p class="swiper__main-title-desc">2021 · Гибрид · 10 000 км</p>
+          </div>
+          <div class="swiper__card-image-wrapper">
+            <img  class="swiper__card-image" src="/static/img/car-slider.png" alt="Car">
+          </div>
+          <div class="swiper__main-order">
+            <h3 class="swiper__main-order-price">2 115 600 ₽</h3>
+            <button class="swiper__main-order-button swiper__main-order-button--gray">Оставить заявку</button>
+          </div>
+        </div>
+      </div>
+
+      <div class="swiper-slide swiper__standart-slide">
+        <div class="swiper__card-standart">
+          <div class="swiper__main-title">
+            <h3 class="swiper__main-title-name">SUBARU LEVORG VN5</h3>
+            <p class="swiper__main-title-desc">2021 · Гибрид · 10 000 км</p>
+          </div>
+          <div class="swiper__card-image-wrapper">
+            <img  class="swiper__card-image" src="/static/img/car-slider.png" alt="Car">
+          </div>
+          <div class="swiper__main-order">
+            <h3 class="swiper__main-order-price">2 115 600 ₽</h3>
+            <button class="swiper__main-order-button swiper__main-order-button--gray">Оставить заявку</button>
+          </div>
+        </div>
+      </div>
 </div>
+</section>
+<section class="container">
   <div class="swiper-container">
-  
-      <div class="swiper__info">
-        <div class="swiper__title">
-          <p class="swiper__title-text">Популярные авто &nbsp;</p>
-          <p class="swiper__title-text swiper__title-text--red swiper__title-text--china">Из Китая</p>
-        </div>
-        <div class="swiper__nav hidden-mobile">
-          <div class="custom-prev">
-            <svg width="55" height="13" viewBox="0 0 55 13" fill="none" xmlns="http://www.w3.org/2000/svg">
-                <path d="M0.182812 6.30746L5.80781 0.68246C5.92509 0.565185 6.08415 0.4993 6.25 0.4993C6.41585 0.4993 6.57491 0.565185 6.69219 0.68246C6.80946 0.799736 6.87535 0.958795 6.87535 1.12465C6.87535 1.2905 6.80946 1.44956 6.69219 1.56683L2.1336 6.12465L54.375 6.12465C54.5408 6.12465 54.6997 6.1905 54.8169 6.30771C54.9342 6.42492 55 6.58389 55 6.74965C55 6.91541 54.9342 7.07438 54.8169 7.19159C54.6997 7.3088 54.5408 7.37465 54.375 7.37465L2.1336 7.37465L6.69219 11.9325C6.80946 12.0497 6.87535 12.2088 6.87535 12.3746C6.87535 12.5405 6.80946 12.6996 6.69219 12.8168C6.57491 12.9341 6.41585 13 6.25 13C6.08415 13 5.92509 12.9341 5.80781 12.8168L0.182812 7.19184C0.124702 7.13379 0.0786029 7.06486 0.0471502 6.98899C0.0156975 6.91311 -0.000491557 6.83178 -0.00049155 6.74965C-0.000491542 6.66751 0.0156975 6.58618 0.0471502 6.51031C0.0786029 6.43444 0.124702 6.36551 0.182812 6.30746Z" fill="white"/>
-            </svg>            
-          </div>
-          <div class="custom-next">
-            <svg width="55" height="13" viewBox="0 0 55 13" fill="none" xmlns="http://www.w3.org/2000/svg">
-                <path d="M54.8172 7.1918L49.1922 12.8168C49.0749 12.9341 48.9159 13 48.75 13C48.5841 13 48.4251 12.9341 48.3078 12.8168C48.1905 12.6995 48.1247 12.5405 48.1247 12.3746C48.1247 12.2088 48.1905 12.0497 48.3078 11.9324L52.8664 7.37462H0.625C0.45924 7.37462 0.300269 7.30877 0.183059 7.19156C0.0658485 7.07435 0 6.91538 0 6.74962C0 6.58385 0.0658485 6.42488 0.183059 6.30767C0.300269 6.19046 0.45924 6.12462 0.625 6.12462H52.8664L48.3078 1.5668C48.1905 1.44953 48.1247 1.29047 48.1247 1.12462C48.1247 0.958763 48.1905 0.799703 48.3078 0.682428C48.4251 0.565152 48.5841 0.499268 48.75 0.499268C48.9159 0.499268 49.0749 0.565152 49.1922 0.682428L54.8172 6.30743C54.8753 6.36547 54.9214 6.4344 54.9529 6.51028C54.9843 6.58615 55.0005 6.66748 55.0005 6.74962C55.0005 6.83175 54.9843 6.91308 54.9529 6.98895C54.9214 7.06483 54.8753 7.13376 54.8172 7.1918Z" fill="white"/>
-            </svg>
-          </div>
-        </div>
-      
+    <div class="swiper__info">
+      <div class="swiper__title">
+        <p class="swiper__title-text">Популярные авто &nbsp;</p>
+        <p class="swiper__title-text swiper__title-text--red swiper__title-text--china">Из Китая</p>
       </div>
-    
-      <div class="swiper-wrapper">
-        <div class="swiper-slide swiper__main-slide hidden-mobile">
-          <div class="swiper__card">
-            <div class="swiper__main-slide-wrapper">
-              
-              <div class="inner-slider__wrapper">
-  
-                <div class="swiper inner-slider">
-                  <div class="swiper-wrapper">
-  
-                    <div class="swiper-slide">
-                      <img 
-                        class="inner-slider__img"
-                        src="/static/img/car-slider-main.png" 
-                        alt="Car 1">
-                    </div>
-  
-                    <div class="swiper-slide">
-                      <img 
-                        class="inner-slider__img"
-                        src="/static/img/car-slider.png" 
-                        alt="Car 2">
-                    </div>
-  
-                    <div class="swiper-slide">
-                      <img 
-                        class="inner-slider__img"
-                        src="/static/img/car-slider-main.png" 
-                        alt="Car 3">
-                    </div>
-  
-                  </div>
-  
-                  <div class="inner-slider__pagination">
-                    <button class="inner-slider__pagination-bullet" data-index="0"></button>
-                    <button class="inner-slider__pagination-bullet" data-index="1"></button>
-                    <button class="inner-slider__pagination-bullet" data-index="2"></button>
-                  </div>
-                </div>
-              </div>
-              <div class="swiper__main-info-wrapper">
-                <div class="swiper__main-title">
-                  <h3 class="swiper__main-title-name">Subaru LEVORG VN5</h3>
-                  <p class="swiper__main-title-desc">2021 • Гибрит • 10 000 км</p>
-                </div>
-                <div class="swiper__main-order">
-                    <h3 class="swiper__main-order-price">2 115 600 ₽</h3>
-                    <button onclick="" class="swiper__main-order-button">Оставить заявку</a></button>
-                </div>
-              </div>
-            </div>
-          </div>
+      <div class="swiper__nav hidden-mobile">
+        <div class="custom-prev">
+          <svg width="55" height="13" viewBox="0 0 55 13" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <path d="M0.182812 6.30746L5.80781 0.68246C5.92509 0.565185 6.08415 0.4993 6.25 0.4993C6.41585 0.4993 6.57491 0.565185 6.69219 0.68246C6.80946 0.799736 6.87535 0.958795 6.87535 1.12465C6.87535 1.2905 6.80946 1.44956 6.69219 1.56683L2.1336 6.12465L54.375 6.12465C54.5408 6.12465 54.6997 6.1905 54.8169 6.30771C54.9342 6.42492 55 6.58389 55 6.74965C55 6.91541 54.9342 7.07438 54.8169 7.19159C54.6997 7.3088 54.5408 7.37465 54.375 7.37465L2.1336 7.37465L6.69219 11.9325C6.80946 12.0497 6.87535 12.2088 6.87535 12.3746C6.87535 12.5405 6.80946 12.6996 6.69219 12.8168C6.57491 12.9341 6.41585 13 6.25 13C6.08415 13 5.92509 12.9341 5.80781 12.8168L0.182812 7.19184C0.124702 7.13379 0.0786029 7.06486 0.0471502 6.98899C0.0156975 6.91311 -0.000491557 6.83178 -0.00049155 6.74965C-0.000491542 6.66751 0.0156975 6.58618 0.0471502 6.51031C0.0786029 6.43444 0.124702 6.36551 0.182812 6.30746Z" fill="white"/>
+          </svg>            
         </div>
-  
-        <div class="swiper-slide swiper__standart-slide">
-          <div class="swiper__card-standart">
-            <div class="swiper__main-title">
-              <h3 class="swiper__main-title-name">SUBARU LEVORG VN5</h3>
-              <p class="swiper__main-title-desc">2021 · Гибрид · 10 000 км</p>
-            </div>
-            <div class="swiper__card-image-wrapper">
-              <img  class="swiper__card-image" src="/static/img/car-slider.png" alt="Car">
-            </div>
-            <div class="swiper__main-order">
-              <h3 class="swiper__main-order-price">2 115 600 ₽</h3>
-              <button class="swiper__main-order-button swiper__main-order-button--gray">Оставить заявку</button>
-            </div>
-          </div>
+        <div class="custom-next">
+          <svg width="55" height="13" viewBox="0 0 55 13" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <path d="M54.8172 7.1918L49.1922 12.8168C49.0749 12.9341 48.9159 13 48.75 13C48.5841 13 48.4251 12.9341 48.3078 12.8168C48.1905 12.6995 48.1247 12.5405 48.1247 12.3746C48.1247 12.2088 48.1905 12.0497 48.3078 11.9324L52.8664 7.37462H0.625C0.45924 7.37462 0.300269 7.30877 0.183059 7.19156C0.0658485 7.07435 0 6.91538 0 6.74962C0 6.58385 0.0658485 6.42488 0.183059 6.30767C0.300269 6.19046 0.45924 6.12462 0.625 6.12462H52.8664L48.3078 1.5668C48.1905 1.44953 48.1247 1.29047 48.1247 1.12462C48.1247 0.958763 48.1905 0.799703 48.3078 0.682428C48.4251 0.565152 48.5841 0.499268 48.75 0.499268C48.9159 0.499268 49.0749 0.565152 49.1922 0.682428L54.8172 6.30743C54.8753 6.36547 54.9214 6.4344 54.9529 6.51028C54.9843 6.58615 55.0005 6.66748 55.0005 6.74962C55.0005 6.83175 54.9843 6.91308 54.9529 6.98895C54.9214 7.06483 54.8753 7.13376 54.8172 7.1918Z" fill="white"/>
+          </svg>
         </div>
-  
-        <div class="swiper-slide swiper__standart-slide">
-          <div class="swiper__card-standart">
-            <div class="swiper__main-title">
-              <h3 class="swiper__main-title-name">SUBARU LEVORG VN5</h3>
-              <p class="swiper__main-title-desc">2021 · Гибрид · 10 000 км</p>
-            </div>
-            <div class="swiper__card-image-wrapper">
-              <img  class="swiper__card-image" src="/static/img/car-slider.png" alt="Car">
-            </div>
-            <div class="swiper__main-order">
-              <h3 class="swiper__main-order-price">2 115 600 ₽</h3>
-              <button class="swiper__main-order-button swiper__main-order-button--gray">Оставить заявку</button>
-            </div>
-          </div>
-        </div>
-  
-        <div class="swiper-slide swiper__standart-slide">
-          <div class="swiper__card-standart">
-            <div class="swiper__main-title">
-              <h3 class="swiper__main-title-name">SUBARU LEVORG VN5</h3>
-              <p class="swiper__main-title-desc">2021 · Гибрид · 10 000 км</p>
-            </div>
-            <div class="swiper__card-image-wrapper">
-              <img  class="swiper__card-image" src="/static/img/car-slider.png" alt="Car">
-            </div>
-            <div class="swiper__main-order">
-              <h3 class="swiper__main-order-price">2 115 600 ₽</h3>
-              <button class="swiper__main-order-button swiper__main-order-button--gray">Оставить заявку</button>
-            </div>
-          </div>
-        </div>
-  
-        <div class="swiper-slide swiper__standart-slide">
-          <div class="swiper__card-standart">
-            <div class="swiper__main-title">
-              <h3 class="swiper__main-title-name">SUBARU LEVORG VN5</h3>
-              <p class="swiper__main-title-desc">2021 · Гибрид · 10 000 км</p>
-            </div>
-            <div class="swiper__card-image-wrapper">
-              <img  class="swiper__card-image" src="/static/img/car-slider.png" alt="Car">
-            </div>
-            <div class="swiper__main-order">
-              <h3 class="swiper__main-order-price">2 115 600 ₽</h3>
-              <button class="swiper__main-order-button swiper__main-order-button--gray">Оставить заявку</button>
-            </div>
-          </div>
-        </div>
-  
-        <div class="swiper-slide swiper__standart-slide">
-          <div class="swiper__card-standart">
-            <div class="swiper__main-title">
-              <h3 class="swiper__main-title-name">SUBARU LEVORG VN5</h3>
-              <p class="swiper__main-title-desc">2021 · Гибрид · 10 000 км</p>
-            </div>
-            <div class="swiper__card-image-wrapper">
-              <img  class="swiper__card-image" src="/static/img/car-slider.png" alt="Car">
-            </div>
-            <div class="swiper__main-order">
-              <h3 class="swiper__main-order-price">2 115 600 ₽</h3>
-              <button class="swiper__main-order-button swiper__main-order-button--gray">Оставить заявку</button>
-            </div>
-          </div>
-        </div>
-  </div>
-      
-  </div>
- 
-    <div class="swiper-container">
-    
-        <div class="swiper__info">
-          <div class="swiper__title">
-            <p class="swiper__title-text">Популярные авто &nbsp;</p>
-            <p class="swiper__title-text swiper__title-text--red swiper__title-text--japan">Из Японии</p>
-          </div>
-          <div class="swiper__nav hidden-mobile">
-            <div class="custom-prev">
-              <svg width="55" height="13" viewBox="0 0 55 13" fill="none" xmlns="http://www.w3.org/2000/svg">
-                  <path d="M0.182812 6.30746L5.80781 0.68246C5.92509 0.565185 6.08415 0.4993 6.25 0.4993C6.41585 0.4993 6.57491 0.565185 6.69219 0.68246C6.80946 0.799736 6.87535 0.958795 6.87535 1.12465C6.87535 1.2905 6.80946 1.44956 6.69219 1.56683L2.1336 6.12465L54.375 6.12465C54.5408 6.12465 54.6997 6.1905 54.8169 6.30771C54.9342 6.42492 55 6.58389 55 6.74965C55 6.91541 54.9342 7.07438 54.8169 7.19159C54.6997 7.3088 54.5408 7.37465 54.375 7.37465L2.1336 7.37465L6.69219 11.9325C6.80946 12.0497 6.87535 12.2088 6.87535 12.3746C6.87535 12.5405 6.80946 12.6996 6.69219 12.8168C6.57491 12.9341 6.41585 13 6.25 13C6.08415 13 5.92509 12.9341 5.80781 12.8168L0.182812 7.19184C0.124702 7.13379 0.0786029 7.06486 0.0471502 6.98899C0.0156975 6.91311 -0.000491557 6.83178 -0.00049155 6.74965C-0.000491542 6.66751 0.0156975 6.58618 0.0471502 6.51031C0.0786029 6.43444 0.124702 6.36551 0.182812 6.30746Z" fill="white"/>
-              </svg>            
-            </div>
-            <div class="custom-next">
-              <svg width="55" height="13" viewBox="0 0 55 13" fill="none" xmlns="http://www.w3.org/2000/svg">
-                  <path d="M54.8172 7.1918L49.1922 12.8168C49.0749 12.9341 48.9159 13 48.75 13C48.5841 13 48.4251 12.9341 48.3078 12.8168C48.1905 12.6995 48.1247 12.5405 48.1247 12.3746C48.1247 12.2088 48.1905 12.0497 48.3078 11.9324L52.8664 7.37462H0.625C0.45924 7.37462 0.300269 7.30877 0.183059 7.19156C0.0658485 7.07435 0 6.91538 0 6.74962C0 6.58385 0.0658485 6.42488 0.183059 6.30767C0.300269 6.19046 0.45924 6.12462 0.625 6.12462H52.8664L48.3078 1.5668C48.1905 1.44953 48.1247 1.29047 48.1247 1.12462C48.1247 0.958763 48.1905 0.799703 48.3078 0.682428C48.4251 0.565152 48.5841 0.499268 48.75 0.499268C48.9159 0.499268 49.0749 0.565152 49.1922 0.682428L54.8172 6.30743C54.8753 6.36547 54.9214 6.4344 54.9529 6.51028C54.9843 6.58615 55.0005 6.66748 55.0005 6.74962C55.0005 6.83175 54.9843 6.91308 54.9529 6.98895C54.9214 7.06483 54.8753 7.13376 54.8172 7.1918Z" fill="white"/>
-              </svg>
-            </div>
-          </div>
-        </div>
-        <div class="swiper-wrapper">
-          <div class="swiper-slide swiper__main-slide hidden-mobile">
-            <div class="swiper__card">
-              <div class="swiper__main-slide-wrapper">
-                
-                <div class="inner-slider__wrapper">
-    
-                  <div class="swiper inner-slider">
-                    <div class="swiper-wrapper">
-    
-                      <div class="swiper-slide">
-                        <img 
-                          class="inner-slider__img"
-                          src="/static/img/car-slider-main.png" 
-                          alt="Car 1">
-                      </div>
-    
-                      <div class="swiper-slide">
-                        <img 
-                          class="inner-slider__img"
-                          src="/static/img/car-slider.png" 
-                          alt="Car 2">
-                      </div>
-    
-                      <div class="swiper-slide">
-                        <img 
-                          class="inner-slider__img"
-                          src="/static/img/car-slider-main.png" 
-                          alt="Car 3">
-                      </div>
-    
-                    </div>
-    
-                    <div class="inner-slider__pagination">
-                      <button class="inner-slider__pagination-bullet" data-index="0"></button>
-                      <button class="inner-slider__pagination-bullet" data-index="1"></button>
-                      <button class="inner-slider__pagination-bullet" data-index="2"></button>
-                    </div>
-                  </div>
-                </div>
-                <div class="swiper__main-info-wrapper">
-                  <div class="swiper__main-title">
-                    <h3 class="swiper__main-title-name">Subaru LEVORG VN5</h3>
-                    <p class="swiper__main-title-desc">2021 • Гибрит • 10 000 км</p>
-                  </div>
-                  <div class="swiper__main-order">
-                      <h3 class="swiper__main-order-price">2 115 600 ₽</h3>
-                      <button onclick="" class="swiper__main-order-button">Оставить заявку</a></button>
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div>
-    
-          <div class="swiper-slide swiper__standart-slide">
-            <div class="swiper__card-standart">
-              <div class="swiper__main-title">
-                <h3 class="swiper__main-title-name">SUBARU LEVORG VN5</h3>
-                <p class="swiper__main-title-desc">2021 · Гибрид · 10 000 км</p>
-              </div>
-              <div class="swiper__card-image-wrapper">
-                <img  class="swiper__card-image" src="/static/img/car-slider.png" alt="Car">
-              </div>
-              <div class="swiper__main-order">
-                <h3 class="swiper__main-order-price">2 115 600 ₽</h3>
-                <button class="swiper__main-order-button swiper__main-order-button--gray">Оставить заявку</button>
-              </div>
-            </div>
-          </div>
-    
-          <div class="swiper-slide swiper__standart-slide">
-            <div class="swiper__card-standart">
-              <div class="swiper__main-title">
-                <h3 class="swiper__main-title-name">SUBARU LEVORG VN5</h3>
-                <p class="swiper__main-title-desc">2021 · Гибрид · 10 000 км</p>
-              </div>
-              <div class="swiper__card-image-wrapper">
-                <img  class="swiper__card-image" src="/static/img/car-slider.png" alt="Car">
-              </div>
-              <div class="swiper__main-order">
-                <h3 class="swiper__main-order-price">2 115 600 ₽</h3>
-                <button class="swiper__main-order-button swiper__main-order-button--gray">Оставить заявку</button>
-              </div>
-            </div>
-          </div>
-    
-          <div class="swiper-slide swiper__standart-slide">
-            <div class="swiper__card-standart">
-              <div class="swiper__main-title">
-                <h3 class="swiper__main-title-name">SUBARU LEVORG VN5</h3>
-                <p class="swiper__main-title-desc">2021 · Гибрид · 10 000 км</p>
-              </div>
-              <div class="swiper__card-image-wrapper">
-                <img  class="swiper__card-image" src="/static/img/car-slider.png" alt="Car">
-              </div>
-              <div class="swiper__main-order">
-                <h3 class="swiper__main-order-price">2 115 600 ₽</h3>
-                <button class="swiper__main-order-button swiper__main-order-button--gray">Оставить заявку</button>
-              </div>
-            </div>
-          </div>
-    
-          <div class="swiper-slide swiper__standart-slide">
-            <div class="swiper__card-standart">
-              <div class="swiper__main-title">
-                <h3 class="swiper__main-title-name">SUBARU LEVORG VN5</h3>
-                <p class="swiper__main-title-desc">2021 · Гибрид · 10 000 км</p>
-              </div>
-              <div class="swiper__card-image-wrapper">
-                <img  class="swiper__card-image" src="/static/img/car-slider.png" alt="Car">
-              </div>
-              <div class="swiper__main-order">
-                <h3 class="swiper__main-order-price">2 115 600 ₽</h3>
-                <button class="swiper__main-order-button swiper__main-order-button--gray">Оставить заявку</button>
-              </div>
-            </div>
-          </div>
-    
-          <div class="swiper-slide swiper__standart-slide">
-            <div class="swiper__card-standart">
-              <div class="swiper__main-title">
-                <h3 class="swiper__main-title-name">SUBARU LEVORG VN5</h3>
-                <p class="swiper__main-title-desc">2021 · Гибрид · 10 000 км</p>
-              </div>
-              <div class="swiper__card-image-wrapper">
-                <img  class="swiper__card-image" src="/static/img/car-slider.png" alt="Car">
-              </div>
-              <div class="swiper__main-order">
-                <h3 class="swiper__main-order-price">2 115 600 ₽</h3>
-                <button class="swiper__main-order-button swiper__main-order-button--gray">Оставить заявку</button>
-              </div>
-            </div>
-          </div>
+      </div>
     </div>
+    <div class="swiper-wrapper">
+      <!-- Главная карточка -->
+      {% with cars|first as main_car %}
+      <div class="swiper-slide swiper__main-slide ">
+        <div class="swiper__card ">
+          <div class="swiper__main-slide-wrapper ">
+            <div class="inner-slider__wrapper ">
+              <div class="swiper inner-slider">
+                <div class="swiper-wrapper">
+                  <div class="swiper-slide">
+                    <img class="inner-slider__img" src="/static/img/car-slider-main.png" alt="Car 1">
+                  </div>
+                  <div class="swiper-slide">
+                    <img class="inner-slider__img" src="/static/img/car-slider.png" alt="Car 2">
+                  </div>
+                  <div class="swiper-slide">
+                    <img class="inner-slider__img" src="/static/img/car-slider-main.png" alt="Car 3">
+                  </div>
+                </div>
+                <div class="inner-slider__pagination">
+                  <button class="inner-slider__pagination-bullet" data-index="0"></button>
+                  <button class="inner-slider__pagination-bullet" data-index="1"></button>
+                  <button class="inner-slider__pagination-bullet" data-index="2"></button>
+                </div>
+              </div>
+            </div>
+            <div class="swiper__main-info-wrapper">
+              <div class="swiper__main-title">
+                <h3 class="swiper__main-title-name">{{ main_car.model }}</h3>
+                <p class="swiper__main-title-desc">{{ main_car.year }} • {{ main_car.transmission }} • {{ main_car.mileage }} км</p>
+              </div>
+              <div class="swiper__main-order">
+                <h3 class="swiper__main-order-price">{{ main_car.price }} ₽</h3>
+                <button onclick="" class="swiper__main-order-button">Оставить заявку</button>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      {% endwith %}
+    
+      {% for car in cars|slice:"1:11" %}
+      <div class="swiper-slide swiper__standart-slide">
+        <div class="swiper__card-standart">
+          <div class="swiper__main-title">
+            <h3 class="swiper__main-title-name">{{ car.model }}</h3>
+            <p class="swiper__main-title-desc">{{ car.year }} • {{ car.transmission }} • {{ car.mileage }} км</p>
+          </div>
+          <div class="swiper__card-image-wrapper">
+            <img class="swiper__card-image" src="/static/img/car-slider.png" alt="Car">
+          </div>
+          <div class="swiper__main-order">
+            <h3 class="swiper__main-order-price">{{ car.price }} ₽</h3>
+            <button class="swiper__main-order-button swiper__main-order-button--gray">Оставить заявку</button>
+          </div>
+        </div>
+      </div>
+      {% endfor %}
+      <div class="swiper-slide swiper__standart-slide">
+        <div class="swiper__card-standart">
+          <div class="swiper__main-title">
+            <h3 class="swiper__main-title-name">SUBARU LEVORG VN5</h3>
+            <p class="swiper__main-title-desc">2021 · Гибрид · 10 000 км</p>
+          </div>
+          <div class="swiper__card-image-wrapper">
+            <img  class="swiper__card-image" src="/static/img/car-slider.png" alt="Car">
+          </div>
+          <div class="swiper__main-order">
+            <h3 class="swiper__main-order-price">2 115 600 ₽</h3>
+            <button class="swiper__main-order-button swiper__main-order-button--gray">Оставить заявку</button>
+          </div>
+        </div>
+      </div>
+
+      <div class="swiper-slide swiper__standart-slide">
+        <div class="swiper__card-standart">
+          <div class="swiper__main-title">
+            <h3 class="swiper__main-title-name">SUBARU LEVORG VN5</h3>
+            <p class="swiper__main-title-desc">2021 · Гибрид · 10 000 км</p>
+          </div>
+          <div class="swiper__card-image-wrapper">
+            <img  class="swiper__card-image" src="/static/img/car-slider.png" alt="Car">
+          </div>
+          <div class="swiper__main-order">
+            <h3 class="swiper__main-order-price">2 115 600 ₽</h3>
+            <button class="swiper__main-order-button swiper__main-order-button--gray">Оставить заявку</button>
+          </div>
+        </div>
+      </div>
+
+      <div class="swiper-slide swiper__standart-slide">
+        <div class="swiper__card-standart">
+          <div class="swiper__main-title">
+            <h3 class="swiper__main-title-name">SUBARU LEVORG VN5</h3>
+            <p class="swiper__main-title-desc">2021 · Гибрид · 10 000 км</p>
+          </div>
+          <div class="swiper__card-image-wrapper">
+            <img  class="swiper__card-image" src="/static/img/car-slider.png" alt="Car">
+          </div>
+          <div class="swiper__main-order">
+            <h3 class="swiper__main-order-price">2 115 600 ₽</h3>
+            <button class="swiper__main-order-button swiper__main-order-button--gray">Оставить заявку</button>
+          </div>
+        </div>
+      </div>
+
+      <div class="swiper-slide swiper__standart-slide">
+        <div class="swiper__card-standart">
+          <div class="swiper__main-title">
+            <h3 class="swiper__main-title-name">SUBARU LEVORG VN5</h3>
+            <p class="swiper__main-title-desc">2021 · Гибрид · 10 000 км</p>
+          </div>
+          <div class="swiper__card-image-wrapper">
+            <img  class="swiper__card-image" src="/static/img/car-slider.png" alt="Car">
+          </div>
+          <div class="swiper__main-order">
+            <h3 class="swiper__main-order-price">2 115 600 ₽</h3>
+            <button class="swiper__main-order-button swiper__main-order-button--gray">Оставить заявку</button>
+          </div>
+        </div>
+      </div>
+</div>
+</section>
+<section class="container">
+  <div class="swiper-container">
+    <div class="swiper__info">
+      <div class="swiper__title">
+        <p class="swiper__title-text">Популярные авто &nbsp;</p>
+        <p class="swiper__title-text swiper__title-text--red swiper__title-text--japan">Из Японии</p>
+      </div>
+      <div class="swiper__nav hidden-mobile">
+        <div class="custom-prev">
+          <svg width="55" height="13" viewBox="0 0 55 13" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <path d="M0.182812 6.30746L5.80781 0.68246C5.92509 0.565185 6.08415 0.4993 6.25 0.4993C6.41585 0.4993 6.57491 0.565185 6.69219 0.68246C6.80946 0.799736 6.87535 0.958795 6.87535 1.12465C6.87535 1.2905 6.80946 1.44956 6.69219 1.56683L2.1336 6.12465L54.375 6.12465C54.5408 6.12465 54.6997 6.1905 54.8169 6.30771C54.9342 6.42492 55 6.58389 55 6.74965C55 6.91541 54.9342 7.07438 54.8169 7.19159C54.6997 7.3088 54.5408 7.37465 54.375 7.37465L2.1336 7.37465L6.69219 11.9325C6.80946 12.0497 6.87535 12.2088 6.87535 12.3746C6.87535 12.5405 6.80946 12.6996 6.69219 12.8168C6.57491 12.9341 6.41585 13 6.25 13C6.08415 13 5.92509 12.9341 5.80781 12.8168L0.182812 7.19184C0.124702 7.13379 0.0786029 7.06486 0.0471502 6.98899C0.0156975 6.91311 -0.000491557 6.83178 -0.00049155 6.74965C-0.000491542 6.66751 0.0156975 6.58618 0.0471502 6.51031C0.0786029 6.43444 0.124702 6.36551 0.182812 6.30746Z" fill="white"/>
+          </svg>            
+        </div>
+        <div class="custom-next">
+          <svg width="55" height="13" viewBox="0 0 55 13" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <path d="M54.8172 7.1918L49.1922 12.8168C49.0749 12.9341 48.9159 13 48.75 13C48.5841 13 48.4251 12.9341 48.3078 12.8168C48.1905 12.6995 48.1247 12.5405 48.1247 12.3746C48.1247 12.2088 48.1905 12.0497 48.3078 11.9324L52.8664 7.37462H0.625C0.45924 7.37462 0.300269 7.30877 0.183059 7.19156C0.0658485 7.07435 0 6.91538 0 6.74962C0 6.58385 0.0658485 6.42488 0.183059 6.30767C0.300269 6.19046 0.45924 6.12462 0.625 6.12462H52.8664L48.3078 1.5668C48.1905 1.44953 48.1247 1.29047 48.1247 1.12462C48.1247 0.958763 48.1905 0.799703 48.3078 0.682428C48.4251 0.565152 48.5841 0.499268 48.75 0.499268C48.9159 0.499268 49.0749 0.565152 49.1922 0.682428L54.8172 6.30743C54.8753 6.36547 54.9214 6.4344 54.9529 6.51028C54.9843 6.58615 55.0005 6.66748 55.0005 6.74962C55.0005 6.83175 54.9843 6.91308 54.9529 6.98895C54.9214 7.06483 54.8753 7.13376 54.8172 7.1918Z" fill="white"/>
+          </svg>
+        </div>
+      </div>
     </div>
+    <div class="swiper-wrapper">
+      <!-- Главная карточка -->
+      {% with cars|first as main_car %}
+      <div class="swiper-slide swiper__main-slide ">
+        <div class="swiper__card ">
+          <div class="swiper__main-slide-wrapper ">
+            <div class="inner-slider__wrapper ">
+              <div class="swiper inner-slider">
+                <div class="swiper-wrapper">
+                  <div class="swiper-slide">
+                    <img class="inner-slider__img" src="/static/img/car-slider-main.png" alt="Car 1">
+                  </div>
+                  <div class="swiper-slide">
+                    <img class="inner-slider__img" src="/static/img/car-slider.png" alt="Car 2">
+                  </div>
+                  <div class="swiper-slide">
+                    <img class="inner-slider__img" src="/static/img/car-slider-main.png" alt="Car 3">
+                  </div>
+                </div>
+                <div class="inner-slider__pagination">
+                  <button class="inner-slider__pagination-bullet" data-index="0"></button>
+                  <button class="inner-slider__pagination-bullet" data-index="1"></button>
+                  <button class="inner-slider__pagination-bullet" data-index="2"></button>
+                </div>
+              </div>
+            </div>
+            <div class="swiper__main-info-wrapper">
+              <div class="swiper__main-title">
+                <h3 class="swiper__main-title-name">{{ main_car.model }}</h3>
+                <p class="swiper__main-title-desc">{{ main_car.year }} • {{ main_car.transmission }} • {{ main_car.mileage }} км</p>
+              </div>
+              <div class="swiper__main-order">
+                <h3 class="swiper__main-order-price">{{ main_car.price }} ₽</h3>
+                <button onclick="" class="swiper__main-order-button">Оставить заявку</button>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      {% endwith %}
+    
+      {% for car in cars|slice:"1:11" %}
+      <div class="swiper-slide swiper__standart-slide">
+        <div class="swiper__card-standart">
+          <div class="swiper__main-title">
+            <h3 class="swiper__main-title-name">{{ car.model }}</h3>
+            <p class="swiper__main-title-desc">{{ car.year }} • {{ car.transmission }} • {{ car.mileage }} км</p>
+          </div>
+          <div class="swiper__card-image-wrapper">
+            <img class="swiper__card-image" src="/static/img/car-slider.png" alt="Car">
+          </div>
+          <div class="swiper__main-order">
+            <h3 class="swiper__main-order-price">{{ car.price }} ₽</h3>
+            <button class="swiper__main-order-button swiper__main-order-button--gray">Оставить заявку</button>
+          </div>
+        </div>
+      </div>
+      {% endfor %}
+      <div class="swiper-slide swiper__standart-slide">
+        <div class="swiper__card-standart">
+          <div class="swiper__main-title">
+            <h3 class="swiper__main-title-name">SUBARU LEVORG VN5</h3>
+            <p class="swiper__main-title-desc">2021 · Гибрид · 10 000 км</p>
+          </div>
+          <div class="swiper__card-image-wrapper">
+            <img  class="swiper__card-image" src="/static/img/car-slider.png" alt="Car">
+          </div>
+          <div class="swiper__main-order">
+            <h3 class="swiper__main-order-price">2 115 600 ₽</h3>
+            <button class="swiper__main-order-button swiper__main-order-button--gray">Оставить заявку</button>
+          </div>
+        </div>
+      </div>
+
+      <div class="swiper-slide swiper__standart-slide">
+        <div class="swiper__card-standart">
+          <div class="swiper__main-title">
+            <h3 class="swiper__main-title-name">SUBARU LEVORG VN5</h3>
+            <p class="swiper__main-title-desc">2021 · Гибрид · 10 000 км</p>
+          </div>
+          <div class="swiper__card-image-wrapper">
+            <img  class="swiper__card-image" src="/static/img/car-slider.png" alt="Car">
+          </div>
+          <div class="swiper__main-order">
+            <h3 class="swiper__main-order-price">2 115 600 ₽</h3>
+            <button class="swiper__main-order-button swiper__main-order-button--gray">Оставить заявку</button>
+          </div>
+        </div>
+      </div>
+
+      <div class="swiper-slide swiper__standart-slide">
+        <div class="swiper__card-standart">
+          <div class="swiper__main-title">
+            <h3 class="swiper__main-title-name">SUBARU LEVORG VN5</h3>
+            <p class="swiper__main-title-desc">2021 · Гибрид · 10 000 км</p>
+          </div>
+          <div class="swiper__card-image-wrapper">
+            <img  class="swiper__card-image" src="/static/img/car-slider.png" alt="Car">
+          </div>
+          <div class="swiper__main-order">
+            <h3 class="swiper__main-order-price">2 115 600 ₽</h3>
+            <button class="swiper__main-order-button swiper__main-order-button--gray">Оставить заявку</button>
+          </div>
+        </div>
+      </div>
+
+      <div class="swiper-slide swiper__standart-slide">
+        <div class="swiper__card-standart">
+          <div class="swiper__main-title">
+            <h3 class="swiper__main-title-name">SUBARU LEVORG VN5</h3>
+            <p class="swiper__main-title-desc">2021 · Гибрид · 10 000 км</p>
+          </div>
+          <div class="swiper__card-image-wrapper">
+            <img  class="swiper__card-image" src="/static/img/car-slider.png" alt="Car">
+          </div>
+          <div class="swiper__main-order">
+            <h3 class="swiper__main-order-price">2 115 600 ₽</h3>
+            <button class="swiper__main-order-button swiper__main-order-button--gray">Оставить заявку</button>
+          </div>
+        </div>
+      </div>
+</div>
+
+
 </section>
 <section class="brands">
   <div class="brands__carousel">
@@ -612,6 +571,7 @@
       <img src="/static/img/Daewoo.png" alt="">
       <img src="/static/img/Ford.png" alt="">
       <img src="/static/img/Volvo.png" alt="">
+
     </div>
   </div>
 </section>
@@ -780,19 +740,25 @@
     </div>
     <div class="reviews__link">
       <div class="reviews__link-item">
-        <a>VL справочник</a>
+
+        <a href="#" >VL справочник</a>
+
         <svg width="10" height="9" viewBox="0 0 10 9" fill="none" xmlns="http://www.w3.org/2000/svg">
           <path d="M9.50028 0.5V7C9.50028 7.13261 9.4476 7.25979 9.35383 7.35355C9.26006 7.44732 9.13289 7.5 9.00028 7.5C8.86767 7.5 8.74049 7.44732 8.64672 7.35355C8.55296 7.25979 8.50028 7.13261 8.50028 7V1.70687L1.35403 8.85375C1.26021 8.94757 1.13296 9.00028 1.00028 9.00028C0.867596 9.00028 0.740348 8.94757 0.646528 8.85375C0.552708 8.75993 0.5 8.63268 0.5 8.5C0.5 8.36732 0.552708 8.24007 0.646528 8.14625L7.7934 1H2.50028C2.36767 1 2.24049 0.947321 2.14672 0.853553C2.05296 0.759785 2.00028 0.632608 2.00028 0.5C2.00028 0.367392 2.05296 0.240215 2.14672 0.146447C2.24049 0.0526785 2.36767 0 2.50028 0H9.00028C9.13289 0 9.26006 0.0526785 9.35383 0.146447C9.4476 0.240215 9.50028 0.367392 9.50028 0.5Z" fill="white" fill-opacity="0.5"/>
         </svg>
       </div>
       <div class="reviews__link-item">
-        <a>2ГИС</a>
+
+        <a href="#" >2ГИС</a>
+
         <svg width="10" height="9" viewBox="0 0 10 9" fill="none" xmlns="http://www.w3.org/2000/svg">
           <path d="M9.50028 0.5V7C9.50028 7.13261 9.4476 7.25979 9.35383 7.35355C9.26006 7.44732 9.13289 7.5 9.00028 7.5C8.86767 7.5 8.74049 7.44732 8.64672 7.35355C8.55296 7.25979 8.50028 7.13261 8.50028 7V1.70687L1.35403 8.85375C1.26021 8.94757 1.13296 9.00028 1.00028 9.00028C0.867596 9.00028 0.740348 8.94757 0.646528 8.85375C0.552708 8.75993 0.5 8.63268 0.5 8.5C0.5 8.36732 0.552708 8.24007 0.646528 8.14625L7.7934 1H2.50028C2.36767 1 2.24049 0.947321 2.14672 0.853553C2.05296 0.759785 2.00028 0.632608 2.00028 0.5C2.00028 0.367392 2.05296 0.240215 2.14672 0.146447C2.24049 0.0526785 2.36767 0 2.50028 0H9.00028C9.13289 0 9.26006 0.0526785 9.35383 0.146447C9.4476 0.240215 9.50028 0.367392 9.50028 0.5Z" fill="white" fill-opacity="0.5"/>
         </svg>
       </div>
       <div class="reviews__link-item">
-        <a>Яндекс карты</a>
+
+        <a href="#" >Яндекс карты</a>
+
         <svg width="10" height="9" viewBox="0 0 10 9" fill="none" xmlns="http://www.w3.org/2000/svg">
           <path d="M9.50028 0.5V7C9.50028 7.13261 9.4476 7.25979 9.35383 7.35355C9.26006 7.44732 9.13289 7.5 9.00028 7.5C8.86767 7.5 8.74049 7.44732 8.64672 7.35355C8.55296 7.25979 8.50028 7.13261 8.50028 7V1.70687L1.35403 8.85375C1.26021 8.94757 1.13296 9.00028 1.00028 9.00028C0.867596 9.00028 0.740348 8.94757 0.646528 8.85375C0.552708 8.75993 0.5 8.63268 0.5 8.5C0.5 8.36732 0.552708 8.24007 0.646528 8.14625L7.7934 1H2.50028C2.36767 1 2.24049 0.947321 2.14672 0.853553C2.05296 0.759785 2.00028 0.632608 2.00028 0.5C2.00028 0.367392 2.05296 0.240215 2.14672 0.146447C2.24049 0.0526785 2.36767 0 2.50028 0H9.00028C9.13289 0 9.26006 0.0526785 9.35383 0.146447C9.4476 0.240215 9.50028 0.367392 9.50028 0.5Z" fill="white" fill-opacity="0.5"/>
         </svg>
@@ -804,90 +770,404 @@
     <div class="reviews__item">
       <img src="/static/img/human.png" alt="" class="reviews__item-img">
       <p class="reviews__item-name">Иванова Ольга</p>
-      
+
       <div>
         <div class="reviews__item-stars">
-          <img src="" alt="" class="reviews__item-star">
-          <img src="" alt="" class="reviews__item-star">
-          <img src="" alt="" class="reviews__item-star">
-          <img src="" alt="" class="reviews__item-star">
-          <img src="" alt="" class="reviews__item-star">
+          <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 16 16" fill="none">
+            <path d="M7.27995 1.91196C7.60141 1.36008 8.39875 1.36008 8.72015 1.91196L10.5835 5.11112L14.2019 5.89466C14.8261 6.02983 15.0725 6.7881 14.6469 7.26436L12.1801 10.0251L12.5531 13.7085C12.6174 14.3439 11.9724 14.8126 11.3879 14.555L8.00008 13.0621L4.61219 14.555C4.02774 14.8126 3.38271 14.3439 3.44705 13.7085L3.81999 10.0251L1.35323 7.26436C0.92768 6.7881 1.17406 6.02983 1.79827 5.89466L5.41664 5.11112L7.27995 1.91196Z" fill="#F5B300"></path>
+          </svg>
+          <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 16 16" fill="none">
+            <path d="M7.27995 1.91196C7.60141 1.36008 8.39875 1.36008 8.72015 1.91196L10.5835 5.11112L14.2019 5.89466C14.8261 6.02983 15.0725 6.7881 14.6469 7.26436L12.1801 10.0251L12.5531 13.7085C12.6174 14.3439 11.9724 14.8126 11.3879 14.555L8.00008 13.0621L4.61219 14.555C4.02774 14.8126 3.38271 14.3439 3.44705 13.7085L3.81999 10.0251L1.35323 7.26436C0.92768 6.7881 1.17406 6.02983 1.79827 5.89466L5.41664 5.11112L7.27995 1.91196Z" fill="#F5B300"></path>
+          </svg>  
+          <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 16 16" fill="none">
+            <path d="M7.27995 1.91196C7.60141 1.36008 8.39875 1.36008 8.72015 1.91196L10.5835 5.11112L14.2019 5.89466C14.8261 6.02983 15.0725 6.7881 14.6469 7.26436L12.1801 10.0251L12.5531 13.7085C12.6174 14.3439 11.9724 14.8126 11.3879 14.555L8.00008 13.0621L4.61219 14.555C4.02774 14.8126 3.38271 14.3439 3.44705 13.7085L3.81999 10.0251L1.35323 7.26436C0.92768 6.7881 1.17406 6.02983 1.79827 5.89466L5.41664 5.11112L7.27995 1.91196Z" fill="#F5B300"></path>
+          </svg>  
+          <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 16 16" fill="none">
+            <path d="M7.27995 1.91196C7.60141 1.36008 8.39875 1.36008 8.72015 1.91196L10.5835 5.11112L14.2019 5.89466C14.8261 6.02983 15.0725 6.7881 14.6469 7.26436L12.1801 10.0251L12.5531 13.7085C12.6174 14.3439 11.9724 14.8126 11.3879 14.555L8.00008 13.0621L4.61219 14.555C4.02774 14.8126 3.38271 14.3439 3.44705 13.7085L3.81999 10.0251L1.35323 7.26436C0.92768 6.7881 1.17406 6.02983 1.79827 5.89466L5.41664 5.11112L7.27995 1.91196Z" fill="#F5B300"></path>
+          </svg>  
+          <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 16 16" fill="none">
+            <path d="M7.27995 1.91196C7.60141 1.36008 8.39875 1.36008 8.72015 1.91196L10.5835 5.11112L14.2019 5.89466C14.8261 6.02983 15.0725 6.7881 14.6469 7.26436L12.1801 10.0251L12.5531 13.7085C12.6174 14.3439 11.9724 14.8126 11.3879 14.555L8.00008 13.0621L4.61219 14.555C4.02774 14.8126 3.38271 14.3439 3.44705 13.7085L3.81999 10.0251L1.35323 7.26436C0.92768 6.7881 1.17406 6.02983 1.79827 5.89466L5.41664 5.11112L7.27995 1.91196Z" fill="#F5B300"></path>
+          </svg>                             
+
         </div>
         <div class="reviews__item-date">1 октября 2023 г.</div>
       </div>
     </div>
 
     <div class="reviews__item">
+
+      <img src="/static/img/human.png" alt="" class="reviews__item-img">
       <p class="reviews__item-name">Иванова Ольга</p>
       <div>
         <div class="reviews__item-stars">
-          <img src="" alt="" class="reviews__item-star">
-          <img src="" alt="" class="reviews__item-star">
-          <img src="" alt="" class="reviews__item-star">
-          <img src="" alt="" class="reviews__item-star">
-          <img src="" alt="" class="reviews__item-star">
+          <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 16 16" fill="none">
+            <path d="M7.27995 1.91196C7.60141 1.36008 8.39875 1.36008 8.72015 1.91196L10.5835 5.11112L14.2019 5.89466C14.8261 6.02983 15.0725 6.7881 14.6469 7.26436L12.1801 10.0251L12.5531 13.7085C12.6174 14.3439 11.9724 14.8126 11.3879 14.555L8.00008 13.0621L4.61219 14.555C4.02774 14.8126 3.38271 14.3439 3.44705 13.7085L3.81999 10.0251L1.35323 7.26436C0.92768 6.7881 1.17406 6.02983 1.79827 5.89466L5.41664 5.11112L7.27995 1.91196Z" fill="#F5B300"></path>
+          </svg>
+          <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 16 16" fill="none">
+            <path d="M7.27995 1.91196C7.60141 1.36008 8.39875 1.36008 8.72015 1.91196L10.5835 5.11112L14.2019 5.89466C14.8261 6.02983 15.0725 6.7881 14.6469 7.26436L12.1801 10.0251L12.5531 13.7085C12.6174 14.3439 11.9724 14.8126 11.3879 14.555L8.00008 13.0621L4.61219 14.555C4.02774 14.8126 3.38271 14.3439 3.44705 13.7085L3.81999 10.0251L1.35323 7.26436C0.92768 6.7881 1.17406 6.02983 1.79827 5.89466L5.41664 5.11112L7.27995 1.91196Z" fill="#F5B300"></path>
+          </svg>  
+          <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 16 16" fill="none">
+            <path d="M7.27995 1.91196C7.60141 1.36008 8.39875 1.36008 8.72015 1.91196L10.5835 5.11112L14.2019 5.89466C14.8261 6.02983 15.0725 6.7881 14.6469 7.26436L12.1801 10.0251L12.5531 13.7085C12.6174 14.3439 11.9724 14.8126 11.3879 14.555L8.00008 13.0621L4.61219 14.555C4.02774 14.8126 3.38271 14.3439 3.44705 13.7085L3.81999 10.0251L1.35323 7.26436C0.92768 6.7881 1.17406 6.02983 1.79827 5.89466L5.41664 5.11112L7.27995 1.91196Z" fill="#F5B300"></path>
+          </svg>  
+          <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 16 16" fill="none">
+            <path d="M7.27995 1.91196C7.60141 1.36008 8.39875 1.36008 8.72015 1.91196L10.5835 5.11112L14.2019 5.89466C14.8261 6.02983 15.0725 6.7881 14.6469 7.26436L12.1801 10.0251L12.5531 13.7085C12.6174 14.3439 11.9724 14.8126 11.3879 14.555L8.00008 13.0621L4.61219 14.555C4.02774 14.8126 3.38271 14.3439 3.44705 13.7085L3.81999 10.0251L1.35323 7.26436C0.92768 6.7881 1.17406 6.02983 1.79827 5.89466L5.41664 5.11112L7.27995 1.91196Z" fill="#F5B300"></path>
+          </svg>  
+          <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 16 16" fill="none">
+            <path d="M7.27995 1.91196C7.60141 1.36008 8.39875 1.36008 8.72015 1.91196L10.5835 5.11112L14.2019 5.89466C14.8261 6.02983 15.0725 6.7881 14.6469 7.26436L12.1801 10.0251L12.5531 13.7085C12.6174 14.3439 11.9724 14.8126 11.3879 14.555L8.00008 13.0621L4.61219 14.555C4.02774 14.8126 3.38271 14.3439 3.44705 13.7085L3.81999 10.0251L1.35323 7.26436C0.92768 6.7881 1.17406 6.02983 1.79827 5.89466L5.41664 5.11112L7.27995 1.91196Z" fill="#F5B300"></path>
+          </svg>                             
         </div>
         <div class="reviews__item-date">1 октября 2023 г.</div>
       </div>
     </div>
 
     <div class="reviews__item">
+      <img src="/static/img/human.png" alt="" class="reviews__item-img">
       <p class="reviews__item-name">Иванова Ольга</p>
       <div>
         <div class="reviews__item-stars">
-          <img src="" alt="" class="reviews__item-star">
-          <img src="" alt="" class="reviews__item-star">
-          <img src="" alt="" class="reviews__item-star">
-          <img src="" alt="" class="reviews__item-star">
-          <img src="" alt="" class="reviews__item-star">
+          <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 16 16" fill="none">
+            <path d="M7.27995 1.91196C7.60141 1.36008 8.39875 1.36008 8.72015 1.91196L10.5835 5.11112L14.2019 5.89466C14.8261 6.02983 15.0725 6.7881 14.6469 7.26436L12.1801 10.0251L12.5531 13.7085C12.6174 14.3439 11.9724 14.8126 11.3879 14.555L8.00008 13.0621L4.61219 14.555C4.02774 14.8126 3.38271 14.3439 3.44705 13.7085L3.81999 10.0251L1.35323 7.26436C0.92768 6.7881 1.17406 6.02983 1.79827 5.89466L5.41664 5.11112L7.27995 1.91196Z" fill="#F5B300"></path>
+          </svg>
+          <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 16 16" fill="none">
+            <path d="M7.27995 1.91196C7.60141 1.36008 8.39875 1.36008 8.72015 1.91196L10.5835 5.11112L14.2019 5.89466C14.8261 6.02983 15.0725 6.7881 14.6469 7.26436L12.1801 10.0251L12.5531 13.7085C12.6174 14.3439 11.9724 14.8126 11.3879 14.555L8.00008 13.0621L4.61219 14.555C4.02774 14.8126 3.38271 14.3439 3.44705 13.7085L3.81999 10.0251L1.35323 7.26436C0.92768 6.7881 1.17406 6.02983 1.79827 5.89466L5.41664 5.11112L7.27995 1.91196Z" fill="#F5B300"></path>
+          </svg>  
+          <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 16 16" fill="none">
+            <path d="M7.27995 1.91196C7.60141 1.36008 8.39875 1.36008 8.72015 1.91196L10.5835 5.11112L14.2019 5.89466C14.8261 6.02983 15.0725 6.7881 14.6469 7.26436L12.1801 10.0251L12.5531 13.7085C12.6174 14.3439 11.9724 14.8126 11.3879 14.555L8.00008 13.0621L4.61219 14.555C4.02774 14.8126 3.38271 14.3439 3.44705 13.7085L3.81999 10.0251L1.35323 7.26436C0.92768 6.7881 1.17406 6.02983 1.79827 5.89466L5.41664 5.11112L7.27995 1.91196Z" fill="#F5B300"></path>
+          </svg>  
+          <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 16 16" fill="none">
+            <path d="M7.27995 1.91196C7.60141 1.36008 8.39875 1.36008 8.72015 1.91196L10.5835 5.11112L14.2019 5.89466C14.8261 6.02983 15.0725 6.7881 14.6469 7.26436L12.1801 10.0251L12.5531 13.7085C12.6174 14.3439 11.9724 14.8126 11.3879 14.555L8.00008 13.0621L4.61219 14.555C4.02774 14.8126 3.38271 14.3439 3.44705 13.7085L3.81999 10.0251L1.35323 7.26436C0.92768 6.7881 1.17406 6.02983 1.79827 5.89466L5.41664 5.11112L7.27995 1.91196Z" fill="#F5B300"></path>
+          </svg>  
+          <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 16 16" fill="none">
+            <path d="M7.27995 1.91196C7.60141 1.36008 8.39875 1.36008 8.72015 1.91196L10.5835 5.11112L14.2019 5.89466C14.8261 6.02983 15.0725 6.7881 14.6469 7.26436L12.1801 10.0251L12.5531 13.7085C12.6174 14.3439 11.9724 14.8126 11.3879 14.555L8.00008 13.0621L4.61219 14.555C4.02774 14.8126 3.38271 14.3439 3.44705 13.7085L3.81999 10.0251L1.35323 7.26436C0.92768 6.7881 1.17406 6.02983 1.79827 5.89466L5.41664 5.11112L7.27995 1.91196Z" fill="#F5B300"></path>
+          </svg>                             
+
         </div>
         <div class="reviews__item-date">1 октября 2023 г.</div>
       </div>
     </div>
 
     <div class="reviews__item">
+
+      <img src="/static/img/human.png" alt="" class="reviews__item-img">
       <p class="reviews__item-name">Иванова Ольга</p>
       <div>
         <div class="reviews__item-stars">
-          <img src="" alt="" class="reviews__item-star">
-          <img src="" alt="" class="reviews__item-star">
-          <img src="" alt="" class="reviews__item-star">
-          <img src="" alt="" class="reviews__item-star">
-          <img src="" alt="" class="reviews__item-star">
+          <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 16 16" fill="none">
+            <path d="M7.27995 1.91196C7.60141 1.36008 8.39875 1.36008 8.72015 1.91196L10.5835 5.11112L14.2019 5.89466C14.8261 6.02983 15.0725 6.7881 14.6469 7.26436L12.1801 10.0251L12.5531 13.7085C12.6174 14.3439 11.9724 14.8126 11.3879 14.555L8.00008 13.0621L4.61219 14.555C4.02774 14.8126 3.38271 14.3439 3.44705 13.7085L3.81999 10.0251L1.35323 7.26436C0.92768 6.7881 1.17406 6.02983 1.79827 5.89466L5.41664 5.11112L7.27995 1.91196Z" fill="#F5B300"></path>
+          </svg>
+          <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 16 16" fill="none">
+            <path d="M7.27995 1.91196C7.60141 1.36008 8.39875 1.36008 8.72015 1.91196L10.5835 5.11112L14.2019 5.89466C14.8261 6.02983 15.0725 6.7881 14.6469 7.26436L12.1801 10.0251L12.5531 13.7085C12.6174 14.3439 11.9724 14.8126 11.3879 14.555L8.00008 13.0621L4.61219 14.555C4.02774 14.8126 3.38271 14.3439 3.44705 13.7085L3.81999 10.0251L1.35323 7.26436C0.92768 6.7881 1.17406 6.02983 1.79827 5.89466L5.41664 5.11112L7.27995 1.91196Z" fill="#F5B300"></path>
+          </svg>  
+          <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 16 16" fill="none">
+            <path d="M7.27995 1.91196C7.60141 1.36008 8.39875 1.36008 8.72015 1.91196L10.5835 5.11112L14.2019 5.89466C14.8261 6.02983 15.0725 6.7881 14.6469 7.26436L12.1801 10.0251L12.5531 13.7085C12.6174 14.3439 11.9724 14.8126 11.3879 14.555L8.00008 13.0621L4.61219 14.555C4.02774 14.8126 3.38271 14.3439 3.44705 13.7085L3.81999 10.0251L1.35323 7.26436C0.92768 6.7881 1.17406 6.02983 1.79827 5.89466L5.41664 5.11112L7.27995 1.91196Z" fill="#F5B300"></path>
+          </svg>  
+          <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 16 16" fill="none">
+            <path d="M7.27995 1.91196C7.60141 1.36008 8.39875 1.36008 8.72015 1.91196L10.5835 5.11112L14.2019 5.89466C14.8261 6.02983 15.0725 6.7881 14.6469 7.26436L12.1801 10.0251L12.5531 13.7085C12.6174 14.3439 11.9724 14.8126 11.3879 14.555L8.00008 13.0621L4.61219 14.555C4.02774 14.8126 3.38271 14.3439 3.44705 13.7085L3.81999 10.0251L1.35323 7.26436C0.92768 6.7881 1.17406 6.02983 1.79827 5.89466L5.41664 5.11112L7.27995 1.91196Z" fill="#F5B300"></path>
+          </svg>  
+          <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 16 16" fill="none">
+            <path d="M7.27995 1.91196C7.60141 1.36008 8.39875 1.36008 8.72015 1.91196L10.5835 5.11112L14.2019 5.89466C14.8261 6.02983 15.0725 6.7881 14.6469 7.26436L12.1801 10.0251L12.5531 13.7085C12.6174 14.3439 11.9724 14.8126 11.3879 14.555L8.00008 13.0621L4.61219 14.555C4.02774 14.8126 3.38271 14.3439 3.44705 13.7085L3.81999 10.0251L1.35323 7.26436C0.92768 6.7881 1.17406 6.02983 1.79827 5.89466L5.41664 5.11112L7.27995 1.91196Z" fill="#F5B300"></path>
+          </svg>                             
+
         </div>
         <div class="reviews__item-date">1 октября 2023 г.</div>
       </div>
     </div>
 
     <div class="reviews__item">
+
+      <img src="/static/img/human.png" alt="" class="reviews__item-img">
       <p class="reviews__item-name">Иванова Ольга</p>
       <div>
         <div class="reviews__item-stars">
-          <img src="" alt="" class="reviews__item-star">
-          <img src="" alt="" class="reviews__item-star">
-          <img src="" alt="" class="reviews__item-star">
-          <img src="" alt="" class="reviews__item-star">
-          <img src="" alt="" class="reviews__item-star">
+          <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 16 16" fill="none">
+            <path d="M7.27995 1.91196C7.60141 1.36008 8.39875 1.36008 8.72015 1.91196L10.5835 5.11112L14.2019 5.89466C14.8261 6.02983 15.0725 6.7881 14.6469 7.26436L12.1801 10.0251L12.5531 13.7085C12.6174 14.3439 11.9724 14.8126 11.3879 14.555L8.00008 13.0621L4.61219 14.555C4.02774 14.8126 3.38271 14.3439 3.44705 13.7085L3.81999 10.0251L1.35323 7.26436C0.92768 6.7881 1.17406 6.02983 1.79827 5.89466L5.41664 5.11112L7.27995 1.91196Z" fill="#F5B300"></path>
+          </svg>
+          <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 16 16" fill="none">
+            <path d="M7.27995 1.91196C7.60141 1.36008 8.39875 1.36008 8.72015 1.91196L10.5835 5.11112L14.2019 5.89466C14.8261 6.02983 15.0725 6.7881 14.6469 7.26436L12.1801 10.0251L12.5531 13.7085C12.6174 14.3439 11.9724 14.8126 11.3879 14.555L8.00008 13.0621L4.61219 14.555C4.02774 14.8126 3.38271 14.3439 3.44705 13.7085L3.81999 10.0251L1.35323 7.26436C0.92768 6.7881 1.17406 6.02983 1.79827 5.89466L5.41664 5.11112L7.27995 1.91196Z" fill="#F5B300"></path>
+          </svg>  
+          <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 16 16" fill="none">
+            <path d="M7.27995 1.91196C7.60141 1.36008 8.39875 1.36008 8.72015 1.91196L10.5835 5.11112L14.2019 5.89466C14.8261 6.02983 15.0725 6.7881 14.6469 7.26436L12.1801 10.0251L12.5531 13.7085C12.6174 14.3439 11.9724 14.8126 11.3879 14.555L8.00008 13.0621L4.61219 14.555C4.02774 14.8126 3.38271 14.3439 3.44705 13.7085L3.81999 10.0251L1.35323 7.26436C0.92768 6.7881 1.17406 6.02983 1.79827 5.89466L5.41664 5.11112L7.27995 1.91196Z" fill="#F5B300"></path>
+          </svg>  
+          <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 16 16" fill="none">
+            <path d="M7.27995 1.91196C7.60141 1.36008 8.39875 1.36008 8.72015 1.91196L10.5835 5.11112L14.2019 5.89466C14.8261 6.02983 15.0725 6.7881 14.6469 7.26436L12.1801 10.0251L12.5531 13.7085C12.6174 14.3439 11.9724 14.8126 11.3879 14.555L8.00008 13.0621L4.61219 14.555C4.02774 14.8126 3.38271 14.3439 3.44705 13.7085L3.81999 10.0251L1.35323 7.26436C0.92768 6.7881 1.17406 6.02983 1.79827 5.89466L5.41664 5.11112L7.27995 1.91196Z" fill="#F5B300"></path>
+          </svg>  
+          <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 16 16" fill="none">
+            <path d="M7.27995 1.91196C7.60141 1.36008 8.39875 1.36008 8.72015 1.91196L10.5835 5.11112L14.2019 5.89466C14.8261 6.02983 15.0725 6.7881 14.6469 7.26436L12.1801 10.0251L12.5531 13.7085C12.6174 14.3439 11.9724 14.8126 11.3879 14.555L8.00008 13.0621L4.61219 14.555C4.02774 14.8126 3.38271 14.3439 3.44705 13.7085L3.81999 10.0251L1.35323 7.26436C0.92768 6.7881 1.17406 6.02983 1.79827 5.89466L5.41664 5.11112L7.27995 1.91196Z" fill="#F5B300"></path>
+          </svg>                             
+
         </div>
         <div class="reviews__item-date">1 октября 2023 г.</div>
       </div>
     </div>
 
     <div class="reviews__item">
+
+      <img src="/static/img/human.png" alt="" class="reviews__item-img">
       <p class="reviews__item-name">Иванова Ольга</p>
       <div>
         <div class="reviews__item-stars">
-          <img src="" alt="" class="reviews__item-star">
-          <img src="" alt="" class="reviews__item-star">
-          <img src="" alt="" class="reviews__item-star">
-          <img src="" alt="" class="reviews__item-star">
-          <img src="" alt="" class="reviews__item-star">
+          <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 16 16" fill="none">
+            <path d="M7.27995 1.91196C7.60141 1.36008 8.39875 1.36008 8.72015 1.91196L10.5835 5.11112L14.2019 5.89466C14.8261 6.02983 15.0725 6.7881 14.6469 7.26436L12.1801 10.0251L12.5531 13.7085C12.6174 14.3439 11.9724 14.8126 11.3879 14.555L8.00008 13.0621L4.61219 14.555C4.02774 14.8126 3.38271 14.3439 3.44705 13.7085L3.81999 10.0251L1.35323 7.26436C0.92768 6.7881 1.17406 6.02983 1.79827 5.89466L5.41664 5.11112L7.27995 1.91196Z" fill="#F5B300"></path>
+          </svg>
+          <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 16 16" fill="none">
+            <path d="M7.27995 1.91196C7.60141 1.36008 8.39875 1.36008 8.72015 1.91196L10.5835 5.11112L14.2019 5.89466C14.8261 6.02983 15.0725 6.7881 14.6469 7.26436L12.1801 10.0251L12.5531 13.7085C12.6174 14.3439 11.9724 14.8126 11.3879 14.555L8.00008 13.0621L4.61219 14.555C4.02774 14.8126 3.38271 14.3439 3.44705 13.7085L3.81999 10.0251L1.35323 7.26436C0.92768 6.7881 1.17406 6.02983 1.79827 5.89466L5.41664 5.11112L7.27995 1.91196Z" fill="#F5B300"></path>
+          </svg>  
+          <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 16 16" fill="none">
+            <path d="M7.27995 1.91196C7.60141 1.36008 8.39875 1.36008 8.72015 1.91196L10.5835 5.11112L14.2019 5.89466C14.8261 6.02983 15.0725 6.7881 14.6469 7.26436L12.1801 10.0251L12.5531 13.7085C12.6174 14.3439 11.9724 14.8126 11.3879 14.555L8.00008 13.0621L4.61219 14.555C4.02774 14.8126 3.38271 14.3439 3.44705 13.7085L3.81999 10.0251L1.35323 7.26436C0.92768 6.7881 1.17406 6.02983 1.79827 5.89466L5.41664 5.11112L7.27995 1.91196Z" fill="#F5B300"></path>
+          </svg>  
+          <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 16 16" fill="none">
+            <path d="M7.27995 1.91196C7.60141 1.36008 8.39875 1.36008 8.72015 1.91196L10.5835 5.11112L14.2019 5.89466C14.8261 6.02983 15.0725 6.7881 14.6469 7.26436L12.1801 10.0251L12.5531 13.7085C12.6174 14.3439 11.9724 14.8126 11.3879 14.555L8.00008 13.0621L4.61219 14.555C4.02774 14.8126 3.38271 14.3439 3.44705 13.7085L3.81999 10.0251L1.35323 7.26436C0.92768 6.7881 1.17406 6.02983 1.79827 5.89466L5.41664 5.11112L7.27995 1.91196Z" fill="#F5B300"></path>
+          </svg>  
+          <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 16 16" fill="none">
+            <path d="M7.27995 1.91196C7.60141 1.36008 8.39875 1.36008 8.72015 1.91196L10.5835 5.11112L14.2019 5.89466C14.8261 6.02983 15.0725 6.7881 14.6469 7.26436L12.1801 10.0251L12.5531 13.7085C12.6174 14.3439 11.9724 14.8126 11.3879 14.555L8.00008 13.0621L4.61219 14.555C4.02774 14.8126 3.38271 14.3439 3.44705 13.7085L3.81999 10.0251L1.35323 7.26436C0.92768 6.7881 1.17406 6.02983 1.79827 5.89466L5.41664 5.11112L7.27995 1.91196Z" fill="#F5B300"></path>
+          </svg>                             
+
+        </div>
+        <div class="reviews__item-date">1 октября 2023 г.</div>
+      </div>
+    </div>
+
+    <div class="reviews__item">
+
+      <img src="/static/img/human.png" alt="" class="reviews__item-img">
+      <p class="reviews__item-name">Иванова Ольга</p>
+      <div>
+        <div class="reviews__item-stars">
+          <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 16 16" fill="none">
+            <path d="M7.27995 1.91196C7.60141 1.36008 8.39875 1.36008 8.72015 1.91196L10.5835 5.11112L14.2019 5.89466C14.8261 6.02983 15.0725 6.7881 14.6469 7.26436L12.1801 10.0251L12.5531 13.7085C12.6174 14.3439 11.9724 14.8126 11.3879 14.555L8.00008 13.0621L4.61219 14.555C4.02774 14.8126 3.38271 14.3439 3.44705 13.7085L3.81999 10.0251L1.35323 7.26436C0.92768 6.7881 1.17406 6.02983 1.79827 5.89466L5.41664 5.11112L7.27995 1.91196Z" fill="#F5B300"></path>
+          </svg>
+          <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 16 16" fill="none">
+            <path d="M7.27995 1.91196C7.60141 1.36008 8.39875 1.36008 8.72015 1.91196L10.5835 5.11112L14.2019 5.89466C14.8261 6.02983 15.0725 6.7881 14.6469 7.26436L12.1801 10.0251L12.5531 13.7085C12.6174 14.3439 11.9724 14.8126 11.3879 14.555L8.00008 13.0621L4.61219 14.555C4.02774 14.8126 3.38271 14.3439 3.44705 13.7085L3.81999 10.0251L1.35323 7.26436C0.92768 6.7881 1.17406 6.02983 1.79827 5.89466L5.41664 5.11112L7.27995 1.91196Z" fill="#F5B300"></path>
+          </svg>  
+          <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 16 16" fill="none">
+            <path d="M7.27995 1.91196C7.60141 1.36008 8.39875 1.36008 8.72015 1.91196L10.5835 5.11112L14.2019 5.89466C14.8261 6.02983 15.0725 6.7881 14.6469 7.26436L12.1801 10.0251L12.5531 13.7085C12.6174 14.3439 11.9724 14.8126 11.3879 14.555L8.00008 13.0621L4.61219 14.555C4.02774 14.8126 3.38271 14.3439 3.44705 13.7085L3.81999 10.0251L1.35323 7.26436C0.92768 6.7881 1.17406 6.02983 1.79827 5.89466L5.41664 5.11112L7.27995 1.91196Z" fill="#F5B300"></path>
+          </svg>  
+          <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 16 16" fill="none">
+            <path d="M7.27995 1.91196C7.60141 1.36008 8.39875 1.36008 8.72015 1.91196L10.5835 5.11112L14.2019 5.89466C14.8261 6.02983 15.0725 6.7881 14.6469 7.26436L12.1801 10.0251L12.5531 13.7085C12.6174 14.3439 11.9724 14.8126 11.3879 14.555L8.00008 13.0621L4.61219 14.555C4.02774 14.8126 3.38271 14.3439 3.44705 13.7085L3.81999 10.0251L1.35323 7.26436C0.92768 6.7881 1.17406 6.02983 1.79827 5.89466L5.41664 5.11112L7.27995 1.91196Z" fill="#F5B300"></path>
+          </svg>  
+          <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 16 16" fill="none">
+            <path d="M7.27995 1.91196C7.60141 1.36008 8.39875 1.36008 8.72015 1.91196L10.5835 5.11112L14.2019 5.89466C14.8261 6.02983 15.0725 6.7881 14.6469 7.26436L12.1801 10.0251L12.5531 13.7085C12.6174 14.3439 11.9724 14.8126 11.3879 14.555L8.00008 13.0621L4.61219 14.555C4.02774 14.8126 3.38271 14.3439 3.44705 13.7085L3.81999 10.0251L1.35323 7.26436C0.92768 6.7881 1.17406 6.02983 1.79827 5.89466L5.41664 5.11112L7.27995 1.91196Z" fill="#F5B300"></path>
+          </svg>                             
+        </div>
+        <div class="reviews__item-date">1 октября 2023 г.</div>
+      </div>
+    </div>
+    
+    <div class="reviews__item">
+      <img src="/static/img/human.png" alt="" class="reviews__item-img">
+      <p class="reviews__item-name">Иванова Ольга</p>
+      <div>
+        <div class="reviews__item-stars">
+          <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 16 16" fill="none">
+            <path d="M7.27995 1.91196C7.60141 1.36008 8.39875 1.36008 8.72015 1.91196L10.5835 5.11112L14.2019 5.89466C14.8261 6.02983 15.0725 6.7881 14.6469 7.26436L12.1801 10.0251L12.5531 13.7085C12.6174 14.3439 11.9724 14.8126 11.3879 14.555L8.00008 13.0621L4.61219 14.555C4.02774 14.8126 3.38271 14.3439 3.44705 13.7085L3.81999 10.0251L1.35323 7.26436C0.92768 6.7881 1.17406 6.02983 1.79827 5.89466L5.41664 5.11112L7.27995 1.91196Z" fill="#F5B300"></path>
+          </svg>
+          <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 16 16" fill="none">
+            <path d="M7.27995 1.91196C7.60141 1.36008 8.39875 1.36008 8.72015 1.91196L10.5835 5.11112L14.2019 5.89466C14.8261 6.02983 15.0725 6.7881 14.6469 7.26436L12.1801 10.0251L12.5531 13.7085C12.6174 14.3439 11.9724 14.8126 11.3879 14.555L8.00008 13.0621L4.61219 14.555C4.02774 14.8126 3.38271 14.3439 3.44705 13.7085L3.81999 10.0251L1.35323 7.26436C0.92768 6.7881 1.17406 6.02983 1.79827 5.89466L5.41664 5.11112L7.27995 1.91196Z" fill="#F5B300"></path>
+          </svg>  
+          <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 16 16" fill="none">
+            <path d="M7.27995 1.91196C7.60141 1.36008 8.39875 1.36008 8.72015 1.91196L10.5835 5.11112L14.2019 5.89466C14.8261 6.02983 15.0725 6.7881 14.6469 7.26436L12.1801 10.0251L12.5531 13.7085C12.6174 14.3439 11.9724 14.8126 11.3879 14.555L8.00008 13.0621L4.61219 14.555C4.02774 14.8126 3.38271 14.3439 3.44705 13.7085L3.81999 10.0251L1.35323 7.26436C0.92768 6.7881 1.17406 6.02983 1.79827 5.89466L5.41664 5.11112L7.27995 1.91196Z" fill="#F5B300"></path>
+          </svg>  
+          <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 16 16" fill="none">
+            <path d="M7.27995 1.91196C7.60141 1.36008 8.39875 1.36008 8.72015 1.91196L10.5835 5.11112L14.2019 5.89466C14.8261 6.02983 15.0725 6.7881 14.6469 7.26436L12.1801 10.0251L12.5531 13.7085C12.6174 14.3439 11.9724 14.8126 11.3879 14.555L8.00008 13.0621L4.61219 14.555C4.02774 14.8126 3.38271 14.3439 3.44705 13.7085L3.81999 10.0251L1.35323 7.26436C0.92768 6.7881 1.17406 6.02983 1.79827 5.89466L5.41664 5.11112L7.27995 1.91196Z" fill="#F5B300"></path>
+          </svg>  
+          <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 16 16" fill="none">
+            <path d="M7.27995 1.91196C7.60141 1.36008 8.39875 1.36008 8.72015 1.91196L10.5835 5.11112L14.2019 5.89466C14.8261 6.02983 15.0725 6.7881 14.6469 7.26436L12.1801 10.0251L12.5531 13.7085C12.6174 14.3439 11.9724 14.8126 11.3879 14.555L8.00008 13.0621L4.61219 14.555C4.02774 14.8126 3.38271 14.3439 3.44705 13.7085L3.81999 10.0251L1.35323 7.26436C0.92768 6.7881 1.17406 6.02983 1.79827 5.89466L5.41664 5.11112L7.27995 1.91196Z" fill="#F5B300"></path>
+          </svg>                             
+
         </div>
         <div class="reviews__item-date">1 октября 2023 г.</div>
       </div>
     </div>
   </div>
+
 </section>
+<section class="clips">
+  <div class="clips__header-wrapper  container">
+    <div class="clips__header-content">
+      <svg width="46" height="60" viewBox="0 0 46 60" fill="none" xmlns="http://www.w3.org/2000/svg">
+        <path fill-rule="evenodd" clip-rule="evenodd" d="M13.2 0.249581C13.5908 0.225912 13.9825 0.279627 14.3525 0.407646C14.7226 0.535664 15.0637 0.735467 15.3563 0.995598C15.649 1.25573 15.8874 1.57107 16.0579 1.92354C16.2284 2.27601 16.3277 2.65867 16.35 3.04958L17.225 16.3496C17.2714 17.1386 17.0025 17.9137 16.4774 18.5045C15.9523 19.0952 15.214 19.4532 14.425 19.4996C13.636 19.546 12.8608 19.2771 12.2701 18.752C11.6794 18.2269 11.3214 17.4886 11.275 16.6996L10.4 3.39958C10.3763 3.00875 10.43 2.61709 10.5581 2.24706C10.6861 1.87703 10.8859 1.53591 11.146 1.24326C11.4061 0.950616 11.7215 0.712197 12.074 0.541679C12.4264 0.371161 12.8091 0.271897 13.2 0.249581ZM33.815 0.879581C34.193 0.988093 34.5458 1.17048 34.8528 1.41619C35.1599 1.6619 35.4152 1.96605 35.604 2.31107C35.7928 2.65608 35.9113 3.03509 35.9527 3.42619C35.994 3.81729 35.9574 4.21271 35.845 4.58958L31.12 20.8646C30.8972 21.6258 30.3812 22.2672 29.6854 22.6479C28.9897 23.0286 28.1712 23.1174 27.41 22.8946C26.6488 22.6718 26.0073 22.1558 25.6266 21.46C25.2459 20.7642 25.1572 19.9458 25.38 19.1846L30.105 2.90958C30.2135 2.53157 30.3959 2.17882 30.6416 1.87174C30.8873 1.56466 31.1915 1.30935 31.5365 1.12057C31.8815 0.93179 32.2605 0.81329 32.6516 0.771925C33.0427 0.730561 33.4381 0.767151 33.815 0.879581ZM35.88 25.6596C36.333 25.1395 36.9724 24.8186 37.6601 24.7662C38.3478 24.7138 39.0285 24.9341 39.555 25.3796C41.5863 27.1403 43.1972 29.3338 44.2692 31.799C45.3413 34.2641 45.8473 36.9382 45.75 39.6246C45.75 49.0046 37.7 59.7496 23 59.7496C12.08 59.7496 0.25 51.9796 0.25 39.6246C0.25 37.2446 0.985 34.0596 2.945 31.3996C4.975 28.5996 8.3 26.4996 12.99 26.4996C14.355 26.4996 19.64 26.9546 22.755 33.1846C23.0706 33.8112 23.1244 34.5374 22.9045 35.2037C22.6846 35.8699 22.2091 36.4215 21.5825 36.7371C20.9559 37.0527 20.2296 37.1065 19.5634 36.8866C18.8972 36.6667 18.3456 36.1912 18.03 35.5646C16.175 31.7846 13.305 31.7496 12.99 31.7496C10.085 31.7496 8.3 32.9746 7.18 34.5146C6.12177 36.0117 5.53659 37.7916 5.5 39.6246C5.5 48.1296 13.9 54.4996 23 54.4996C34.76 54.4996 40.5 46.0996 40.5 39.6246C40.5 36.2996 39.73 32.4146 36.16 29.3696C35.8974 29.1448 35.6817 28.8704 35.5254 28.562C35.3691 28.2537 35.2752 27.9175 35.2492 27.5728C35.2232 27.228 35.2655 26.8816 35.3738 26.5533C35.482 26.2249 35.6541 25.9212 35.88 25.6596Z" fill="#D257FF"/>
+        </svg>
+        <h3 class="clips__header">Клипы</h3>
+    </div>
+    <button class="clips__header-button">
+        <img src="/static/img/VK.png" alt="">
+        <p>Подписаться</p>
+    </button>
+  </div>
+  <div class="clips__swiper swiper">
+    <div class="swiper-wrapper">
+      <div class="swiper-slide clips__img-wrapper">
+        <a href="https://vk.com/clips/tomiko_trade?z=clip-226932717_456239028">
+          <img src="/static/img/clip-img.png" alt="Клип 1">
+        </a>
+      </div>
+      <div class="swiper-slide">
+        <a href="https://vk.com/clips/tomiko_trade?z=clip-226932717_456239028">
+          <img src="/static/img/clip-img-2.png" alt="Клип 1">
+        </a>
+      </div>
+      <div class="swiper-slide">
+        <a href="https://vk.com/clips/tomiko_trade?z=clip-226932717_456239028">
+          <img src="/static/img/clip-img.png" alt="Клип 1">
+        </a>
+      </div>
+      <div class="swiper-slide">
+        <a href="https://vk.com/clips/tomiko_trade?z=clip-226932717_456239028">
+          <img src="/static/img/clip-img-2.png" alt="Клип 1">
+        </a>
+      </div>
+      <div class="swiper-slide">
+        <a href="https://vk.com/clips/tomiko_trade?z=clip-226932717_456239028">
+          <img src="/static/img/clip-img.png" alt="Клип 1">
+        </a>
+      </div>
+      <div class="swiper-slide">
+        <a href="https://vk.com/clips/tomiko_trade?z=clip-226932717_456239028">
+          <img src="/static/img/clip-img-2.png" alt="Клип 1">
+        </a>
+      </div>
+      <div class="swiper-slide">
+        <a href="https://vk.com/clips/tomiko_trade?z=clip-226932717_456239028">
+          <img src="/static/img/clip-img.png" alt="Клип 1">
+        </a>
+      </div>
+      <div class="swiper-slide">
+        <a href="https://vk.com/clips/tomiko_trade?z=clip-226932717_456239028">
+          <img src="/static/img/clip-img-2.png" alt="Клип 1">
+        </a>
+      </div>
+      <div class="swiper-slide">
+        <a href="https://vk.com/clips/tomiko_trade?z=clip-226932717_456239028">
+          <img src="/static/img/clip-img.png" alt="Клип 1">
+        </a>
+      </div>
+      <div class="swiper-slide">
+        <a href="https://vk.com/clips/tomiko_trade?z=clip-226932717_456239028">
+          <img src="/static/img/clip-img-2.png" alt="Клип 1">
+        </a>
+      </div>
+      <div class="swiper-slide">
+        <a href="https://vk.com/clips/tomiko_trade?z=clip-226932717_456239028">
+          <img src="/static/img/clip-img.png" alt="Клип 1">
+        </a>
+      </div>
+      <div class="swiper-slide">
+        <a href="https://vk.com/clips/tomiko_trade?z=clip-226932717_456239028">
+          <img src="/static/img/clip-img-2.png" alt="Клип 1">
+        </a>
+      </div>
+    </div>
+  </div>
+</section>
+<section class="socials container">
+  <div class="socials__background"></div>
+  <div class="socials__stripe"></div>
+  <div class="socials__wrapper">
+    <div class="socials__img-wrapper">
+      <img class="socials__img" src="/static/img/socials.png" alt="">
+    </div>
+    <div class="socials__content">
+      <div class="socials__header">
+        <div class="socials__header-text-top">
+          <h3 class="socials__header-text socials__header-text--red">
+            Подпишись
+          </h3>
+          <h3 class="socials__header-text">
+            И не упусти
+          </h3>
+        </div>
+        <div class="socials__header-text-bottom">
+          <h3 class="socials__header-text">
+           Свой автомобиль мечты
+          </h3>
+        </div>
+      </div>
+      <div class="socials__links">
+        <div class="socials__links-item">
+          <div class="socials__links-img-wrapper">
+  
+            <img class="socials__links-img" src="/static/img/tg.png" alt="">
+          </div>
+          <a href=""><h4 class="socials__links-text">Телеграм-канал</h4></a>
+          <svg width="10" height="9" viewBox="0 0 10 9" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <path d="M9.50028 0.5V7C9.50028 7.13261 9.4476 7.25979 9.35383 7.35355C9.26006 7.44732 9.13289 7.5 9.00028 7.5C8.86767 7.5 8.74049 7.44732 8.64672 7.35355C8.55296 7.25979 8.50028 7.13261 8.50028 7V1.70687L1.35403 8.85375C1.26021 8.94757 1.13296 9.00028 1.00028 9.00028C0.867596 9.00028 0.740348 8.94757 0.646528 8.85375C0.552708 8.75993 0.5 8.63268 0.5 8.5C0.5 8.36732 0.552708 8.24007 0.646528 8.14625L7.7934 1H2.50028C2.36767 1 2.24049 0.947321 2.14672 0.853553C2.05296 0.759785 2.00028 0.632608 2.00028 0.5C2.00028 0.367392 2.05296 0.240215 2.14672 0.146447C2.24049 0.0526785 2.36767 0 2.50028 0H9.00028C9.13289 0 9.26006 0.0526785 9.35383 0.146447C9.4476 0.240215 9.50028 0.367392 9.50028 0.5Z" fill="white" fill-opacity="0.5"/>
+          </svg>
+        </div>
+        <div class="socials__links-item">
+          <div class="socials__links-img-wrapper">
+            <img class="socials__links-img" src="/static/img/VK-blue.png" alt="">
+          </div>
+          <a href=""><h4 class="socials__links-text">VK</h4></a>
+          <svg width="10" height="9" viewBox="0 0 10 9" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <path d="M9.50028 0.5V7C9.50028 7.13261 9.4476 7.25979 9.35383 7.35355C9.26006 7.44732 9.13289 7.5 9.00028 7.5C8.86767 7.5 8.74049 7.44732 8.64672 7.35355C8.55296 7.25979 8.50028 7.13261 8.50028 7V1.70687L1.35403 8.85375C1.26021 8.94757 1.13296 9.00028 1.00028 9.00028C0.867596 9.00028 0.740348 8.94757 0.646528 8.85375C0.552708 8.75993 0.5 8.63268 0.5 8.5C0.5 8.36732 0.552708 8.24007 0.646528 8.14625L7.7934 1H2.50028C2.36767 1 2.24049 0.947321 2.14672 0.853553C2.05296 0.759785 2.00028 0.632608 2.00028 0.5C2.00028 0.367392 2.05296 0.240215 2.14672 0.146447C2.24049 0.0526785 2.36767 0 2.50028 0H9.00028C9.13289 0 9.26006 0.0526785 9.35383 0.146447C9.4476 0.240215 9.50028 0.367392 9.50028 0.5Z" fill="white" fill-opacity="0.5"/>
+          </svg>
+        </div>
+        <div class="socials__links-item">
+          <div class="socials__links-img-wrapper">
+            <img class="socials__links-img" src="/static/img/insta.png" alt="">
+          </div>
+          <a href=""><h4 class="socials__links-text">Instagram</h4></a>
+          <svg width="10" height="9" viewBox="0 0 10 9" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <path d="M9.50028 0.5V7C9.50028 7.13261 9.4476 7.25979 9.35383 7.35355C9.26006 7.44732 9.13289 7.5 9.00028 7.5C8.86767 7.5 8.74049 7.44732 8.64672 7.35355C8.55296 7.25979 8.50028 7.13261 8.50028 7V1.70687L1.35403 8.85375C1.26021 8.94757 1.13296 9.00028 1.00028 9.00028C0.867596 9.00028 0.740348 8.94757 0.646528 8.85375C0.552708 8.75993 0.5 8.63268 0.5 8.5C0.5 8.36732 0.552708 8.24007 0.646528 8.14625L7.7934 1H2.50028C2.36767 1 2.24049 0.947321 2.14672 0.853553C2.05296 0.759785 2.00028 0.632608 2.00028 0.5C2.00028 0.367392 2.05296 0.240215 2.14672 0.146447C2.24049 0.0526785 2.36767 0 2.50028 0H9.00028C9.13289 0 9.26006 0.0526785 9.35383 0.146447C9.4476 0.240215 9.50028 0.367392 9.50028 0.5Z" fill="white" fill-opacity="0.5"/>
+          </svg>
+        </div>
+      </div>
+    </div>
+    
+  </div>
+
+
+</section>
+<footer class="footer">
+  <div class="container">
+    <div class="footer__content">
+      <div class="footer__nav">
+        <div class="footer__logo">
+          <a href="/">
+            <img src="/static/img/logo.png" alt="Лого">
+          </a>
+        </div>
+
+        <div class="footer__section">
+          <h3 class="footer__title">КАТАЛОГ</h3>
+          <ul class="footer__list">
+            <li><a href="#">Авто из Кореи</a></li>
+            <li><a href="#">Авто из Китая</a></li>
+            <li><a href="#">Авто из Японии</a></li>
+          </ul>
+        </div>
+        
+        <div class="footer__section--two">
+          <h3 class="footer__title">КОМПАНИЯ</h3>
+          <ul class="footer__list">
+            <li><a href="#">О компании</a></li>
+            <li><a href="#">Доставка</a></li>
+            <li><a href="#">Отзывы</a></li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="footer__contact">
+        <p class="footer__phone-label">Звонок по России бесплатный</p>
+        <a href="tel:88005504832" class="footer__phone">8 800 550 48 32</a>
+        <div class="footer__socials">
+          <a href="#" class="footer__social-link"><img src="/static/img/tg-gray.png" alt="Telegram"></a>
+          <a href="#" class="footer__social-link"><img src="/static/img/wh-gray.png" alt="WhatsApp"></a>
+          <a href="#" class="footer__social-link"><img src="/static/img/vk-gray.png" alt="VK"></a>
+          <a href="#" class="footer__social-link"><img src="/static/img/inst-gray.png" alt="Instagram"></a>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="footer__divider"></div>
+  <div class="container">
+    <div class="footer__bottom">
+      <p class="footer__copyright">© 2024 ООО «Правый руль» Автомобили под заказ из Кореи, Китая и Японии</p>
+      <a href="#" class="footer__policy">Политика конфиденциальности</a>
+    </div>
+  </div>
+</footer>
+
 <script>
   document.addEventListener('DOMContentLoaded', () => {
   const mainSwiper = new Swiper('.swiper-container', {

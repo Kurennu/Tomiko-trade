@@ -1,43 +1,179 @@
 <!DOCTYPE html>
-<html lang="en">
+<html>
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Car Catalog</title>
+    <head>
+        <title>Каталог автомобилей</title>
+        <style>
+            .filters { margin-bottom: 20px; }
+            .filter-row { margin: 10px 0; }
+            .cars-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 20px; }
+            .car-card { border: 1px solid #ccc; padding: 10px; }
+            .pagination { margin-top: 20px; text-align: center; }
+            .pagination a { margin: 0 5px; text-decoration: none; }
+            .filter-suggestions { 
+                position: absolute;
+                background: white;
+                border: 1px solid #ccc;
+                max-height: 200px;
+                overflow-y: auto;
+                display: none;
+                z-index: 1000;
+            }
+            .suggestion-item {
+                padding: 5px;
+                cursor: pointer;
+            }
+            .suggestion-item:hover {
+                background: #f0f0f0;
+            }
+        </style>
+        
+    </head>
 </head>
 <body>
-    <h1>Car Catalog</h1>
-    <table border="1">
-        <thead>
-            <tr>
-                <th>Model</th>
-                <th>Year</th>
-                <th>Mileage</th>
-                <th>Price</th>
-                <th>Transmission</th>
-                <th>Engine Volume</th>
-                <th>Drive</th>
-                <th>Color</th>
-                <th>Power Volume</th>
-                <th>Brand Country</th>
-            </tr>
-        </thead>
-        <tbody>
-            {% for car in cars %}
-            <tr>
-                <td>{{ car.model }}</td>
-                <td>{{ car.year }}</td>
-                <td>{{ car.mileage }}</td>
-                <td>{{ car.price }}</td>
-                <td>{{ car.transmission }}</td>
-                <td>{{ car.engine_volume }}</td>
-                <td>{{ car.drive }}</td>
-                <td>{{ car.color }}</td>
-                <td>{{ car.power_volume }}</td>
-                <td>{{ car.brand_country.country }}</td>
-            </tr>
-            {% endfor %}
-        </tbody>
-    </table>
+    <div class="filters">
+        <form method="GET" action="">
+            <div class="filter-row">
+                <input type="text" name="brand" placeholder="Марка авто" value="{{ request.GET.brand }}">
+                <input type="text" name="model" placeholder="Модель авто" value="{{ request.GET.model }}">
+            </div>
+
+            <div class="filter-row">
+                <input type="number" name="year_from" placeholder="Год от" value="{{ request.GET.year_from }}">
+                <input type="number" name="year_to" placeholder="Год до" value="{{ request.GET.year_to }}">
+            </div>
+
+            <div class="filter-row">
+                <input type="number" name="mileage_from" placeholder="Пробег от" value="{{ request.GET.mileage_from }}">
+                <input type="number" name="mileage_to" placeholder="Пробег до" value="{{ request.GET.mileage_to }}">
+            </div>
+
+            <div class="filter-row">
+                <input type="text" name="engine_from" placeholder="Объем от" value="{{ request.GET.engine_from }}">
+                <input type="text" name="engine_to" placeholder="Объем до" value="{{ request.GET.engine_to }}">
+            </div>
+
+            <div class="filter-row">
+                <input type="text" name="transmission" placeholder="Тип КПП" value="{{ request.GET.transmission }}">
+                <input type="text" name="drive" placeholder="Привод" value="{{ request.GET.drive }}">
+                <input type="text" name="color" placeholder="Цвет" value="{{ request.GET.color }}">
+            </div>
+
+            <input type="hidden" name="page" value="{{ page_obj.number }}">
+        </form>
+    </div>
+
+    <div class="cars-grid">
+        {% for car in page_obj %}
+            <div class="car-card">
+                <h3>{{ car.brand_country.brand }} {{ car.model }}</h3>
+                <p>Год: {{ car.year }}</p>
+                <p>Пробег: {{ car.mileage }} км</p>
+                <p>Цена: {{ car.price }} руб</p>
+                <p>КПП: {{ car.transmission }}</p>
+                <p>Объем: {{ car.engine_volume }}</p>
+                <p>Привод: {{ car.drive }}</p>
+                <p>Цвет: {{ car.color }}</p>
+            </div>
+        {% endfor %}
+    </div>
+
+    <div class="pagination">
+        {% if page_obj.has_previous %}
+            <a href="?page=1{% for key, value in request.GET.items %}{% if key != 'page' %}&{{ key }}={{ value }}{% endif %}{% endfor %}">&laquo; первая</a>
+            <a href="?page={{ page_obj.previous_page_number }}{% for key, value in request.GET.items %}{% if key != 'page' %}&{{ key }}={{ value }}{% endif %}{% endfor %}">предыдущая</a>
+        {% endif %}
+
+        <span>
+            Страница {{ page_obj.number }} из {{ page_obj.paginator.num_pages }}
+        </span>
+
+        {% if page_obj.has_next %}
+            <a href="?page={{ page_obj.next_page_number }}{% for key, value in request.GET.items %}{% if key != 'page' %}&{{ key }}={{ value }}{% endif %}{% endfor %}">следующая</a>
+            <a href="?page={{ page_obj.paginator.num_pages }}{% for key, value in request.GET.items %}{% if key != 'page' %}&{{ key }}={{ value }}{% endif %}{% endfor %}">последняя &raquo;</a>
+        {% endif %}
+    </div>
+<script>
+    document.addEventListener('DOMContentLoaded', function() {
+        const form = document.querySelector('form');
+        const inputs = form.querySelectorAll('input');
+        
+        function createSuggestionBox(input, items) {
+            const suggestionBox = document.createElement('div');
+            suggestionBox.className = 'filter-suggestions';
+            input.parentNode.style.position = 'relative';
+            input.parentNode.appendChild(suggestionBox);
+
+            input.addEventListener('input', function() {
+                const value = this.value.toLowerCase();
+                suggestionBox.innerHTML = '';
+                
+                const filtered = items.filter(item => 
+                    item.toLowerCase().includes(value)
+                );
+                
+                filtered.forEach(item => {
+                    const div = document.createElement('div');
+                    div.className = 'suggestion-item';
+                    div.textContent = item;
+                    div.onclick = () => {
+                        input.value = item;
+                        suggestionBox.style.display = 'none';
+                        form.submit();
+                    };
+                    suggestionBox.appendChild(div);
+                });
+                
+                suggestionBox.style.display = filtered.length ? 'block' : 'none';
+            });
+
+            document.addEventListener('click', function(e) {
+                if (!input.contains(e.target) && !suggestionBox.contains(e.target)) {
+                    suggestionBox.style.display = 'none';
+                }
+            });
+
+            input.addEventListener('keypress', function(e) {
+                if (e.key === 'Enter') {
+                    e.preventDefault();
+                    form.submit();
+                }
+            });
+        }
+
+        const brandInput = document.querySelector('input[name="brand"]');
+        const modelInput = document.querySelector('input[name="model"]');
+        const brands = {{ brands_json|safe }};
+        createSuggestionBox(brandInput, brands);
+
+        if (brandInput.value) {
+            const models = {{ models_by_brand|safe }}[brandInput.value] || [];
+            createSuggestionBox(modelInput, models);
+        }
+
+        brandInput.addEventListener('change', function() {
+            const brand = this.value;
+            if (brand) {
+                const models = {{ models_by_brand|safe }}[brand] || [];
+                createSuggestionBox(modelInput, models);
+            }
+        });
+
+        createSuggestionBox(document.querySelector('input[name="transmission"]'), {{ transmissions_json|safe }});
+        createSuggestionBox(document.querySelector('input[name="drive"]'), {{ drives_json|safe }});
+        createSuggestionBox(document.querySelector('input[name="color"]'), {{ colors_json|safe }});
+
+        inputs.forEach(input => {
+            if (input.type === 'number') {
+                input.addEventListener('keypress', function(e) {
+                    if (e.key === 'Enter') {
+                        e.preventDefault();
+                        form.submit();
+                    }
+                });
+            }
+        });
+    });
+</script>
 </body>
 </html>
