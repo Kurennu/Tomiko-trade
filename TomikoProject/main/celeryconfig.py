@@ -5,4 +5,8 @@ beat_schedule = {
         'task': 'tasks.parse_reviews',
         'schedule': 86400.0,  # количество секунд в сутках, раз в сутки запускает скрипт
     },
+    'parse-vk-clips-daily': {
+        'task': 'tasks.parse_vk_clips',
+        'schedule': 86400.0,
+    }
 }
