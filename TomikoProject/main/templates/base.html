@@ -4,17 +4,12 @@
    {% include 'includes/head.html' %}
 </head>
 <body>
-   <div class="wrapper">
        {% include 'includes/header.html' %}
-       <main class="main">
            {% block content %}
            {% endblock %}
-       </main>
        {% include 'includes/footer.html' %}
-   </div>
 
    {% block scripts %}
-   <!-- Сюда можно добавить скрипты, которые должны быть на каждой странице -->
    {% endblock %}
 </body>
 </html>
