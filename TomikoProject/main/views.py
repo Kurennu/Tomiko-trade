@@ -150,3 +150,10 @@ def car_detail(request, car_id):
         'similar_cars': similar_cars,
     }
     return render(request, 'product.html', context)
+
+
+def promo(request):
+    return render(request, 'promo.html')
+
+def promo(request):
+    return render(request, '405.html')
