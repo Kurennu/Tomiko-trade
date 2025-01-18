@@ -2,7 +2,7 @@ from django.db import models
 
 
 class Brands(models.Model):
-    country = models.CharField(max_length=100)
+    country = models.CharField(max_length=50)
     brand = models.CharField(max_length=100)
 
     class Meta:
@@ -20,7 +20,7 @@ class Cars(models.Model):
     drive = models.CharField(max_length=50)
     color = models.CharField(max_length=50)
     power_volume = models.CharField(max_length=50)
-    brand_country = models.ForeignKey(Brands, models.DO_NOTHING, blank=True, null=True)
+    brand_country = models.ForeignKey('Brands', models.DO_NOTHING, blank=True, null=True)
 
     class Meta:
         managed = False

@@ -1,43 +1,195 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Car Catalog</title>
-</head>
-<body>
-    <h1>Car Catalog</h1>
-    <table border="1">
-        <thead>
-            <tr>
-                <th>Model</th>
-                <th>Year</th>
-                <th>Mileage</th>
-                <th>Price</th>
-                <th>Transmission</th>
-                <th>Engine Volume</th>
-                <th>Drive</th>
-                <th>Color</th>
-                <th>Power Volume</th>
-                <th>Brand Country</th>
-            </tr>
-        </thead>
-        <tbody>
-            {% for car in cars %}
-            <tr>
-                <td>{{ car.model }}</td>
-                <td>{{ car.year }}</td>
-                <td>{{ car.mileage }}</td>
-                <td>{{ car.price }}</td>
-                <td>{{ car.transmission }}</td>
-                <td>{{ car.engine_volume }}</td>
-                <td>{{ car.drive }}</td>
-                <td>{{ car.color }}</td>
-                <td>{{ car.power_volume }}</td>
-                <td>{{ car.brand_country.country }}</td>
-            </tr>
-            {% endfor %}
-        </tbody>
-    </table>
-</body>
-</html>
+{% extends 'base.html' %}
+{% block title %}Контакты{% endblock %}
+{% block content %}
+<section class="breadcrumbs container">
+    <nav class="breadcrumbs__content">
+        <p><a href="{% url 'index' %}">Главная</a></p>
+        <p><a href="{% url 'catalog' %}">Каталог</a></p>
+        {% if current_country %}
+            <p aria-current="page">{{ page_title }}</p>
+        {% endif %}
+    </nav>
+</section>
+<section class="catalog container">
+    <h1 class="catalog__header catalog__header--{{ current_country|default:'default' }}">
+        {{ page_title }}
+    </h1>
+    <div class="catalog__filter">
+        <form class="catalog__filter-inner" method="GET" action="{% if current_country %}{% url 'catalog_by_country' current_country %}{% else %}{% url 'catalog' %}{% endif %}">
+            <div class="catalog__filter-row">
+                <div class="catalog__filter-container">
+                    <input class="catalog__filter-input" type="text" name="brand" placeholder="Марка авто" value="{{ request.GET.brand }}">
+                </div>
+                <div class="catalog__filter-container">
+                    <input class="catalog__filter-input" type="text" name="model" placeholder="Модель авто" value="{{ request.GET.model }}">
+                </div>
+            </div>
+            <div class="catalog__filter-row">
+                <div class="catalog__filter--double">
+                    <input class="catalog__filter-input--double" type="number" name="year_from" placeholder="Год от" value="{{ request.GET.year_from }}">
+                    <span class="catalog__filter-separator">|</span>
+                    <input class="catalog__filter-input--double" type="number" name="year_to" placeholder="до" value="{{ request.GET.year_to }}">
+                </div>
+
+                <div class="catalog__filter--double">
+                    <input class="catalog__filter-input--double" type="number" name="mileage_from" placeholder="Пробег от, км" value="{{ request.GET.mileage_from }}">
+                    <span class="catalog__filter-separator">|</span>
+                    <input class="catalog__filter-input--double"type="number" name="mileage_to" placeholder="до" value="{{ request.GET.mileage_to }}">
+                </div>
+            </div>
+            <div class="catalog__filter-row">
+                <div class="catalog__filter--double">
+                    <input class="catalog__filter-input--double" type="number" name="engine_from" placeholder="Объем от, л" value="{{ request.GET.engine_from }}">
+                    <span class="catalog__filter-separator">|</span>
+                    <input class="catalog__filter-input--double" type="number" name="engine_to" placeholder="до" value="{{ request.GET.engine_to }}">
+                </div>
+                <div class="catalog__filter-container">
+                    <input class="catalog__filter-input" type="text" name="transmission" placeholder="Тип КПП" value="{{ request.GET.transmission }}">
+                </div>
+            </div>
+            <div class="catalog__filter-row">
+                <div class="catalog__filter-container">
+                    <input class="catalog__filter-input" type="text" name="drive" placeholder="Привод" value="{{ request.GET.drive }}">
+                </div>
+                <div class="catalog__filter-container">
+                    <input class="catalog__filter-input" type="text" name="color" placeholder="Цвет" value="{{ request.GET.color }}">
+                </div>
+            </div>
+            <button class="catalog__filter-button">
+                Показать
+            </button>
+            <input type="hidden" name="page" value="{{ page_obj.number }}">
+        </form>
+    </div>
+</section>
+<section class="catalog__card-inner container">
+    {% for car in page_obj %}
+    <a href="{% url 'car_detail' car.id %}"> 
+    <div class="catalog__card">
+        <div class="catalog__card-title">
+            <h3 class="catalog__card-title-name">{{ car.brand_country.brand }} {{ car.model }}</h3>
+            <p class="catalog__card-title-desc">{{ car.year }} · {{ car.drive }} · {{ car.mileage }}</p>
+        </div>
+        <div class="catalog__card-image-wrapper">
+            <img  class="catalog__card-image" src="/static/img/car-slider.png" alt="Car">
+        </div>
+        <div class="catalog__card-order">
+            <h3 class="catalog__card-order-price">{{ car.price }} Р</h3>
+            <button class="catalog__card-button">Оставить заявку</button>
+        </div>
+    </div>
+    <a>
+    {% endfor %}
+</section>
+
+<div class="pagination container">
+    <div class="pagination__inner">
+    {% if page_obj.paginator.num_pages > 1 %}
+        {% for num in page_obj.paginator.page_range %}
+            {% if num == page_obj.number %}
+                <span class="pagination__item pagination__item--active">{{ num }}</span>
+            {% elif num > page_obj.number|add:'-4' and num < page_obj.number|add:'4' %}
+                <a class="pagination__item" href="?page={{ num }}{% for key, value in request.GET.items %}{% if key != 'page' %}&{{ key }}={{ value }}{% endif %}{% endfor %}">{{ num }}</a>
+            {% elif num == 1 or num == page_obj.paginator.num_pages %}
+                <a class="pagination__item" href="?page={{ num }}{% for key, value in request.GET.items %}{% if key != 'page' %}&{{ key }}={{ value }}{% endif %}{% endfor %}">{{ num }}</a>
+            {% elif num == page_obj.number|add:'-4' or num == page_obj.number|add:'4' %}
+                <span class="pagination__dots">...</span>
+            {% endif %}
+        {% endfor %}
+        
+        {% if page_obj.has_next %}
+            <a class="pagination__next" href="?page={{ page_obj.next_page_number }}{% for key, value in request.GET.items %}{% if key != 'page' %}&{{ key }}={{ value }}{% endif %}{% endfor %}">
+                Следущая
+            </a>
+        {% endif %}
+    {% endif %}         
+    </div>
+</div>
+
+{% endblock %}
+
+{% block scripts %}
+    {{ block.super }}
+<script>
+    document.addEventListener('DOMContentLoaded', function() {
+        const form = document.querySelector('form');
+        const inputs = form.querySelectorAll('input');
+        
+        function createSuggestionBox(input, items) {
+            const suggestionBox = document.createElement('div');
+            suggestionBox.className = 'filter-suggestions';
+            input.parentNode.style.position = 'relative';
+            input.parentNode.appendChild(suggestionBox);
+
+            input.addEventListener('input', function() {
+                const value = this.value.toLowerCase();
+                suggestionBox.innerHTML = '';
+                
+                const filtered = items.filter(item => 
+                    item.toLowerCase().includes(value)
+                );
+                
+                filtered.forEach(item => {
+                    const div = document.createElement('div');
+                    div.className = 'suggestion-item';
+                    div.textContent = item;
+                    div.onclick = () => {
+                        input.value = item;
+                        suggestionBox.style.display = 'none';
+                        form.submit();
+                    };
+                    suggestionBox.appendChild(div);
+                });
+                
+                suggestionBox.style.display = filtered.length ? 'block' : 'none';
+            });
+
+            document.addEventListener('click', function(e) {
+                if (!input.contains(e.target) && !suggestionBox.contains(e.target)) {
+                    suggestionBox.style.display = 'none';
+                }
+            });
+
+            input.addEventListener('keypress', function(e) {
+                if (e.key === 'Enter') {
+                    e.preventDefault();
+                    form.submit();
+                }
+            });
+        }
+
+        const brandInput = document.querySelector('input[name="brand"]');
+        const modelInput = document.querySelector('input[name="model"]');
+        const brands = {{ brands_json|safe }};
+        createSuggestionBox(brandInput, brands);
+
+        if (brandInput.value) {
+            const models = {{ models_by_brand|safe }}[brandInput.value] || [];
+            createSuggestionBox(modelInput, models);
+        }
+
+        brandInput.addEventListener('change', function() {
+            const brand = this.value;
+            if (brand) {
+                const models = {{ models_by_brand|safe }}[brand] || [];
+                createSuggestionBox(modelInput, models);
+            }
+        });
+
+        createSuggestionBox(document.querySelector('input[name="transmission"]'), {{ transmissions_json|safe }});
+        createSuggestionBox(document.querySelector('input[name="drive"]'), {{ drives_json|safe }});
+        createSuggestionBox(document.querySelector('input[name="color"]'), {{ colors_json|safe }});
+
+        inputs.forEach(input => {
+            if (input.type === 'number') {
+                input.addEventListener('keypress', function(e) {
+                    if (e.key === 'Enter') {
+                        e.preventDefault();
+                        form.submit();
+                    }
+                });
+            }
+        });
+    });
+</script>
+{% endblock %}

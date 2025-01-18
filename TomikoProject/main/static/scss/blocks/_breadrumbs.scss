@@ -1,0 +1,24 @@
+.breadcrumbs{
+    width: 100%;
+    margin-top: 24px;
+    margin-bottom: 40px;
+    &__content{
+        display: flex;
+        font-weight: 500;
+        column-gap: 15px;
+        justify-content: flex-start;
+        font-weight: 400;
+        font-size: 14px;
+        color: var(--color-white);
+        opacity: 50%;
+    & > *:not(:first-child)::before {
+      content: '';
+      display: inline-block;
+      margin-right: 15px;
+      width: 5px;
+      height: 5px;
+      border-radius: 50%;
+      background-color: var(--color-white);
+    }
+    }
+}

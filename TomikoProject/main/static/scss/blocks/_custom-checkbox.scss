@@ -1,0 +1,21 @@
+.custom-checkbox {
+    min-width: 24px;
+    height: 24px;
+    background: var(--color-white);
+    border-radius: 8px;
+    position: relative;
+
+    &::after {
+        content: "";
+        position: absolute;
+        left: 8px;
+        top: 4px;
+        width: 6px;
+        height: 12px;
+        border: solid var(--color-dark);
+        border-width: 0 2px 2px 0;
+        transform: rotate(45deg);
+        opacity: 0;
+        transition: opacity 0.2s;
+    }
+}
