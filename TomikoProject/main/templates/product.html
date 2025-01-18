@@ -1,0 +1,64 @@
+{% extends 'base.html' %}
+{% block title %}{{ car.brand_country.brand }} {{ car.model }}{% endblock %}
+
+{% block content %}
+<section class="breadcrumbs container">
+    <nav class="breadcrumbs__content">
+        <p><a href="{% url 'index' %}">Главная</a></p>
+        <p><a href="{% url 'catalog' %}">Каталог</a></p>
+        <p><a href="{% url 'catalog_by_country' car.brand_country.country|lower %}">
+            Автомобили из {{ car.brand_country.country }}
+        </a></p>
+        <p aria-current="page">{{ car.brand_country.brand }} {{ car.model }}</p>
+    </nav>
+</section>
+
+<section class="car-detail container">
+    <div class="car-detail__grid">
+        <div class="car-detail__info">
+            <h1 class="car-detail__title">{{ car.brand_country.brand }} {{ car.model }}</h1>
+            <div class="car-detail__price">{{ car.price }} ₽</div>
+            
+            <div class="car-detail__specs">
+                <h2 class="car-detail__specs-title">Характеристики</h2>
+                <div class="car-detail__specs-grid">
+                    <div class="car-detail__spec-item">
+                        <span class="car-detail__spec-label">Год выпуска</span>
+                        <span class="car-detail__spec-value">{{ car.year }}</span>
+                    </div>
+                    <div class="car-detail__spec-item">
+                        <span class="car-detail__spec-label">Пробег</span>
+                        <span class="car-detail__spec-value">{{ car.mileage }} км</span>
+                    </div>
+                    <div class="car-detail__spec-item">
+                        <span class="car-detail__spec-label">Объем двигателя</span>
+                        <span class="car-detail__spec-value">{{ car.engine_volume }}</span>
+                    </div>
+                    <div class="car-detail__spec-item">
+                        <span class="car-detail__spec-label">Мощность</span>
+                        <span class="car-detail__spec-value">{{ car.power_volume }}</span>
+                    </div>
+                    <div class="car-detail__spec-item">
+                        <span class="car-detail__spec-label">КПП</span>
+                        <span class="car-detail__spec-value">{{ car.transmission }}</span>
+                    </div>
+                    <div class="car-detail__spec-item">
+                        <span class="car-detail__spec-label">Привод</span>
+                        <span class="car-detail__spec-value">{{ car.drive }}</span>
+                    </div>
+                    <div class="car-detail__spec-item">
+                        <span class="car-detail__spec-label">Цвет</span>
+                        <span class="car-detail__spec-value">{{ car.color }}</span>
+                    </div>
+                    <div class="car-detail__spec-item">
+                        <span class="car-detail__spec-label">Страна производства</span>
+                        <span class="car-detail__spec-value">{{ car.brand_country.country }}</span>
+                    </div>
+                </div>
+            </div>
+
+            <button class="car-detail__order-btn" data-car-id="{{ car.id }}">Оставить заявку</button>
+        </div>
+    </div>
+</section>
+{% endblock %}

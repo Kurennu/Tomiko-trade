@@ -8,9 +8,9 @@
             >
         </a>
         <ul class="header__navbar-list hidden-mobile">
-            <li><a class="header__navbar-item" href="">Авто из Кореи</a></li>
-            <li><a class="header__navbar-item" href="">Авто из Китая</a></li>
-            <li><a class="header__navbar-item" href="{% url 'catalog' %}">Авто из Японии</a></li>
+            <li><a class="header__navbar-item" href="{% url 'catalog_by_country' 'korea' %}">Авто из Кореи</a></li>
+            <li><a class="header__navbar-item" href="{% url 'catalog_by_country' 'china' %}">Авто из Китая</a></li>
+            <li><a class="header__navbar-item" href="{% url 'catalog_by_country' 'japan' %}">Авто из Японии</a></li>
             <li><a class="header__navbar-item" href="{% url 'contacts' %}">Контакты</a></li>
         </ul>
     </nav>

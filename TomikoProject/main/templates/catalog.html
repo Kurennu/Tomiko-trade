@@ -5,15 +5,17 @@
     <nav class="breadcrumbs__content">
         <p><a href="{% url 'index' %}">Главная</a></p>
         <p><a href="{% url 'catalog' %}">Каталог</a></p>
-        <p aria-current="page">Автомобили из Японии</p>
+        {% if current_country %}
+            <p aria-current="page">{{ page_title }}</p>
+        {% endif %}
     </nav>
 </section>
 <section class="catalog container">
-    <h1 class="catalog__header">
-        Автомобили из Японии
+    <h1 class="catalog__header catalog__header--{{ current_country|default:'default' }}">
+        {{ page_title }}
     </h1>
     <div class="catalog__filter">
-        <form class="catalog__filter-inner" method="GET" action="">
+        <form class="catalog__filter-inner" method="GET" action="{% if current_country %}{% url 'catalog_by_country' current_country %}{% else %}{% url 'catalog' %}{% endif %}">
             <div class="catalog__filter-row">
                 <div class="catalog__filter-container">
                     <input class="catalog__filter-input" type="text" name="brand" placeholder="Марка авто" value="{{ request.GET.brand }}">
@@ -37,7 +39,7 @@
             </div>
             <div class="catalog__filter-row">
                 <div class="catalog__filter--double">
-                    <input class="catalog__filter-input--double" type="number" name="engine_from" placeholder="Объём от, л" value="{{ request.GET.engine_from }}">
+                    <input class="catalog__filter-input--double" type="number" name="engine_from" placeholder="Объем от, л" value="{{ request.GET.engine_from }}">
                     <span class="catalog__filter-separator">|</span>
                     <input class="catalog__filter-input--double" type="number" name="engine_to" placeholder="до" value="{{ request.GET.engine_to }}">
                 </div>
@@ -62,6 +64,7 @@
 </section>
 <section class="catalog__card-inner container">
     {% for car in page_obj %}
+    <a href="{% url 'car_detail' car.id %}"> 
     <div class="catalog__card">
         <div class="catalog__card-title">
             <h3 class="catalog__card-title-name">{{ car.brand_country.brand }} {{ car.model }}</h3>
@@ -75,6 +78,7 @@
             <button class="catalog__card-button">Оставить заявку</button>
         </div>
     </div>
+    <a>
     {% endfor %}
 </section>
 

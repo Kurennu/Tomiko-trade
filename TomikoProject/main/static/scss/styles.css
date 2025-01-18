@@ -2267,29 +2267,6 @@ svg * {
   transition: opacity 0.2s;
 }
 
-.cars-grid {
-  display: -ms-grid;
-  display: grid;
-  -ms-grid-columns: 1fr 20px 1fr 20px 1fr;
-  grid-template-columns: repeat(3, 1fr);
-  gap: 20px;
-}
-
-.car-card {
-  border: 1px solid #ccc;
-  padding: 10px;
-}
-
-.pagination {
-  margin-top: 20px;
-  text-align: center;
-}
-
-.pagination a {
-  margin: 0 5px;
-  text-decoration: none;
-}
-
 .catalog {
   width: 100%;
   margin-bottom: 40px;
@@ -2306,9 +2283,20 @@ svg * {
   margin-left: 10px;
   position: absolute;
   top: 10px;
-  background: url("/static/img/japan.png") no-repeat;
   width: 100%;
   height: 100%;
+}
+.catalog__header--japan::after {
+  background: url("/static/img/japan.png") no-repeat;
+}
+.catalog__header--korea::after {
+  background: url("/static/img/korea.png") no-repeat;
+}
+.catalog__header--china::after {
+  background: url("/static/img/china.png") no-repeat;
+}
+.catalog__header--default::after {
+  background: none;
 }
 .catalog__filter {
   background-color: #081E36;
@@ -2424,15 +2412,20 @@ svg * {
   row-gap: 16px;
 }
 .catalog__card-inner {
+  width: 100%;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
   -ms-flex-wrap: wrap;
       flex-wrap: wrap;
-  -webkit-column-gap: 16px;
-     -moz-column-gap: 16px;
-          column-gap: 16px;
+  -webkit-box-pack: start;
+      -ms-flex-pack: start;
+          justify-content: flex-start;
+  -webkit-column-gap: 6px;
+     -moz-column-gap: 6px;
+          column-gap: 6px;
   row-gap: 16px;
+  margin-bottom: 16px;
 }
 .catalog__card-title {
   row-gap: 8px;
