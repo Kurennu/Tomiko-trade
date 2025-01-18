@@ -155,5 +155,5 @@ def car_detail(request, car_id):
 def promo(request):
     return render(request, 'promo.html')
 
-def promo(request):
+def error(request):
     return render(request, '405.html')
