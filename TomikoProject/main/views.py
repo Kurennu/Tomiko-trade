@@ -21,7 +21,7 @@ def contacts(request):
 
 #     return render(request, 'catalog.html', {'page_obj': page_obj})
 
-
+ 
 def slider_view(request):
     cars_korea = Cars.objects.filter(brand_country__country='Корея')
     cars_japan = Cars.objects.filter(brand_country__country='Япония')
@@ -41,8 +41,7 @@ def slider_view(request):
 
 def catalog(request):
     queryset = Cars.objects.all()
-    
-
+ 
     brand = request.GET.get('brand')
     if brand:
         queryset = queryset.filter(brand_country__brand__iexact=brand)
@@ -101,7 +100,7 @@ def catalog(request):
     colors = list(Cars.objects.values_list('color', flat=True).distinct())
     
 
-    paginator = Paginator(queryset, 9)
+    paginator = Paginator(queryset, 12)
     page_number = request.GET.get('page', 1)
     page_obj = paginator.get_page(page_number)
     

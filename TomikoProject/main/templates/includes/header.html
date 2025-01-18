@@ -1,6 +1,6 @@
 <header class="header container">
     <nav class="header__navbar">
-        <a href="">
+        <a href="{% url 'index' %}">
             <img
                     class="header__logo"
                     src="/static/img/logo.png"
@@ -10,8 +10,8 @@
         <ul class="header__navbar-list hidden-mobile">
             <li><a class="header__navbar-item" href="">Авто из Кореи</a></li>
             <li><a class="header__navbar-item" href="">Авто из Китая</a></li>
-            <li><a class="header__navbar-item" href="">Авто из Японии</a></li>
-            <li><a class="header__navbar-item" href="">Контакты</a></li>
+            <li><a class="header__navbar-item" href="{% url 'catalog' %}">Авто из Японии</a></li>
+            <li><a class="header__navbar-item" href="{% url 'contacts' %}">Контакты</a></li>
         </ul>
     </nav>
     <div class="header__contacts hidden-mobile">

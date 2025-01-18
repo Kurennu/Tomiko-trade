@@ -1,98 +1,111 @@
-<!DOCTYPE html>
-<html>
-<head>
-    <head>
-        <title>Каталог автомобилей</title>
-        <style>
-            .filters { margin-bottom: 20px; }
-            .filter-row { margin: 10px 0; }
-            .cars-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 20px; }
-            .car-card { border: 1px solid #ccc; padding: 10px; }
-            .pagination { margin-top: 20px; text-align: center; }
-            .pagination a { margin: 0 5px; text-decoration: none; }
-            .filter-suggestions { 
-                position: absolute;
-                background: white;
-                border: 1px solid #ccc;
-                max-height: 200px;
-                overflow-y: auto;
-                display: none;
-                z-index: 1000;
-            }
-            .suggestion-item {
-                padding: 5px;
-                cursor: pointer;
-            }
-            .suggestion-item:hover {
-                background: #f0f0f0;
-            }
-        </style>
-        
-    </head>
-</head>
-<body>
-    <div class="filters">
-        <form method="GET" action="">
-            <div class="filter-row">
-                <input type="text" name="brand" placeholder="Марка авто" value="{{ request.GET.brand }}">
-                <input type="text" name="model" placeholder="Модель авто" value="{{ request.GET.model }}">
+{% extends 'base.html' %}
+{% block title %}Контакты{% endblock %}
+{% block content %}
+<section class="breadcrumbs container">
+    <nav class="breadcrumbs__content">
+        <p><a href="{% url 'index' %}">Главная</a></p>
+        <p><a href="{% url 'catalog' %}">Каталог</a></p>
+        <p aria-current="page">Автомобили из Японии</p>
+    </nav>
+</section>
+<section class="catalog container">
+    <h1 class="catalog__header">
+        Автомобили из Японии
+    </h1>
+    <div class="catalog__filter">
+        <form class="catalog__filter-inner" method="GET" action="">
+            <div class="catalog__filter-row">
+                <div class="catalog__filter-container">
+                    <input class="catalog__filter-input" type="text" name="brand" placeholder="Марка авто" value="{{ request.GET.brand }}">
+                </div>
+                <div class="catalog__filter-container">
+                    <input class="catalog__filter-input" type="text" name="model" placeholder="Модель авто" value="{{ request.GET.model }}">
+                </div>
             </div>
+            <div class="catalog__filter-row">
+                <div class="catalog__filter--double">
+                    <input class="catalog__filter-input--double" type="number" name="year_from" placeholder="Год от" value="{{ request.GET.year_from }}">
+                    <span class="catalog__filter-separator">|</span>
+                    <input class="catalog__filter-input--double" type="number" name="year_to" placeholder="до" value="{{ request.GET.year_to }}">
+                </div>
 
-            <div class="filter-row">
-                <input type="number" name="year_from" placeholder="Год от" value="{{ request.GET.year_from }}">
-                <input type="number" name="year_to" placeholder="Год до" value="{{ request.GET.year_to }}">
+                <div class="catalog__filter--double">
+                    <input class="catalog__filter-input--double" type="number" name="mileage_from" placeholder="Пробег от, км" value="{{ request.GET.mileage_from }}">
+                    <span class="catalog__filter-separator">|</span>
+                    <input class="catalog__filter-input--double"type="number" name="mileage_to" placeholder="до" value="{{ request.GET.mileage_to }}">
+                </div>
             </div>
-
-            <div class="filter-row">
-                <input type="number" name="mileage_from" placeholder="Пробег от" value="{{ request.GET.mileage_from }}">
-                <input type="number" name="mileage_to" placeholder="Пробег до" value="{{ request.GET.mileage_to }}">
+            <div class="catalog__filter-row">
+                <div class="catalog__filter--double">
+                    <input class="catalog__filter-input--double" type="number" name="engine_from" placeholder="Объём от, л" value="{{ request.GET.engine_from }}">
+                    <span class="catalog__filter-separator">|</span>
+                    <input class="catalog__filter-input--double" type="number" name="engine_to" placeholder="до" value="{{ request.GET.engine_to }}">
+                </div>
+                <div class="catalog__filter-container">
+                    <input class="catalog__filter-input" type="text" name="transmission" placeholder="Тип КПП" value="{{ request.GET.transmission }}">
+                </div>
             </div>
-
-            <div class="filter-row">
-                <input type="text" name="engine_from" placeholder="Объем от" value="{{ request.GET.engine_from }}">
-                <input type="text" name="engine_to" placeholder="Объем до" value="{{ request.GET.engine_to }}">
+            <div class="catalog__filter-row">
+                <div class="catalog__filter-container">
+                    <input class="catalog__filter-input" type="text" name="drive" placeholder="Привод" value="{{ request.GET.drive }}">
+                </div>
+                <div class="catalog__filter-container">
+                    <input class="catalog__filter-input" type="text" name="color" placeholder="Цвет" value="{{ request.GET.color }}">
+                </div>
             </div>
-
-            <div class="filter-row">
-                <input type="text" name="transmission" placeholder="Тип КПП" value="{{ request.GET.transmission }}">
-                <input type="text" name="drive" placeholder="Привод" value="{{ request.GET.drive }}">
-                <input type="text" name="color" placeholder="Цвет" value="{{ request.GET.color }}">
-            </div>
-
+            <button class="catalog__filter-button">
+                Показать
+            </button>
             <input type="hidden" name="page" value="{{ page_obj.number }}">
         </form>
     </div>
+</section>
+<section class="catalog__card-inner container">
+    {% for car in page_obj %}
+    <div class="catalog__card">
+        <div class="catalog__card-title">
+            <h3 class="catalog__card-title-name">{{ car.brand_country.brand }} {{ car.model }}</h3>
+            <p class="catalog__card-title-desc">{{ car.year }} · {{ car.drive }} · {{ car.mileage }}</p>
+        </div>
+        <div class="catalog__card-image-wrapper">
+            <img  class="catalog__card-image" src="/static/img/car-slider.png" alt="Car">
+        </div>
+        <div class="catalog__card-order">
+            <h3 class="catalog__card-order-price">{{ car.price }} Р</h3>
+            <button class="catalog__card-button">Оставить заявку</button>
+        </div>
+    </div>
+    {% endfor %}
+</section>
 
-    <div class="cars-grid">
-        {% for car in page_obj %}
-            <div class="car-card">
-                <h3>{{ car.brand_country.brand }} {{ car.model }}</h3>
-                <p>Год: {{ car.year }}</p>
-                <p>Пробег: {{ car.mileage }} км</p>
-                <p>Цена: {{ car.price }} руб</p>
-                <p>КПП: {{ car.transmission }}</p>
-                <p>Объем: {{ car.engine_volume }}</p>
-                <p>Привод: {{ car.drive }}</p>
-                <p>Цвет: {{ car.color }}</p>
-            </div>
+<div class="pagination container">
+    <div class="pagination__inner">
+    {% if page_obj.paginator.num_pages > 1 %}
+        {% for num in page_obj.paginator.page_range %}
+            {% if num == page_obj.number %}
+                <span class="pagination__item pagination__item--active">{{ num }}</span>
+            {% elif num > page_obj.number|add:'-4' and num < page_obj.number|add:'4' %}
+                <a class="pagination__item" href="?page={{ num }}{% for key, value in request.GET.items %}{% if key != 'page' %}&{{ key }}={{ value }}{% endif %}{% endfor %}">{{ num }}</a>
+            {% elif num == 1 or num == page_obj.paginator.num_pages %}
+                <a class="pagination__item" href="?page={{ num }}{% for key, value in request.GET.items %}{% if key != 'page' %}&{{ key }}={{ value }}{% endif %}{% endfor %}">{{ num }}</a>
+            {% elif num == page_obj.number|add:'-4' or num == page_obj.number|add:'4' %}
+                <span class="pagination__dots">...</span>
+            {% endif %}
         {% endfor %}
-    </div>
-
-    <div class="pagination">
-        {% if page_obj.has_previous %}
-            <a href="?page=1{% for key, value in request.GET.items %}{% if key != 'page' %}&{{ key }}={{ value }}{% endif %}{% endfor %}">&laquo; первая</a>
-            <a href="?page={{ page_obj.previous_page_number }}{% for key, value in request.GET.items %}{% if key != 'page' %}&{{ key }}={{ value }}{% endif %}{% endfor %}">предыдущая</a>
-        {% endif %}
-
-        <span>
-            Страница {{ page_obj.number }} из {{ page_obj.paginator.num_pages }}
-        </span>
-
+        
         {% if page_obj.has_next %}
-            <a href="?page={{ page_obj.next_page_number }}{% for key, value in request.GET.items %}{% if key != 'page' %}&{{ key }}={{ value }}{% endif %}{% endfor %}">следующая</a>
-            <a href="?page={{ page_obj.paginator.num_pages }}{% for key, value in request.GET.items %}{% if key != 'page' %}&{{ key }}={{ value }}{% endif %}{% endfor %}">последняя &raquo;</a>
+            <a class="pagination__next" href="?page={{ page_obj.next_page_number }}{% for key, value in request.GET.items %}{% if key != 'page' %}&{{ key }}={{ value }}{% endif %}{% endfor %}">
+                Следущая
+            </a>
         {% endif %}
+    {% endif %}         
     </div>
+</div>
+
+{% endblock %}
+
+{% block scripts %}
+    {{ block.super }}
 <script>
     document.addEventListener('DOMContentLoaded', function() {
         const form = document.querySelector('form');
@@ -175,5 +188,4 @@
         });
     });
 </script>
-</body>
-</html>
+{% endblock %}
