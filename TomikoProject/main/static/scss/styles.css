@@ -197,14 +197,23 @@ svg * {
   }
 }
 .header {
+  position: sticky;
+  top: 0;
+  left: 0;
+  z-index: 99999;
+  background-color: var(--color-dark);
+}
+.header__inner {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
-  margin-top: 24px;
+  width: 100%;
   -webkit-box-pack: justify;
       -ms-flex-pack: justify;
           justify-content: space-between;
-  width: 100%;
+  margin-top: 24px;
+  padding-bottom: 12px;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.16);
 }
 .header__navbar {
   display: -webkit-box;
@@ -307,10 +316,11 @@ svg * {
   content: "";
   position: absolute;
   z-index: -100;
-  top: 0;
+  top: -42px;
   left: 0;
   width: 100%;
   height: 100%;
+  opacity: 80%;
   background-image: url("/static/img/hero.png");
   background-blend-mode: overlay;
   background-repeat: no-repeat;
