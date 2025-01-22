@@ -25,3 +25,31 @@ class Cars(models.Model):
     class Meta:
         managed = False
         db_table = 'cars'
+
+
+class Reviews(models.Model):
+    user_name = models.CharField(max_length=255)
+    rating = models.FloatField()
+    date = models.DateField()
+
+    class Meta:
+        managed = False
+        db_table = 'reviews'
+
+
+class Feedback(models.Model):
+    name = models.CharField(max_length=50)
+    phone = models.CharField(max_length=15)
+    message = models.CharField(max_length=200)
+
+    class Meta:
+        managed = False  
+        db_table = 'feedback'
+
+
+class Clip(models.Model):
+    cover_url = models.CharField(max_length=200)
+    link = models.CharField(max_length=200)
+
+    def __str__(self):
+        return f"Clip {self.id}: {self.cover_url}"
