@@ -1,0 +1,102 @@
+{% extends 'base.html' %}
+{% block title %}Акции{% endblock %}
+{% block content %}
+    <main class="content">
+        <section class="section container">
+            <div class="sectoin__body">
+                <div class="promo">
+                    <div class="promo__title ">
+                        <h1 style="margin-top: 0px;">Акции</h1>
+                    </div>
+                    <div class="fon">
+                        <div class="promo__main">
+                            <div class="promo__body">
+                                <div class="promo__zagolovok">
+                                    <h3 class="promo__zagolovok--min">Приведи друга</h3>
+                                    <img src="/static/img/good.png" alt="" class="promo__zagolovok--img">
+                                </div>
+                                <div class="promo__description">
+                                    <p>Каждый третий клиент обращается к нам по рекомендации знакомых, друзей, родственников. Этот факт нас безумно радует, и в знак благодарности мы запустили акцию “Приведи друга”.</p>
+                                    <ul class="promo__description--list">
+                                        <li class="promo__description--item">
+                                            <img src="/static/img/one.png" alt="" class="promo__description--item--img">
+                                            <p>Вы рекомендуете нашу компанию;</p>
+                                        </li>
+                                        <li class="promo__description--item">
+                                            <img src="/static/img/two.png" alt="" class="promo__description--item--img">
+                                            <p>По вашей рекомендации человек заключает с нами договор на приобретение автомобиля;</p>
+                                        </li>
+                                        <li class="promo__description--item">
+                                            <img src="/static/img/three.png" alt="" class="promo__description--item--img">
+                                            <p>Вы получаете денежное вознаграждение или скидку на следующий заказ.</p>
+                                        </li>
+                                    </ul>
+                                    <p>Более подробную информацию можно узнать у наших менеджеров.</p>
+                                </div>
+                                <div class="stages__buttons">
+                                    <button class="stages__buttons-help hero__info-button">Получить консультацию</button>
+                                    <button class="stages__buttons-whatsapp">
+                                    <img src="/static/img/cta_button.png" alt="" class="stages__buttons-img">
+                                    </button>
+                                </div>
+                            </div>
+                            <img src="/static/img/promo1.svg" alt="" class="promo__image" width="540" height="443.23" loading="lazy">
+                    </div>
+                </div>
+            </div>
+        </section>
+        <section class="section container">
+            <div class="sectoin__body">
+                <div class="promo">
+                    <div class="fon1">
+                        <div class="promo__main">
+                            <div class="promo__body">
+                                <div class="promo__zagolovok">
+                                    <h3 class="promo__zagolovok--min">Оптовые заказы </h3>
+                                    <img src="/static/img/minicar.png" alt="" class="promo__zagolovok--img1"  width="70"  height="40" style="padding-left: 10px;">
+                                </div>
+                                <div class="promo__description">
+                                    <p>Если вы планируете заказать сразу более 1 автомобиля, то для вас действует система лояльности - 10% скидка на комиссию компании на каждый последующий автомобиль в заказе.</p>
+                                </div>
+                                <div class="stages__buttons">
+                                    <button class="stages__buttons-help hero__info-button">Оставить заявку</button>
+                                </div>
+                            </div>
+                            <img src="/static/img/promo2.png" alt="" class="promo__image" width="540" height="291" loading="lazy">
+                    </div>
+                </div>
+            </div>
+        </section>
+        <section class="section container">
+            <div class="sectoin__body">
+                <div class="promo">
+                    <div class="fon2">
+                        <div class="promo__main">
+                            <div class="promo__body">
+                                <div class="promo__zagolovok">
+                                    <h3 class="promo__zagolovok--min">Оплата депозита двумя частями</h3>
+                                    <img src="/static/img/heands.png" alt="" class="promo__zagolovok--img">
+                                </div>
+                                <div class="promo__description">
+                                    <p>За долгие годы работы мы выработали для вас идеальную схему работы.
+                                        Представьте, что Мы нашли для вас идеальный вариант автомобиля, но у вас нет полной суммы для оплаты депозита на руках. </p>
+                                    <p>Не проблема! В нашей компании вы может оплатить депозит частями. Первую часть депозита оплачиваете в момент заключения договора, вторую - после покупки автомобиля.</p>
+                                    <p>Важно уточнить, что конечная цена от этого не изменится.
+                                        Делаем все для вашего удобства и доверия.</p>
+
+                                </div>
+                                <div class="stages__buttons">
+                                    <button class="stages__buttons-help hero__info-button">Оставить заявку</button>
+                                </div>
+                            </div>
+                            <img src="/static/img/promo3.png" alt="" class="promo__image" width="540" height="440" loading="lazy">
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main> 
+{% endblock %}
+
+{% block scripts %}
+    {{ block.super }}
+    {% endblock %}

@@ -1,0 +1,105 @@
+.fon{
+    width: 1400px;
+    height: 634px;
+    padding: 80px 0px 0px 0px;
+    gap: 80px;
+    border-radius: 28px 28px 28px 28px;
+    border: 1px 0px 0px 0px;
+    opacity: 0px;
+    background: #081E36;
+    border: 1px solid #FFFFFF1F
+}
+.fon1{
+    width: 1400px;
+    height: 406px;
+    padding: 80px 0px 0px 0px;
+    gap: 80px;
+    border-radius: 28px 28px 28px 28px;
+    border: 1px 0px 0px 0px;
+    opacity: 0px;
+    background: #081E36;
+    border: 1px solid #FFFFFF1F
+}
+.fon2{
+    width: 1400px;
+    height: 600px;
+    padding: 80px 0px 0px 0px;
+    gap: 80px;
+    border-radius: 28px 28px 28px 28px;
+    border: 1px 0px 0px 0px;
+    opacity: 0px;
+    background: #081E36;
+    border: 1px solid #FFFFFF1F
+}
+.promo{
+    display: flex;
+    flex-direction: column;
+    row-gap: 32px;
+    align-items: flex-end;
+    flex-wrap: nowrap;
+
+    &__main{
+        display: flex;
+        justify-content: space-between;
+        align-items: start;
+        column-gap: 30px;
+        margin-right: 80px;
+    }
+    &__body{
+        display: flex;
+        flex-direction: column;
+        max-width: 620px ;
+        row-gap: 24px;
+        padding-left: 80px;
+        padding-top: 40px;
+    }
+    &__description{
+        font-family: var(--first-family);
+        font-size: 16px;
+        font-weight: 400;
+        line-height: 24px;
+        padding-bottom: 16px;
+
+    }
+    &__title{
+        padding-left: 80px;
+
+    }
+    &__description--item {
+        display: flex;
+        padding-bottom: 16px;
+    }
+    &__description--item--img{
+        width: 28px;
+        height: 28px;
+        padding: 0px 9px 0px 9px;
+    }
+    &__zagolovok{
+        display: flex;
+        width: 620px;
+        height: 40px;
+        gap: 0px;
+        opacity: 0px;
+        font-family: var(--second-family);
+        font-size: 40px;
+        font-weight: 700;
+        line-height: 40px;
+        
+    }
+    &__zagolovok--img{
+        width: 40px;
+        height: 40px;
+        padding-left: 10px;
+        margin-bottom: 40px;
+
+    }
+    &__title{
+        width: 1400px;
+        height: 70px;
+        font-family: Bebas Neue;
+        font-size: 70px;
+        font-weight: 700;
+        line-height: 70px;
+        
+    }
+}
