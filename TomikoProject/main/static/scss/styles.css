@@ -1022,7 +1022,7 @@ svg * {
   padding: 12px;
   width: 149px;
   height: 44px;
-  background-color: #D51117;
+  background-color: rgba(255, 255, 255, 0.1);
   color: var(--color-white);
   -webkit-backdrop-filter: blur(34px);
           backdrop-filter: blur(34px);
@@ -1035,21 +1035,10 @@ svg * {
   cursor: pointer;
   z-index: 600;
 }
-.swiper__main-order-button:after {
-  content: "";
-  position: absolute;
-  background: url("/static/img/cursor.svg");
-  width: 14px;
-  height: 15px;
-  bottom: -7px;
-  right: 44px;
-}
-.swiper__main-order-button--gray {
-  background-color: rgba(255, 255, 255, 0.1);
-}
-.swiper__main-order-button--gray:after {
-  display: none;
-  content: none;
+.swiper__main-order-button:hover {
+  background-color: #D51117;
+  -webkit-transition-duration: 0.3s;
+          transition-duration: 0.3s;
 }
 .swiper-wrapper {
   -webkit-box-align: end;
