@@ -926,66 +926,13 @@
   </div>
   <div class="clips__swiper swiper">
     <div class="swiper-wrapper">
+      {% for clip in clips %}
       <div class="swiper-slide clips__img-wrapper">
-        <a href="https://vk.com/clips/tomiko_trade?z=clip-226932717_456239028">
-          <img src="/static/img/clip-img.png" alt="Клип 1">
+        <a href="{{ clip.link }}">
+          <img src="{{ clip.cover_url }}" alt="Клип 1">
         </a>
       </div>
-      <div class="swiper-slide">
-        <a href="https://vk.com/clips/tomiko_trade?z=clip-226932717_456239028">
-          <img src="/static/img/clip-img-2.png" alt="Клип 1">
-        </a>
-      </div>
-      <div class="swiper-slide">
-        <a href="https://vk.com/clips/tomiko_trade?z=clip-226932717_456239028">
-          <img src="/static/img/clip-img.png" alt="Клип 1">
-        </a>
-      </div>
-      <div class="swiper-slide">
-        <a href="https://vk.com/clips/tomiko_trade?z=clip-226932717_456239028">
-          <img src="/static/img/clip-img-2.png" alt="Клип 1">
-        </a>
-      </div>
-      <div class="swiper-slide">
-        <a href="https://vk.com/clips/tomiko_trade?z=clip-226932717_456239028">
-          <img src="/static/img/clip-img.png" alt="Клип 1">
-        </a>
-      </div>
-      <div class="swiper-slide">
-        <a href="https://vk.com/clips/tomiko_trade?z=clip-226932717_456239028">
-          <img src="/static/img/clip-img-2.png" alt="Клип 1">
-        </a>
-      </div>
-      <div class="swiper-slide">
-        <a href="https://vk.com/clips/tomiko_trade?z=clip-226932717_456239028">
-          <img src="/static/img/clip-img.png" alt="Клип 1">
-        </a>
-      </div>
-      <div class="swiper-slide">
-        <a href="https://vk.com/clips/tomiko_trade?z=clip-226932717_456239028">
-          <img src="/static/img/clip-img-2.png" alt="Клип 1">
-        </a>
-      </div>
-      <div class="swiper-slide">
-        <a href="https://vk.com/clips/tomiko_trade?z=clip-226932717_456239028">
-          <img src="/static/img/clip-img.png" alt="Клип 1">
-        </a>
-      </div>
-      <div class="swiper-slide">
-        <a href="https://vk.com/clips/tomiko_trade?z=clip-226932717_456239028">
-          <img src="/static/img/clip-img-2.png" alt="Клип 1">
-        </a>
-      </div>
-      <div class="swiper-slide">
-        <a href="https://vk.com/clips/tomiko_trade?z=clip-226932717_456239028">
-          <img src="/static/img/clip-img.png" alt="Клип 1">
-        </a>
-      </div>
-      <div class="swiper-slide">
-        <a href="https://vk.com/clips/tomiko_trade?z=clip-226932717_456239028">
-          <img src="/static/img/clip-img-2.png" alt="Клип 1">
-        </a>
-      </div>
+      {% endfor %}
     </div>
   </div>
 </section>

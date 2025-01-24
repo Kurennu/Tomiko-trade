@@ -1,11 +1,17 @@
 from django.core.paginator import Paginator
 from django.shortcuts import render, get_object_or_404
-from .models import Cars, Brands
+from .models import Cars, Brands, Clips
 import json
 
 def index(request):
-    cars = Cars.objects.all() 
-    return render(request, 'index.html', {'cars': cars})
+    clips = Clips.objects.all()
+    cars = Cars.objects.all()
+
+    context = {
+        'clip': clips,
+        'cars': cars
+    }
+    return render(request, 'index.html', context)
 
 def contacts(request):
     return render(request, 'contacts.html')
