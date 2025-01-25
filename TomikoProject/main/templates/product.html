@@ -13,52 +13,89 @@
     </nav>
 </section>
 
-<section class="car-detail container">
-    <div class="car-detail__grid">
-        <div class="car-detail__info">
-            <h1 class="car-detail__title">{{ car.brand_country.brand }} {{ car.model }}</h1>
-            <div class="car-detail__price">{{ car.price }} ₽</div>
-            
-            <div class="car-detail__specs">
-                <h2 class="car-detail__specs-title">Характеристики</h2>
-                <div class="car-detail__specs-grid">
-                    <div class="car-detail__spec-item">
-                        <span class="car-detail__spec-label">Год выпуска</span>
-                        <span class="car-detail__spec-value">{{ car.year }}</span>
-                    </div>
-                    <div class="car-detail__spec-item">
-                        <span class="car-detail__spec-label">Пробег</span>
-                        <span class="car-detail__spec-value">{{ car.mileage }} км</span>
-                    </div>
-                    <div class="car-detail__spec-item">
-                        <span class="car-detail__spec-label">Объем двигателя</span>
-                        <span class="car-detail__spec-value">{{ car.engine_volume }}</span>
-                    </div>
-                    <div class="car-detail__spec-item">
-                        <span class="car-detail__spec-label">Мощность</span>
-                        <span class="car-detail__spec-value">{{ car.power_volume }}</span>
-                    </div>
-                    <div class="car-detail__spec-item">
-                        <span class="car-detail__spec-label">КПП</span>
-                        <span class="car-detail__spec-value">{{ car.transmission }}</span>
-                    </div>
-                    <div class="car-detail__spec-item">
-                        <span class="car-detail__spec-label">Привод</span>
-                        <span class="car-detail__spec-value">{{ car.drive }}</span>
-                    </div>
-                    <div class="car-detail__spec-item">
-                        <span class="car-detail__spec-label">Цвет</span>
-                        <span class="car-detail__spec-value">{{ car.color }}</span>
-                    </div>
-                    <div class="car-detail__spec-item">
-                        <span class="car-detail__spec-label">Страна производства</span>
-                        <span class="car-detail__spec-value">{{ car.brand_country.country }}</span>
-                    </div>
+<section class="product container">
+    <div class="product__inner">
+        <div class="product__info">
+            <h1 class="product__name">{{ car.brand_country.brand }} {{ car.model }} {{ car.year }}</h1>
+            <div class="product__price">
+                <h2 class="product__price-value">{{ car.price }} ₽</h2>
+            </div>
+            <div class="product__button">
+                <div class="stages__buttons">
+                    <button class="stages__buttons-help hero__info-button">Оставить заявку</button>
+                    <button class="stages__buttons-whatsapp">
+                      <img src="/static/img/cta_button.png" alt="" class="stages__buttons-img">
+                    </button>
+                </div>
+                <div class="product__button-promo">
+                    <p class="product__button-text">Экономия до 30% от рынка авто в наличии</p>
+                    <svg width="16" height="17" viewBox="0 0 16 17" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <path d="M8 2C6.71442 2 5.45772 2.38122 4.3888 3.09545C3.31988 3.80968 2.48676 4.82484 1.99479 6.01256C1.50282 7.20028 1.37409 8.50721 1.6249 9.76809C1.8757 11.029 2.49477 12.1872 3.40381 13.0962C4.31285 14.0052 5.47104 14.6243 6.73192 14.8751C7.99279 15.1259 9.29973 14.9972 10.4874 14.5052C11.6752 14.0132 12.6903 13.1801 13.4046 12.1112C14.1188 11.0423 14.5 9.78558 14.5 8.5C14.4982 6.77665 13.8128 5.12441 12.5942 3.90582C11.3756 2.68722 9.72335 2.00182 8 2ZM7.75 5C7.89834 5 8.04334 5.04399 8.16668 5.1264C8.29002 5.20881 8.38615 5.32594 8.44291 5.46299C8.49968 5.60003 8.51453 5.75083 8.48559 5.89632C8.45665 6.0418 8.38522 6.17544 8.28033 6.28033C8.17544 6.38522 8.04181 6.45665 7.89632 6.48559C7.75083 6.51453 7.60003 6.49968 7.46299 6.44291C7.32595 6.38614 7.20881 6.29001 7.1264 6.16668C7.04399 6.04334 7 5.89834 7 5.75C7 5.55109 7.07902 5.36032 7.21967 5.21967C7.36032 5.07902 7.55109 5 7.75 5ZM8.5 12C8.23479 12 7.98043 11.8946 7.7929 11.7071C7.60536 11.5196 7.5 11.2652 7.5 11V8.5C7.36739 8.5 7.24022 8.44732 7.14645 8.35355C7.05268 8.25979 7 8.13261 7 8C7 7.86739 7.05268 7.74021 7.14645 7.64645C7.24022 7.55268 7.36739 7.5 7.5 7.5C7.76522 7.5 8.01957 7.60536 8.20711 7.79289C8.39465 7.98043 8.5 8.23478 8.5 8.5V11C8.63261 11 8.75979 11.0527 8.85356 11.1464C8.94732 11.2402 9 11.3674 9 11.5C9 11.6326 8.94732 11.7598 8.85356 11.8536C8.75979 11.9473 8.63261 12 8.5 12Z" fill="#9199A0" />
+                    </svg>
                 </div>
             </div>
-
-            <button class="car-detail__order-btn" data-car-id="{{ car.id }}">Оставить заявку</button>
+            <div class="product__details">
+                <div class="product__details-item">
+                    <p class="product__details-label">Год выпуска</p>
+                    <p class="product__details-value">{{ car.year }}</p>
+                </div>
+                <div class="product__details-item">
+                    <p class="product__details-label">Страна</p>
+                    <p class="product__details-value">{{ car.brand_country.country }}</p>
+                </div>
+                <div class="product__details-item">
+                    <p class="product__details-label">КПП</p>
+                    <p class="product__details-value">{{ car.transmission }}</p>
+                </div>
+                <div class="product__details-item">
+                    <p class="product__details-label">Объем двигателя</p>
+                    <p class="product__details-value">{{ car.engine_volume }}</p>
+                </div>
+                <div class="product__details-item">
+                    <p class="product__details-label">Привод</p>
+                    <p class="product__details-value">{{ car.drive }}</p>
+                </div>
+                <div class="product__details-item">
+                    <p class="product__details-label">Цвет</p>
+                    <p class="product__details-value">{{ car.color }}</p>
+                </div>
+                <div class="product__details-item">
+                    <p class="product__details-label">Пробег</p>
+                    <p class="product__details-value">{{ car.mileage }}</p>
+                </div>
+                <div class="product__details-item">
+                    <p class="product__details-label">Мощность</p>
+                    <p class="product__details-value">{{ car.power_volume }}</p>
+                </div>
+            </div>
+            <button class="product__calc">Подробный расчет</button>
+        </div>
+        <div class="product__slider">
+            <div class="slider-main">
+                <button class="slider-btn prev">
+                    <svg width="28" height="28" viewBox="0 0 28 28" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <path d="M8.13045 13.3804L16.8805 4.63045C16.9617 4.54915 17.0583 4.48467 17.1645 4.44067C17.2707 4.39667 17.3845 4.37403 17.4995 4.37403C17.6145 4.37403 17.7283 4.39667 17.8345 4.44067C17.9408 4.48467 18.0373 4.54915 18.1186 4.63045C18.1999 4.71175 18.2644 4.80826 18.3084 4.91448C18.3524 5.0207 18.375 5.13454 18.375 5.24951C18.375 5.36448 18.3524 5.47833 18.3084 5.58455C18.2644 5.69077 18.1999 5.78728 18.1186 5.86858L9.98655 13.9995L18.1186 22.1305C18.2828 22.2946 18.375 22.5173 18.375 22.7495C18.375 22.9817 18.2828 23.2044 18.1186 23.3686C17.9544 23.5328 17.7317 23.625 17.4995 23.625C17.2673 23.625 17.0446 23.5328 16.8805 23.3686L8.13045 14.6186C8.0491 14.5373 7.98456 14.4408 7.94052 14.3346C7.89649 14.2284 7.87383 14.1145 7.87383 13.9995C7.87383 13.8845 7.89649 13.7707 7.94052 13.6644C7.98456 13.5582 8.0491 13.4617 8.13045 13.3804Z" fill="white" />
+                      </svg>
+                </button>
+                <img src="" alt="Subaru" class="main-image">
+                <button class="slider-btn next">
+                    <svg width="12" height="20" viewBox="0 0 12 20" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <path d="M10.8695 10.6195L2.11955 19.3696C2.03825 19.4508 1.94174 19.5153 1.83552 19.5593C1.7293 19.6033 1.61546 19.626 1.50049 19.626C1.38552 19.626 1.27167 19.6033 1.16545 19.5593C1.05923 19.5153 0.96272 19.4508 0.881424 19.3696C0.800127 19.2883 0.735639 19.1917 0.691642 19.0855C0.647645 18.9793 0.625 18.8655 0.625 18.7505C0.625 18.6355 0.647645 18.5217 0.691642 18.4155C0.735639 18.3092 0.800127 18.2127 0.881424 18.1314L9.01346 10.0005L0.881424 1.86955C0.717238 1.70536 0.625 1.48268 0.625 1.25049C0.625 1.01829 0.717238 0.79561 0.881424 0.631424C1.04561 0.467238 1.26829 0.375 1.50049 0.375C1.73268 0.375 1.95536 0.467238 2.11955 0.631424L10.8695 9.38142C10.9509 9.46269 11.0154 9.55919 11.0595 9.66541C11.1035 9.77164 11.1262 9.8855 11.1262 10.0005C11.1262 10.1155 11.1035 10.2293 11.0595 10.3356C11.0154 10.4418 10.9509 10.5383 10.8695 10.6195Z" fill="white" />
+                    </svg>
+                </button>
+            </div>
+            <div class="slider-thumbnails">
+                <img src="" alt="Subaru thumbnail" class="thumbnail active">
+                <img src="" alt="Subaru thumbnail" class="thumbnail">
+                <img src="" alt="Subaru thumbnail" class="thumbnail">
+                <img src="" alt="Subaru thumbnail" class="thumbnail">
+                <img src="" alt="Subaru thumbnail" class="thumbnail">
+            </div>
         </div>
     </div>
 </section>
+{% endblock %}
+{% block scripts %}
+<script src="/static/js/imgSlider.js"></script>
+<script src="/static/js/randomImage.js"></script>
 {% endblock %}
