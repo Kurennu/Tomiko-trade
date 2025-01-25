@@ -7,3 +7,11 @@ class ScheduleAdmin(admin.ModelAdmin):
 @admin.register(Cars)
 class SubjectAdmin(admin.ModelAdmin):
     pass
+
+@admin.register(Clips)
+class SubjectAdmin(admin.ModelAdmin):
+    pass
+
+@admin.register(Reviews)
+class SubjectAdmin(admin.ModelAdmin):
+    pass
