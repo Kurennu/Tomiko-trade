@@ -130,3 +130,21 @@ CELERY_ACCEPT_CONTENT = ['application/json']
 CELERY_RESULT_SERIALIZER = 'json'
 CELERY_TASK_SERIALIZER = 'json'
 CELERY_BROKER_CONNECTION_RETRY_ON_STARTUP = True
+CELERY_TIMEZONE = 'UTC'
+
+from celery.schedules import crontab
+
+CELERY_BEAT_SCHEDULE = {
+    'parse-reviews-daily': {
+        'task': 'main.tasks.parse_reviews',
+        'schedule': crontab(minute=0, hour=0),
+    },
+    'parse-vk-clips-daily': {
+        'task': 'main.tasks.parse_vk_clips',
+        'schedule': crontab(minute=0, hour=0),
+    },
+    'update_car_prices_daily': {
+        'task': 'main.tasks.update_car_prices_task',
+        'schedule': crontab(minute=0, hour=0),
+    },
+}

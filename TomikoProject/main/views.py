@@ -2,6 +2,8 @@ from django.core.paginator import Paginator
 from django.shortcuts import render
 from .models import Cars, Brands
 import json
+from django.http import JsonResponse
+from .utils import *
 
 def index(request):
     cars = Cars.objects.all() 
@@ -115,3 +117,14 @@ def catalog(request):
     }
     
     return render(request, 'catalog.html', context)
+
+
+
+def calculate_car_duty(request, car_id):
+    try:
+        car = Cars.objects.get(id=car_id)
+        total_duty = calculate_total_duty(car)
+        final_price = car.price * get_currency_rate(car.brand.country_currency) + total_duty
+        return JsonResponse({'total_duty': total_duty, 'final_price': final_price})
+    except Cars.DoesNotExist:
+        return JsonResponse({'error': 'Car not found'}, status=404)
