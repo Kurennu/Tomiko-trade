@@ -62,6 +62,7 @@
         </form>
     </div>
 </section>
+
 <section class="catalog__card-inner container">
     {% for car in page_obj %}
     <a href="{% url 'car_detail' car.id %}"> 

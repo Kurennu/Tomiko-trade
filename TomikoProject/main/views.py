@@ -1,6 +1,7 @@
 from django.core.paginator import Paginator
 from django.shortcuts import render, get_object_or_404
-from .models import Cars, Brands, Clips, Reviews
+from .models import Cars, Brands, Clips, Reviews, Feedback
+from django.http import JsonResponse
 import json
 
 def index(request):
@@ -13,6 +14,19 @@ def index(request):
         'reviews': reviews
     }
     return render(request, 'index.html', context)
+
+def send_feedback(request):
+    if request.method == 'POST':
+        name = request.POST.get('name')
+        phone = request.POST.get('phone')
+        message = request.POST.get('message')
+
+        feedback = Feedback(name=name, phone=phone, message=message)
+        feedback.save()
+
+        return JsonResponse({'status': 'success', 'message': 'Формочка отправлена'})
+    else:
+        return JsonResponse({'status': 'error', 'message': 'Некорректный метод отправки.'})
 
 def contacts(request):
     return render(request, 'contacts.html')

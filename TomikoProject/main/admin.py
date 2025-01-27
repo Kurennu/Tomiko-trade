@@ -15,3 +15,7 @@ class SubjectAdmin(admin.ModelAdmin):
 @admin.register(Reviews)
 class SubjectAdmin(admin.ModelAdmin):
     pass
+
+@admin.register(Feedback)
+class SubjectAdmin(admin.ModelAdmin):
+    pass
