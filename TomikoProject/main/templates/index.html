@@ -30,12 +30,41 @@
                     <p class="hero__promo-text hero__promo-text--red">Экономия до</p>
                     <p class="hero__promo-text">от рынка авто в наличии</p>
                 </div>
-                <button class="hero__info-button hero__info-button--promo">Смотреть пример</button>
+                <button class="hero__info-button hero__info-button--promo" onclick="overlayMenu.showModal()">Смотреть пример</button>
             </div>
         </div>
         <div class="line container"></div>
 </section>
 
+<div class="modal">
+  <div class="modal__window">
+    <dialog id="overlayMenu" class="modal__up">
+      <form method="dialog">
+          <button type="submit" class="modal__close">
+            <img src="/static/img/close.svg" alt="">
+          </button>
+      </form>
+      <h3 class="modal__title">Экономия до  <span class="modal__colortext">30%</span> от рынка авто в наличии</h3>
+      <div class="modal__content">
+        <div class="modal__content-1">
+          <img src="/static/img/economy.png" alt="">
+        </div>
+      </div>
+      <div>
+        <div class="stages__buttons">
+          <button class="stages__buttons-help hero__info-button">Получить консультацию</button>
+          <button class="stages__buttons-whatsapp">
+            <img src="/static/img/cta_button.png" alt="" class="stages__buttons-img">
+          </button>
+          <button class="stages__buttons-whatsapp" style="margin-left: 72px;"  >
+            <img src="/static/img/tg-gray.png" alt="" class="stages__buttons-img"  style=" width: 28px; height: 28px;"  >
+          </button>
+        </div>
+      </div>
+  </dialog>
+  </div>
+  <div class="modal__overlay"></div>
+</div>
 
 <section class="container">
   <div class="swiper-container">
