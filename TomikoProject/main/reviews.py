@@ -67,13 +67,14 @@ def main():
             review_blocks = soup.find('ul', id='CommentsList').find_all('li', attrs={'level': '0'})
             for block in review_blocks:
                 user_name, rating, date = extract_review_info(block)
-                add_review = "INSERT INTO reviews (user_name, rating, date) VALUES (?,?,?)"
-                data_review = (user_name, rating, date)
-                try:
-                    cursor.execute(add_review, data_review)
-                    conn.commit()
-                except sqlite3.IntegrityError:
-                    pass
+                if rating:
+                    add_review = "INSERT INTO reviews (user_name, rating, date) VALUES (?,?,?)"
+                    data_review = (user_name, rating, date)
+                    try:
+                        cursor.execute(add_review, data_review)
+                        conn.commit()
+                    except sqlite3.IntegrityError:
+                        pass
     except Exception as e:
         print(f"Произошла ошибка: {e}")
     finally:

@@ -3,6 +3,8 @@ from django.shortcuts import render, get_object_or_404
 from .models import Cars, Brands, Clips, Reviews, Feedback
 from django.http import JsonResponse
 import json
+from django.http import JsonResponse
+from .utils import *
 
 def index(request):
     clips = Clips.objects.all()
@@ -162,6 +164,19 @@ def catalog(request, country=None):
     
     return render(request, 'catalog.html', context)
 
+
+
+def calculate_car_duty(request, car_id):
+    try:
+        car = Cars.objects.get(id=car_id)
+        total_duty = calculate_total_duty(car)
+        final_price = car.price * get_currency_rate(car.brand.country_currency) + total_duty
+        return JsonResponse({'total_duty': total_duty, 'final_price': final_price})
+    except Cars.DoesNotExist:
+        return JsonResponse({'error': 'Car not found'}, status=404)
+    
+
+    
 def car_detail(request, car_id):
     car = get_object_or_404(Cars, id=car_id)
     similar_cars = Cars.objects.filter(brand_country__brand=car.brand_country.brand).exclude(id=car.id)[:4]

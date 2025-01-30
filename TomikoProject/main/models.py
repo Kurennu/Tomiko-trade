@@ -4,9 +4,9 @@ from django.db import models
 class Brands(models.Model):
     country = models.CharField(max_length=50)
     brand = models.CharField(max_length=100)
-
+    currency_code = models.CharField(max_length=10, null=True, blank=True)  
     class Meta:
-        managed = False
+        managed = True
         db_table = 'brands'
 
 
@@ -15,6 +15,7 @@ class Cars(models.Model):
     year = models.IntegerField()
     mileage = models.IntegerField()
     price = models.IntegerField()
+    price_new = models.IntegerField(blank=True, null=True)
     transmission = models.CharField(max_length=50)
     engine_volume = models.CharField(max_length=50)
     drive = models.CharField(max_length=50)
@@ -23,7 +24,7 @@ class Cars(models.Model):
     brand_country = models.ForeignKey('Brands', models.DO_NOTHING, blank=True, null=True)
 
     class Meta:
-        managed = False
+        managed = True
         db_table = 'cars'
 
 
@@ -56,3 +57,21 @@ class Clips(models.Model):
     class Meta:
         managed = False  
         db_table = 'clips'
+
+class CurrencyRate(models.Model):
+    currency = models.CharField(max_length=10, unique=True)
+    rate = models.DecimalField(max_digits=10, decimal_places=4)
+
+    def __str__(self):
+        return f"{self.currency}: {self.rate}"
+
+    @classmethod
+    def update_rates(cls, rates):
+        for currency, rate in rates.items():
+            try:
+                currency_rate = cls.objects.get(currency=currency)
+                currency_rate.rate = rate
+                currency_rate.save()
+            except cls.DoesNotExist:
+                cls.objects.create(currency=currency, rate=rate)
+
