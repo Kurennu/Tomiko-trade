@@ -70,6 +70,9 @@
       font-weight: 600;
       line-height: 22px;
       color: var(--color-white);
+      &:hover{
+        background: linear-gradient(135.00deg, rgb(13, 47, 104),rgb(213, 17, 23) 70%);
+      }
       @include mobile{
         width: 328px;
         height: 43px;

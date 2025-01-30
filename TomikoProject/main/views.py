@@ -8,14 +8,22 @@ from .utils import *
 
 def index(request):
     clips = Clips.objects.all()
-    cars = Cars.objects.all()
-    reviews = Reviews.objects.all()
+    reviews = Reviews.objects.order_by('?')[:8]
+
+    cars_korea = Cars.objects.select_related('brand_country').filter(brand_country__country='Корея')
+    cars_japan = Cars.objects.select_related('brand_country').filter(brand_country__country='Япония')
+    cars_china = Cars.objects.select_related('brand_country').filter(brand_country__country='Китай')
+
     context = {
         'clips': clips,
-        'cars': cars,
-        'reviews': reviews
+        'reviews': reviews,
+        'cars_korea': cars_korea,
+        'cars_japan': cars_japan,
+        'cars_china': cars_china
     }
     return render(request, 'index.html', context)
+
+
 
 def send_feedback(request):
     if request.method == 'POST':
@@ -33,24 +41,9 @@ def send_feedback(request):
 def contacts(request):
     return render(request, 'contacts.html')
 
-def slider_view(request):
-    cars_korea = Cars.objects.filter(brand_country__country='Корея')
-    cars_japan = Cars.objects.filter(brand_country__country='Япония')
-    cars_china = Cars.objects.filter(brand_country__country='Китай')
-
-    countries_and_cars = [
-        ('Из Кореи', cars_korea),
-        ('Из Японии', cars_japan),
-        ('Из Китая', cars_china),
-    ]
-
-    context = {
-        'countries_and_cars': countries_and_cars,
-    }
-    return render(request, 'index.html', context)
-
 
 def catalog(request, country=None):
+    cars = Cars.objects.all()
     queryset = Cars.objects.all()
     
     country_mapping = {
@@ -160,6 +153,7 @@ def catalog(request, country=None):
         'colors_json': json.dumps(colors),
         'page_title': page_title,
         'current_country': country,
+        'cars':cars
     }
     
     return render(request, 'catalog.html', context)

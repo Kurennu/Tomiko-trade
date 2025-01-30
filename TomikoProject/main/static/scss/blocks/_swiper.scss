@@ -36,6 +36,24 @@
       @include mobile{
         font-size: 24px;
       }
+      &--car{
+        color: #FD554B;
+        opacity: 100%;
+        position: relative;
+        &::after{
+          margin-left: 10px;
+          content: "";
+          position: absolute;
+          background: url("/static/img/car-mini.png") no-repeat center / contain;
+          width: 40px;
+          height: 40px;
+          @include mobile{
+            width: 20px;
+            height: 20px;
+            margin-left: 8px;
+          }
+        }
+      }
       &--red{
         color: #FD554B;
         opacity: 100%;
@@ -154,7 +172,6 @@
         z-index: 600;
         &:hover{
           background-color: #D51117;
-          transition-duration: 0.3s;
         }
       }
     }
@@ -195,18 +212,4 @@
     }
   }
 
-}
-
-.swiper-slide {
-  transition: transform 0.3s ease, opacity 0.3s ease;
-}
-
-.swiper-slide--small {
-  width: 338px !important; /* Размер маленького слайда */
-  opacity: 0.7; /* Полупрозрачность для неактивных слайдов */
-}
-
-.swiper-slide--large {
-  width: 641px !important;
-  opacity: 1;
 }

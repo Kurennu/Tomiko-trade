@@ -1,6 +1,6 @@
 .reviews{
     width: 100%;
-    margin-bottom: 40px;
+    margin-bottom: 100px;
 
     &__head-content{
         display: flex;
@@ -60,7 +60,7 @@
             color: #F5B300;
         }
         &-name{
-            max-width: 90px;
+            width: 110px;
             font-weight: 500;
             font-size: 16px;
             line-height: 150%;
