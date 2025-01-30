@@ -1086,6 +1086,23 @@ svg * {
      object-fit: contain;
 }
 
+.swiper-slide {
+  -webkit-transition: opacity 0.3s ease, -webkit-transform 0.3s ease;
+  transition: opacity 0.3s ease, -webkit-transform 0.3s ease;
+  transition: transform 0.3s ease, opacity 0.3s ease;
+  transition: transform 0.3s ease, opacity 0.3s ease, -webkit-transform 0.3s ease;
+}
+
+.swiper-slide--small {
+  width: 338px !important; /* Размер маленького слайда */
+  opacity: 0.7; /* Полупрозрачность для неактивных слайдов */
+}
+
+.swiper-slide--large {
+  width: 641px !important; /* Размер большого слайда */
+  opacity: 1; /* Полная непрозрачность для активного слайда */
+}
+
 .inner-slider {
   width: 641px !important;
   height: 431px !important;

@@ -196,3 +196,17 @@
   }
 
 }
+
+.swiper-slide {
+  transition: transform 0.3s ease, opacity 0.3s ease;
+}
+
+.swiper-slide--small {
+  width: 338px !important; /* Размер маленького слайда */
+  opacity: 0.7; /* Полупрозрачность для неактивных слайдов */
+}
+
+.swiper-slide--large {
+  width: 641px !important;
+  opacity: 1;
+}
