@@ -136,6 +136,57 @@
         </dialog>
     </div>
 </section>
+
+<section class="contact-form container">
+    <div class="contact-form__titles">
+      <h1 class="contact-form__header">
+        Контактная информация👋
+      </h1>
+      <h3 class="contact-form__subheader">Оставьте свою заявку и наш менеджер свяжется с Вами для уточнения деталей</h3>
+      <div class="contact-form__list">
+        <div class="contact-form__item">
+          <h5 class="contact-form__item-subtitle">Звонок по России бесплатный</h5>
+          <h4 class="contact-form__item-title">8 800 550 48 32</h4>
+        </div>
+        <div class="contact-form__item">
+          <h5 class="contact-form__item-subtitle">WhatsApp</h5>
+          <h4 class="contact-form__item-title">+7 (924) 420-24-32</h4>
+        </div>
+        <div class="contact-form__item">
+          <h5 class="contact-form__item-subtitle">Офис</h5>
+          <h4 class="contact-form__item-title">г. Владивосток, ул. Тополевая 6</h4>
+        </div>
+      </div>
+    </div>
+    <form class="contact-form__form" method="POST" action="{% url 'send_feedback' %}">
+      {% csrf_token %}
+      <div class="contact-form__form-row">
+          <div class="contact-form__form-group">
+              <label for="name" class="contact-form__form-label">Имя</label>
+              <input type="text" id="name" name="name" class="contact-form__form-input" placeholder="Введите имя" required>
+          </div>
+          <div class="contact-form__form-group">
+              <label for="phone" class="contact-form__form-label">Телефон</label>
+              <input type="tel" id="phone" name="phone" class="contact-form__form-input" placeholder="+7" required>
+          </div>
+      </div>
+      <div class="contact-form__form-group">
+          <label for="message" class="contact-form__form-label">Уточните свой вопрос</label>
+          <textarea id="message" name="message" class="contact-form__form-textarea" placeholder="Введите текст сообщения, укажите страну, марку и год машины." required></textarea>
+      </div>
+      <div class="contact-form__form-policy">
+          <label class="contact-form__form-checkbox">
+              <input type="checkbox" required>
+              <span class="custom-checkbox"></span>
+              <span class="contact-form__form-checkbox-text">
+                  С <a href="#" class="contact-form__form-link">правилами политики конфиденциальности</a> ознакомлен
+              </span>
+          </label>
+      </div>
+      <button type="submit" class="contact-form__form-submit">Отправить</button>
+  </form>
+  
+  </section>
 {% endblock %}
 {% block scripts %}
 <script src="/static/js/imgSlider.js"></script>
