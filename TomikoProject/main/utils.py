@@ -139,6 +139,9 @@ def calculate_scrapping_fee(cars):
 
 
 def calculate_total_duty(cars):
+    valid_countries = ['Китай', 'Корея', 'Япония']
+    if cars.brand_country is None or cars.brand_country.country not in valid_countries:
+        return 0
     if cars.brand_country is None:
         # print(f"Информация о стране бренда автомобиля {cars.id} отсутствует. Пропустить расчет таможенной пошлины.")
         return 0 
